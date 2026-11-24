@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    background-color: #160618;
+    background-image: radial-gradient(
+      circle at 50% 42%,
+      #4A102D 0%,
+      #160618 58%,
+      #080611 100%
+    );
+    color: #FFF8FC;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #160618;
+    background-image: radial-gradient(
+      circle at 50% 42%,
+      #4A102D 0%,
+      #160618 58%,
+      #080611 100%
+    );
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  button,
+  [role="button"],
+  a,
+  input,
+  textarea {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Ensure tsParticles canvas always stretches 100% across iPad portrait & landscape */
+#sena-cosmic-stars,
+#sena-cosmic-stars canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+/* Safari & iPadOS WebKit 3D Card Flip Fixes */
+.safari-perspective {
+  perspective: 1200px;
+  -webkit-perspective: 1200px;
+}
+
+.safari-preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.safari-backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.safari-rotate-y-180 {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+@keyframes floatUpHeart {
+  0% {
+    transform: translate3d(0, 105vh, 0) scale(0.7) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.28;
+  }
+  80% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translate3d(20px, -15vh, 0) scale(1.15) rotate(18deg);
+    opacity: 0;
+  }
+}
+
+.ambient-rising-heart {
+  position: absolute;
+  bottom: -10vh;
+  color: #FF91B5;
+  text-shadow: 0 0 12px rgba(232, 62, 112, 0.7);
+  will-change: transform, opacity;
+  animation-name: floatUpHeart;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes giftBoxWobble {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  20% {
+    transform: rotate(-7deg) scale(1.04);
+  }
+  40% {
+    transform: rotate(7deg) scale(1.06);
+  }
+  60% {
+    transform: rotate(-5deg) scale(1.07);
+  }
+  80% {
+    transform: rotate(5deg) scale(1.05);
+  }
+}
+
+.animate-gift-wobble {
+  animation: giftBoxWobble 0.55s ease-in-out infinite;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080611;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4A102D;
+  border-radius: 9999px;
+  border: 1px solid rgba(245, 213, 138, 0.25);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E83E70;
+}
