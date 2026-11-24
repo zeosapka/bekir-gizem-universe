@@ -12,7 +12,7 @@ interface CosmicStar {
   isSparkle: boolean;
 }
 
-const STAR_COLORS = ["#FFF8FC", "#F5D58A", "#FF91B5", "#E83E70"];
+const STAR_COLORS = ["#FFFFFF", "#A7F3D0", "#BAE6FD", "#F5D58A"];
 
 export function CosmicBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -126,15 +126,16 @@ export function CosmicBackground() {
       className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden"
       aria-hidden="true"
     >
-      {/* iPad Safari & Chrome (CriOS) Dostu Çok Katmanlı Romantik Nebula Gradienti */}
+      {/* Dengeli Açık Yeşil ve Mavi Tonlarında Çok Katmanlı Arka Plan */}
       <div
         className="absolute inset-0 w-full h-full"
         style={{
           background: [
-            "radial-gradient(circle at 18% 18%, rgba(232, 62, 112, 0.18) 0%, transparent 48%)",
-            "radial-gradient(circle at 82% 32%, rgba(245, 213, 138, 0.14) 0%, transparent 48%)",
-            "radial-gradient(circle at 50% 78%, rgba(74, 16, 45, 0.45) 0%, transparent 58%)",
-            "radial-gradient(ellipse at 50% 35%, #4A102D 0%, #160618 62%, #080611 100%)",
+            "radial-gradient(circle at 20% 22%, rgba(110, 231, 183, 0.34) 0%, transparent 52%)",
+            "radial-gradient(circle at 80% 24%, rgba(125, 211, 252, 0.34) 0%, transparent 52%)",
+            "radial-gradient(circle at 28% 78%, rgba(52, 211, 153, 0.24) 0%, transparent 55%)",
+            "radial-gradient(circle at 75% 76%, rgba(56, 189, 248, 0.28) 0%, transparent 55%)",
+            "linear-gradient(135deg, #136F63 0%, #17857B 34%, #1C7DA6 68%, #1E5F8E 100%)",
           ].join(", "),
         }}
       />

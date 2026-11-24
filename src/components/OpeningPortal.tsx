@@ -235,7 +235,7 @@ export function OpeningPortal({ onEnterUniverse }: OpeningPortalProps) {
         paddingBottom:
           "max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 0.75rem))",
       }}
-      className="fixed inset-0 w-full h-full z-50 flex flex-col items-center justify-center px-5 sm:px-6 overflow-y-auto overflow-x-hidden bg-[radial-gradient(circle_at_center,#4A102D_0%,#080611_70%)] select-none"
+      className="fixed inset-0 w-full h-full z-50 flex flex-col items-center justify-center px-5 sm:px-6 overflow-y-auto overflow-x-hidden bg-[radial-gradient(circle_at_22%_24%,rgba(110,231,183,0.32),transparent_50%),radial-gradient(circle_at_78%_28%,rgba(125,211,252,0.32),transparent_50%),linear-gradient(135deg,#136F63_0%,#17857B_34%,#1C7DA6_68%,#1E5F8E_100%)] select-none"
     >
       {/* TAM EKRAN Vektörel Kalp Geçiş Kanvası — Asla kare kutu kesilmesi yapmaz */}
       <canvas

@@ -27,7 +27,7 @@ export function App() {
   useViewportMetrics();
 
   return (
-    <div className="relative w-full max-w-full min-h-[100dvh] overflow-x-hidden bg-[radial-gradient(circle_at_50%_38%,#4A0E22_0%,#190713_56%,#09050B_100%)] text-[#FFF8FC] selection:bg-[#E11D48]/40 selection:text-[#FFF8FC]">
+    <div className="relative w-full max-w-full min-h-[100dvh] overflow-x-hidden bg-[linear-gradient(135deg,#136F63_0%,#17857B_34%,#1C7DA6_68%,#1E5F8E_100%)] text-[#FFF8FC] selection:bg-[#34D399]/35 selection:text-[#FFF8FC]">
       {/* Persistent Cosmic Starfield & Rising Hearts */}
       <CosmicBackground />
 
