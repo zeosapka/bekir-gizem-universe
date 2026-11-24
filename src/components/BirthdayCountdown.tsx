@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Sparkles, CalendarHeart, PartyPopper } from "lucide-react";
 import { UNIVERSE_CONFIG } from "../config/universeConfig";
@@ -39,9 +39,9 @@ function AnimatedDigitCard({ value, label }: { value: number; label: string }) {
   const formatted = String(value).padStart(2, "0");
 
   return (
-    <div className="relative group flex flex-col items-center justify-center p-5 sm:p-6 md:p-8 rounded-3xl bg-gradient-to-b from-[#1A0B2E]/85 to-[#0D0618]/90 backdrop-blur-2xl border border-[#F5D58A]/25 shadow-[0_12px_40px_rgba(8,6,17,0.85)] overflow-hidden">
+    <div className="relative group flex flex-col items-center justify-center p-5 sm:p-6 md:p-8 rounded-3xl bg-gradient-to-b from-[#084148]/85 to-[#04282D]/90 backdrop-blur-2xl border border-[#F5D58A]/25 shadow-[0_12px_40px_rgba(8,6,17,0.85)] overflow-hidden">
       {/* Köşe Işıltıları */}
-      <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-[#E83E70]/20 blur-2xl pointer-events-none" />
+      <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-[#0EA5E9]/20 blur-2xl pointer-events-none" />
       <div className="absolute -bottom-10 -left-10 w-24 h-24 rounded-full bg-[#F5D58A]/15 blur-2xl pointer-events-none" />
 
       <div className="relative h-14 sm:h-16 md:h-20 flex items-center justify-center overflow-hidden">
@@ -56,7 +56,7 @@ function AnimatedDigitCard({ value, label }: { value: number; label: string }) {
               stiffness: 260,
               damping: 22,
             }}
-            className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-b from-[#FFF8FC] via-[#FF91B5] to-[#F5D58A] bg-clip-text text-transparent tabular-nums tracking-wider"
+            className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-b from-[#FFF8FC] via-[#A7F3D0] to-[#F5D58A] bg-clip-text text-transparent tabular-nums tracking-wider"
           >
             {formatted}
           </motion.span>
@@ -88,10 +88,10 @@ export function BirthdayCountdown() {
       id="countdown-section"
       className="relative py-16 md:py-24 px-6 max-w-5xl mx-auto"
     >
-      <div className="relative rounded-[2.25rem] p-6 sm:p-10 md:p-14 bg-gradient-to-br from-[#4A102D]/35 via-[#120822]/80 to-[#080611]/90 backdrop-blur-2xl border border-[#F5D58A]/30 shadow-[0_0_70px_rgba(232,62,112,0.18)] overflow-hidden">
+      <div className="relative rounded-[2.25rem] p-6 sm:p-10 md:p-14 bg-gradient-to-br from-[#06383E]/35 via-[#06383E]/80 to-[#04282D]/90 backdrop-blur-2xl border border-[#F5D58A]/30 shadow-[0_0_70px_rgba(232,62,112,0.18)] overflow-hidden">
         {/* Başlık */}
         <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4A102D]/50 border border-[#F5D58A]/30 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06383E]/50 border border-[#F5D58A]/30 mb-4">
             <CalendarHeart className="w-4 h-4 shrink-0 text-[#F5D58A]" />
             <span className="text-xs tracking-[0.2em] uppercase text-[#F5D58A] font-semibold">
               {UNIVERSE_CONFIG.countdown.preTitle} • {UNIVERSE_CONFIG.birthdayDisplayDate}
@@ -101,7 +101,7 @@ export function BirthdayCountdown() {
           {!showCelebrationBanner ? (
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#FFF8FC] font-semibold leading-snug">
               {UNIVERSE_CONFIG.countdown.titlePrefix}{" "}
-              <span className="italic text-[#FF91B5]">
+              <span className="italic text-[#A7F3D0]">
                 {UNIVERSE_CONFIG.countdown.titleHighlight}
               </span>
             </h2>
@@ -111,10 +111,10 @@ export function BirthdayCountdown() {
               animate={{ opacity: 1, scale: 1 }}
               className="space-y-4 py-4"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-[#E83E70] to-[#F5D58A] text-[#080611] shadow-[0_0_40px_rgba(245,213,138,0.6)]">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-[#0EA5E9] to-[#F5D58A] text-[#04282D] shadow-[0_0_40px_rgba(245,213,138,0.6)]">
                 <PartyPopper className="w-8 h-8" />
               </div>
-              <h2 className="font-serif font-bold text-3xl sm:text-5xl md:text-6xl bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#FF91B5] bg-clip-text text-transparent tracking-wide">
+              <h2 className="font-serif font-bold text-3xl sm:text-5xl md:text-6xl bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#A7F3D0] bg-clip-text text-transparent tracking-wide">
                 {UNIVERSE_CONFIG.countdown.celebrationHeadline}
               </h2>
               <p className="font-serif italic text-xl sm:text-2xl text-[#FFF8FC]/90 max-w-xl mx-auto">
@@ -152,7 +152,7 @@ export function BirthdayCountdown() {
             <button
               type="button"
               onClick={() => setPreviewBirthdayMode((prev) => !prev)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full text-xs tracking-[0.18em] uppercase text-[#F5D58A]/85 hover:text-[#FFF8FC] bg-[#160A26]/70 hover:bg-[#4A102D]/60 border border-[#F5D58A]/25 transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full text-xs tracking-[0.18em] uppercase text-[#F5D58A]/85 hover:text-[#FFF8FC] bg-[#160A26]/70 hover:bg-[#06383E]/60 border border-[#F5D58A]/25 transition-all cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5 shrink-0 text-[#F5D58A]" />
               <span>

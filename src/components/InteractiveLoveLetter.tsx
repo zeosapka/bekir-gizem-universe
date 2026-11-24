@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MailOpen, Sparkles, RotateCcw, FastForward, Heart } from "lucide-react";
 import { UNIVERSE_CONFIG } from "../config/universeConfig";
@@ -46,7 +46,7 @@ export function InteractiveLoveLetter() {
   return (
     <section className="relative py-16 md:py-24 px-6 max-w-4xl mx-auto">
       <div className="text-center mb-10 md:mb-14">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4A102D]/45 border border-[#F5D58A]/30 mb-3">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06383E]/45 border border-[#F5D58A]/30 mb-3">
           <MailOpen className="w-3.5 h-3.5 text-[#F5D58A]" />
           <span className="text-xs tracking-[0.22em] uppercase text-[#F5D58A] font-medium">
             {UNIVERSE_CONFIG.loveLetter.badgeText}
@@ -77,7 +77,7 @@ export function InteractiveLoveLetter() {
           >
             {/* Zarf Kapağı Üçgen Kesim */}
             <div
-              className="pointer-events-none absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[#4A102D]/60 to-transparent border-b border-[#F5D58A]/25"
+              className="pointer-events-none absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[#06383E]/60 to-transparent border-b border-[#F5D58A]/25"
               style={{
                 clipPath: "polygon(0 0, 100% 0, 50% 100%)",
               }}
@@ -93,8 +93,8 @@ export function InteractiveLoveLetter() {
                 whileTap={{ scale: 0.94 }}
                 className="relative flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-[#F5D58A] via-[#D9A74A] to-[#9E6B18] p-1.5 shadow-[0_0_45px_rgba(245,213,138,0.65)] border-2 border-[#FFF8FC]/50"
               >
-                <div className="flex flex-col items-center justify-center w-full h-full rounded-full border-2 border-dashed border-[#4A102D]/60 bg-gradient-to-inner from-[#F5D58A] to-[#C89333]">
-                  <span className="font-serif font-bold text-xl sm:text-2xl text-[#4A102D] tracking-wider">
+                <div className="flex flex-col items-center justify-center w-full h-full rounded-full border-2 border-dashed border-[#06383E]/60 bg-gradient-to-inner from-[#F5D58A] to-[#C89333]">
+                  <span className="font-serif font-bold text-xl sm:text-2xl text-[#06383E] tracking-wider">
                     {UNIVERSE_CONFIG.loveLetter.sealInitials}
                   </span>
                 </div>
@@ -105,7 +105,7 @@ export function InteractiveLoveLetter() {
                 &ldquo;{UNIVERSE_CONFIG.loveLetter.envelopePrompt}&rdquo;
               </p>
 
-              <div className="mt-5 inline-flex items-center gap-2 px-6 py-3 min-h-[48px] rounded-full bg-[#4A102D]/70 border border-[#F5D58A]/50 text-xs sm:text-sm uppercase tracking-[0.2em] text-[#F5D58A] font-semibold group-hover:bg-[#E83E70] group-hover:text-[#FFF8FC] transition-colors">
+              <div className="mt-5 inline-flex items-center gap-2 px-6 py-3 min-h-[48px] rounded-full bg-[#06383E]/70 border border-[#F5D58A]/50 text-xs sm:text-sm uppercase tracking-[0.2em] text-[#F5D58A] font-semibold group-hover:bg-[#0EA5E9] group-hover:text-[#FFF8FC] transition-colors">
                 <Sparkles className="w-4 h-4 shrink-0" />
                 <span>{UNIVERSE_CONFIG.loveLetter.touchSealHint}</span>
               </div>
@@ -130,7 +130,7 @@ export function InteractiveLoveLetter() {
             {/* Üst Mühür & Kontroller */}
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#F5D58A]/20 pb-5 mb-8">
               <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[#F5D58A] to-[#C68F32] text-[#4A102D] font-serif font-bold text-xs shadow-md">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[#F5D58A] to-[#C68F32] text-[#06383E] font-serif font-bold text-xs shadow-md">
                   B ❤️ G
                 </div>
                 <div>
@@ -148,7 +148,7 @@ export function InteractiveLoveLetter() {
                   <button
                     type="button"
                     onClick={handleRevealAll}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 min-h-[42px] rounded-full text-xs tracking-wider uppercase bg-[#4A102D]/60 text-[#F5D58A] border border-[#F5D58A]/30 hover:bg-[#4A102D] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 min-h-[42px] rounded-full text-xs tracking-wider uppercase bg-[#06383E]/60 text-[#F5D58A] border border-[#F5D58A]/30 hover:bg-[#06383E] transition-colors cursor-pointer"
                   >
                     <FastForward className="w-3.5 h-3.5" />
                     <span>{UNIVERSE_CONFIG.loveLetter.showAllButton}</span>
@@ -157,7 +157,7 @@ export function InteractiveLoveLetter() {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 min-h-[42px] rounded-full text-xs tracking-wider uppercase bg-[#1A0D26] text-[#FF91B5] border border-[#FF91B5]/30 hover:border-[#FF91B5] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 min-h-[42px] rounded-full text-xs tracking-wider uppercase bg-[#1A0D26] text-[#A7F3D0] border border-[#A7F3D0]/30 hover:border-[#A7F3D0] transition-colors cursor-pointer"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                   <span>{UNIVERSE_CONFIG.loveLetter.foldButton}</span>
@@ -194,7 +194,7 @@ export function InteractiveLoveLetter() {
                     transition={{ duration: 0.65 }}
                     className={
                       isHighlight
-                        ? "font-semibold text-[#FF91B5] drop-shadow-[0_0_15px_rgba(232,62,112,0.35)]"
+                        ? "font-semibold text-[#A7F3D0] drop-shadow-[0_0_15px_rgba(232,62,112,0.35)]"
                         : "text-[#FFF8FC]/90"
                     }
                   >
@@ -210,12 +210,12 @@ export function InteractiveLoveLetter() {
                   transition={{ duration: 0.7 }}
                   className="pt-6 border-t border-[#F5D58A]/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                 >
-                  <p className="font-serif italic font-semibold text-2xl sm:text-3xl bg-gradient-to-r from-[#F5D58A] via-[#FF91B5] to-[#E83E70] bg-clip-text text-transparent">
+                  <p className="font-serif italic font-semibold text-2xl sm:text-3xl bg-gradient-to-r from-[#F5D58A] via-[#A7F3D0] to-[#0EA5E9] bg-clip-text text-transparent">
                     {UNIVERSE_CONFIG.loveLetter.signOff}
                   </p>
 
                   <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#F5D58A]/70 font-sans">
-                    <Heart className="w-4 h-4 text-[#E83E70] fill-[#E83E70] animate-pulse" />
+                    <Heart className="w-4 h-4 text-[#0EA5E9] fill-[#0EA5E9] animate-pulse" />
                     <span>{UNIVERSE_CONFIG.loveLetter.foreverBadge}</span>
                   </div>
                 </motion.div>

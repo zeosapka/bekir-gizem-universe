@@ -106,15 +106,15 @@ export function LoveCoupons() {
   return (
     <section className="relative py-16 md:py-24 px-6 max-w-6xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-12">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4A1026]/55 border border-[#F5D58A]/30 mb-3">
-          <Ticket className="w-3.5 h-3.5 text-[#F5D58A]" />
-          <span className="text-xs tracking-[0.22em] uppercase text-[#F5D58A] font-medium">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06383E]/55 backdrop-blur-md border border-[#A7F3D0]/40 mb-3">
+          <Ticket className="w-3.5 h-3.5 text-[#A7F3D0]" />
+          <span className="text-xs tracking-[0.22em] uppercase text-[#E0F2FE] font-medium">
             Sadece İkinize Özel • Aşk Kuponları
           </span>
         </div>
 
         <h2 className="font-serif text-3xl sm:text-5xl text-[#FFF8FC] font-semibold">
-          Gizem’in <span className="italic text-[#F5D58A]">Altın Kupon Defteri</span>
+          Gizem’in <span className="italic text-[#BAE6FD]">Altın Kupon Defteri</span>
         </h2>
 
         <p className="mt-3 font-serif italic text-lg sm:text-xl text-[#FFF8FC]/75">
@@ -152,20 +152,20 @@ export function LoveCoupons() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.45, delay: idx * 0.06 }}
-              className={`relative rounded-3xl p-5 flex flex-col justify-between border transition-all duration-300 ${
+              className={`relative rounded-3xl p-5 flex flex-col justify-between border transition-all duration-300 backdrop-blur-xl ${
                 isUsed
-                  ? "bg-gradient-to-br from-[#1F1A12]/90 to-[#110D0A]/95 border-[#F5D58A]/60 shadow-[0_10px_30px_rgba(245,213,138,0.16)]"
-                  : "bg-gradient-to-br from-[#2B0C1D]/90 to-[#130610]/95 border-[#F5D58A]/25 hover:border-[#F5D58A]/55 shadow-[0_12px_34px_rgba(0,0,0,0.5)]"
+                  ? "bg-[#06383E]/75 border-[#A7F3D0]/70 shadow-[0_12px_34px_rgba(52,211,153,0.22)]"
+                  : "bg-[#06383E]/60 border-white/25 hover:border-[#BAE6FD]/60 shadow-[0_14px_38px_rgba(6,56,62,0.3)]"
               }`}
             >
               {/* Decorative ticket notch accents */}
               <div
                 aria-hidden="true"
-                className="flex items-center justify-between text-[10px] tracking-[0.22em] uppercase text-[#F5D58A]/75 pb-3 mb-3 border-b border-dashed border-[#F5D58A]/25"
+                className="flex items-center justify-between text-[10px] tracking-[0.22em] uppercase text-[#A7F3D0]/85 pb-3 mb-3 border-b border-dashed border-white/20"
               >
                 <span>{coupon.code}</span>
                 <span className="inline-flex items-center gap-1">
-                  <Sparkles className="w-3 h-3" /> 17 KASIM
+                  <Sparkles className="w-3 h-3" /> 17 KASIM 2023
                 </span>
               </div>
 
@@ -174,13 +174,13 @@ export function LoveCoupons() {
                 <h3 className="font-serif text-xl sm:text-2xl text-[#FFF8FC] font-semibold">
                   {coupon.title}
                 </h3>
-                <p className="mt-2 text-sm text-[#FFF8FC]/75 leading-relaxed">
+                <p className="mt-2 text-sm text-[#E0F2FE]/85 leading-relaxed">
                   {coupon.desc}
                 </p>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-dashed border-[#F5D58A]/20 flex items-center justify-between gap-3">
-                <span className="text-[11px] text-[#F5D58A]/70">{coupon.validity}</span>
+              <div className="mt-5 pt-3 border-t border-dashed border-white/20 flex items-center justify-between gap-3">
+                <span className="text-[11px] text-[#BAE6FD]/80">{coupon.validity}</span>
 
                 <button
                   type="button"
@@ -188,8 +188,8 @@ export function LoveCoupons() {
                   disabled={isUsed}
                   className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold transition-all shrink-0 ${
                     isUsed
-                      ? "bg-[#F5D58A]/20 text-[#F5D58A] border border-[#F5D58A]/50 cursor-default"
-                      : "bg-gradient-to-r from-[#E11D48] to-[#F43F5E] hover:brightness-110 text-white shadow-[0_4px_16px_rgba(225,29,72,0.45)] active:scale-95"
+                      ? "bg-[#34D399]/20 text-[#A7F3D0] border border-[#A7F3D0]/50 cursor-default"
+                      : "bg-gradient-to-r from-[#059669] to-[#0284C7] hover:brightness-110 text-white border border-white/40 shadow-[0_6px_18px_rgba(14,165,233,0.38)] active:scale-95"
                   }`}
                 >
                   {isUsed ? (

@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Camera,
@@ -13,7 +13,7 @@ import { UNIVERSE_CONFIG, type MomentItem } from "../config/universeConfig";
 
 function RomanticPlaceholderArtwork({ item }: { item: MomentItem }) {
   return (
-    <div className="relative w-full h-full flex flex-col items-center justify-center p-6 text-center overflow-hidden bg-[radial-gradient(circle_at_50%_30%,#4A102D_0%,#12071D_65%,#080611_100%)]">
+    <div className="relative w-full h-full flex flex-col items-center justify-center p-6 text-center overflow-hidden bg-[radial-gradient(circle_at_50%_30%,#06383E_0%,#06383E_65%,#04282D_100%)]">
       {/* Takımyıldızı SVG Çizgileri */}
       <svg
         viewBox="0 0 200 140"
@@ -23,8 +23,8 @@ function RomanticPlaceholderArtwork({ item }: { item: MomentItem }) {
         <defs>
           <linearGradient id={`grad-${item.id}`} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#F5D58A" />
-            <stop offset="50%" stopColor="#FF91B5" />
-            <stop offset="100%" stopColor="#E83E70" />
+            <stop offset="50%" stopColor="#A7F3D0" />
+            <stop offset="100%" stopColor="#0EA5E9" />
           </linearGradient>
         </defs>
         <path
@@ -35,13 +35,13 @@ function RomanticPlaceholderArtwork({ item }: { item: MomentItem }) {
           strokeDasharray="3 3"
         />
         <circle cx="25" cy="95" r="3" fill="#F5D58A" />
-        <circle cx="65" cy="45" r="4" fill="#FF91B5" />
+        <circle cx="65" cy="45" r="4" fill="#A7F3D0" />
         <circle cx="115" cy="65" r="3" fill="#FFF8FC" />
-        <circle cx="155" cy="25" r="4.5" fill="#E83E70" />
+        <circle cx="155" cy="25" r="4.5" fill="#0EA5E9" />
         <circle cx="175" cy="85" r="3" fill="#F5D58A" />
       </svg>
 
-      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#4A102D]/60 border border-[#F5D58A]/30 text-[11px] uppercase tracking-[0.2em] text-[#F5D58A] mb-2">
+      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#06383E]/60 border border-[#F5D58A]/30 text-[11px] uppercase tracking-[0.2em] text-[#F5D58A] mb-2">
         <ImagePlus className="w-3 h-3 shrink-0" />
         <span>{item.dateLabel}</span>
       </div>
@@ -72,7 +72,7 @@ export function OurLittleMoments() {
     <section className="relative py-16 md:py-24 px-6 max-w-6xl mx-auto">
       {/* Bölüm Başlığı */}
       <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4A102D]/45 border border-[#F5D58A]/30 mb-3">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06383E]/45 border border-[#F5D58A]/30 mb-3">
           <Camera className="w-3.5 h-3.5 text-[#F5D58A]" />
           <span className="text-xs tracking-[0.22em] uppercase text-[#F5D58A] font-medium">
             {UNIVERSE_CONFIG.momentsSection.badgeText}
@@ -114,7 +114,7 @@ export function OurLittleMoments() {
               >
                 {/* 3B KART ÖN YÜZÜ */}
                 <div
-                  className={`absolute inset-0 w-full h-full rounded-[2rem] p-4 flex flex-col justify-between bg-gradient-to-b from-[#1B0B28]/90 to-[#0C0614]/95 backdrop-blur-xl border border-[#F5D58A]/30 shadow-[0_15px_45px_rgba(8,6,17,0.85)] safari-backface-hidden ${
+                  className={`absolute inset-0 w-full h-full rounded-[2rem] p-4 flex flex-col justify-between bg-gradient-to-b from-[#084148]/90 to-[#04282D]/95 backdrop-blur-xl border border-[#F5D58A]/30 shadow-[0_15px_45px_rgba(8,6,17,0.85)] safari-backface-hidden ${
                     isFlipped ? "pointer-events-none" : "pointer-events-auto"
                   }`}
                 >
@@ -138,7 +138,7 @@ export function OurLittleMoments() {
                       <RomanticPlaceholderArtwork item={item} />
                     )}
 
-                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#080611]/75 backdrop-blur-md border border-[#F5D58A]/30 text-[11px] text-[#F5D58A] flex items-center gap-1">
+                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#04282D]/75 backdrop-blur-md border border-[#F5D58A]/30 text-[11px] text-[#F5D58A] flex items-center gap-1">
                       <RotateCw className="w-3 h-3" />
                       <span>{UNIVERSE_CONFIG.momentsSection.flipBadgeText}</span>
                     </div>
@@ -150,7 +150,7 @@ export function OurLittleMoments() {
                       <h3 className="font-serif font-semibold text-2xl text-[#FFF8FC]">
                         {item.title}
                       </h3>
-                      <p className="mt-1 font-serif italic text-base text-[#FF91B5]/90 line-clamp-2">
+                      <p className="mt-1 font-serif italic text-base text-[#A7F3D0]/90 line-clamp-2">
                         &ldquo;{captionText}&rdquo;
                       </p>
                     </div>
@@ -159,7 +159,7 @@ export function OurLittleMoments() {
                       <button
                         type="button"
                         onClick={() => toggleFlip(item.id)}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2 min-h-[42px] rounded-full text-xs uppercase tracking-wider text-[#F5D58A] bg-[#4A102D]/50 hover:bg-[#4A102D] border border-[#F5D58A]/25 transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 min-h-[42px] rounded-full text-xs uppercase tracking-wider text-[#F5D58A] bg-[#06383E]/50 hover:bg-[#06383E] border border-[#F5D58A]/25 transition-colors cursor-pointer"
                       >
                         <RotateCw className="w-3.5 h-3.5 shrink-0" />
                         <span>{UNIVERSE_CONFIG.momentsSection.flipButtonText}</span>
@@ -168,7 +168,7 @@ export function OurLittleMoments() {
                       <button
                         type="button"
                         onClick={() => setSelectedMoment(item)}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 min-h-[42px] rounded-full text-xs uppercase tracking-wider text-[#FFF8FC] bg-[#E83E70]/80 hover:bg-[#E83E70] shadow-[0_0_20px_rgba(232,62,112,0.4)] transition-all cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 min-h-[42px] rounded-full text-xs uppercase tracking-wider text-[#FFF8FC] bg-[#0EA5E9]/80 hover:bg-[#0EA5E9] shadow-[0_0_20px_rgba(232,62,112,0.4)] transition-all cursor-pointer"
                       >
                         <Maximize2 className="w-3.5 h-3.5 shrink-0" />
                         <span>
@@ -181,7 +181,7 @@ export function OurLittleMoments() {
 
                 {/* 3B KART ARKA YÜZÜ (ROMANTİK NOT VE MESAJ DÜZENLEME) */}
                 <div
-                  className={`absolute inset-0 w-full h-full rounded-[2rem] p-6 flex flex-col justify-between bg-gradient-to-br from-[#2B0C20] via-[#150821] to-[#080611] border-2 border-[#F5D58A]/50 shadow-[0_15px_50px_rgba(232,62,112,0.3)] safari-backface-hidden safari-rotate-y-180 ${
+                  className={`absolute inset-0 w-full h-full rounded-[2rem] p-6 flex flex-col justify-between bg-gradient-to-br from-[#2B0C20] via-[#150821] to-[#04282D] border-2 border-[#F5D58A]/50 shadow-[0_15px_50px_rgba(232,62,112,0.3)] safari-backface-hidden safari-rotate-y-180 ${
                     isFlipped ? "pointer-events-auto" : "pointer-events-none"
                   }`}
                 >
@@ -190,7 +190,7 @@ export function OurLittleMoments() {
                       <Sparkles className="w-3.5 h-3.5" />
                       {item.dateLabel}
                     </span>
-                    <Heart className="w-4 h-4 text-[#E83E70] fill-[#E83E70]" />
+                    <Heart className="w-4 h-4 text-[#0EA5E9] fill-[#0EA5E9]" />
                   </div>
 
                   <div className="my-auto py-4 text-center space-y-4">
@@ -204,7 +204,7 @@ export function OurLittleMoments() {
                     <div className="pt-2">
                       <label
                         htmlFor={`note-${item.id}`}
-                        className="block text-[11px] uppercase tracking-[0.18em] text-[#FF91B5]/80 mb-1.5"
+                        className="block text-[11px] uppercase tracking-[0.18em] text-[#A7F3D0]/80 mb-1.5"
                       >
                         {UNIVERSE_CONFIG.momentsSection.editNoteLabel}
                       </label>
@@ -218,7 +218,7 @@ export function OurLittleMoments() {
                             [item.id]: e.target.value,
                           }))
                         }
-                        className="w-full px-3.5 py-2 rounded-xl bg-[#080611]/70 border border-[#F5D58A]/30 text-xs text-[#FFF8FC] focus:outline-none focus:border-[#F5D58A]"
+                        className="w-full px-3.5 py-2 rounded-xl bg-[#04282D]/70 border border-[#F5D58A]/30 text-xs text-[#FFF8FC] focus:outline-none focus:border-[#F5D58A]"
                       />
                     </div>
                   </div>
@@ -227,7 +227,7 @@ export function OurLittleMoments() {
                     <button
                       type="button"
                       onClick={() => toggleFlip(item.id)}
-                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] rounded-full text-xs uppercase tracking-[0.2em] bg-[#4A102D] text-[#F5D58A] border border-[#F5D58A]/40 hover:bg-[#E83E70] hover:text-[#FFF8FC] transition-colors cursor-pointer"
+                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] rounded-full text-xs uppercase tracking-[0.2em] bg-[#06383E] text-[#F5D58A] border border-[#F5D58A]/40 hover:bg-[#0EA5E9] hover:text-[#FFF8FC] transition-colors cursor-pointer"
                     >
                       <RotateCw className="w-3.5 h-3.5" />
                       <span>
@@ -250,7 +250,7 @@ export function OurLittleMoments() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedMoment(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 pt-20 sm:p-8 sm:pt-20 bg-[#080611]/90 backdrop-blur-2xl overflow-y-auto"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 pt-20 sm:p-8 sm:pt-20 bg-[#04282D]/90 backdrop-blur-2xl overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
@@ -273,7 +273,7 @@ export function OurLittleMoments() {
                   type="button"
                   onClick={() => setSelectedMoment(null)}
                   aria-label={UNIVERSE_CONFIG.momentsSection.closeModalAriaLabel}
-                  className="flex items-center justify-center w-12 h-12 rounded-full bg-[#4A102D]/70 border border-[#F5D58A]/40 text-[#FFF8FC] hover:bg-[#E83E70] transition-colors cursor-pointer"
+                  className="flex items-center justify-center w-12 h-12 rounded-full bg-[#06383E]/70 border border-[#F5D58A]/40 text-[#FFF8FC] hover:bg-[#0EA5E9] transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -284,7 +284,7 @@ export function OurLittleMoments() {
                   <img
                     src={selectedMoment.imageUrl}
                     alt={selectedMoment.title}
-                    className="w-full h-full object-contain bg-[#080611]"
+                    className="w-full h-full object-contain bg-[#04282D]"
                   />
                 ) : (
                   <RomanticPlaceholderArtwork item={selectedMoment} />
@@ -292,7 +292,7 @@ export function OurLittleMoments() {
               </div>
 
               <div className="text-center space-y-2">
-                <p className="font-serif italic text-2xl sm:text-3xl text-[#FF91B5]">
+                <p className="font-serif italic text-2xl sm:text-3xl text-[#A7F3D0]">
                   &ldquo;
                   {customNotes[selectedMoment.id] ?? selectedMoment.quote}
                   &rdquo;

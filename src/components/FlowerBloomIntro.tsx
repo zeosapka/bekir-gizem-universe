@@ -1344,11 +1344,23 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
         paddingTop: "max(0.75rem, env(safe-area-inset-top, 0px))",
         paddingBottom:
           "max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 0.85rem))",
+        backgroundImage: [
+          "radial-gradient(circle at 20% 22%, rgba(167, 243, 208, 0.42) 0%, transparent 52%)",
+          "radial-gradient(circle at 82% 24%, rgba(186, 230, 253, 0.42) 0%, transparent 52%)",
+          "radial-gradient(circle at 50% 82%, rgba(110, 231, 183, 0.24) 0%, transparent 56%)",
+          "linear-gradient(135deg, #169882 0%, #1DB59A 32%, #24A4C8 68%, #1D82C4 100%)",
+        ].join(", "),
       }}
-      className={`fixed inset-0 w-full h-full z-50 flex flex-col items-center justify-between px-4 overflow-hidden bg-[radial-gradient(circle_at_22%_24%,rgba(110,231,183,0.32),transparent_50%),radial-gradient(circle_at_78%_28%,rgba(125,211,252,0.32),transparent_50%),linear-gradient(135deg,#136F63_0%,#17857B_34%,#1C7DA6_68%,#1E5F8E_100%)] select-none ${
+      className={`fixed inset-0 w-full h-full z-50 flex flex-col items-center justify-between px-4 overflow-hidden select-none ${
         stage === "bloomed" ? "cursor-pointer" : ""
       }`}
     >
+      {/* Canva Tarzı Zarif Botanik Çerçeve & Işıltı Halkaları */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-4 sm:inset-7 rounded-[2rem] border border-white/25 shadow-[inset_0_0_60px_rgba(255,255,255,0.12)] z-0"
+      />
+
       {/* TAM EKRAN Gül, Lale ve Papatya Buketi Kanvası */}
       <canvas
         ref={canvasRef}
@@ -1357,10 +1369,10 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
 
       {/* Üst Rozet */}
       <div className="relative z-20 mt-13 sm:mt-14 xl:mt-1.5 text-center pointer-events-none px-2 shrink-0 max-w-full">
-        <span className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#190824]/85 border border-[#F5D58A]/35 text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#F5D58A] shadow-[0_0_20px_rgba(8,6,17,0.65)] max-w-full">
-          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+        <span className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#06383E]/55 backdrop-blur-md border border-[#A7F3D0]/45 text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#E0F2FE] shadow-[0_8px_24px_rgba(6,56,62,0.3)] max-w-full">
+          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#A7F3D0]" />
           <span className="truncate">{UNIVERSE_CONFIG.flowerIntro.badgeText}</span>
-          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#BAE6FD]" />
         </span>
       </div>
 
@@ -1380,7 +1392,7 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
               className="space-y-1.5 sm:space-y-2.5 flex flex-col items-center"
             >
               <h2
-                className={`font-serif italic font-semibold bg-gradient-to-r from-[#FFF8FC] via-[#FF91B5] to-[#F5D58A] bg-clip-text text-transparent drop-shadow-[0_2px_25px_rgba(232,62,112,0.65)] leading-snug ${
+                className={`font-serif italic font-semibold bg-gradient-to-r from-[#FFFFFF] via-[#D1FAE5] to-[#E0F2FE] bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(6,56,62,0.55)] leading-snug ${
                   viewport.isCompactHeight
                     ? "text-xl sm:text-2xl md:text-3xl"
                     : "text-xl sm:text-3xl md:text-4xl"
@@ -1389,7 +1401,7 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
                 &ldquo;{UNIVERSE_CONFIG.flowerIntro.message}&rdquo;
               </h2>
 
-              <p className="font-serif italic text-xs sm:text-sm md:text-base text-[#F5D58A]/90 tracking-wide max-w-lg leading-relaxed">
+              <p className="font-serif italic text-xs sm:text-sm md:text-base text-[#E0F2FE]/95 tracking-wide max-w-lg leading-relaxed drop-shadow-[0_1px_10px_rgba(6,56,62,0.4)]">
                 {UNIVERSE_CONFIG.flowerIntro.novemberSubtext}
               </p>
 
@@ -1400,9 +1412,9 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
                     e.stopPropagation();
                     triggerCinematicHeartDive();
                   }}
-                  className="group inline-flex items-center justify-center gap-2 sm:gap-2.5 px-6 sm:px-7 py-2.5 sm:py-3.5 min-h-[46px] sm:min-h-[50px] rounded-full bg-gradient-to-r from-[#4A102D] via-[#E83E70] to-[#4A102D] bg-[length:200%_100%] hover:bg-right border border-[#F5D58A]/75 text-xs sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.2em] font-semibold text-[#FFF8FC] shadow-[0_0_35px_rgba(232,62,112,0.6)] hover:scale-105 active:scale-95 transition-all duration-500 cursor-pointer touch-manipulation"
+                  className="group inline-flex items-center justify-center gap-2 sm:gap-2.5 px-6 sm:px-7 py-2.5 sm:py-3.5 min-h-[46px] sm:min-h-[50px] rounded-full bg-gradient-to-r from-[#059669] via-[#0D9488] to-[#0284C7] bg-[length:200%_100%] hover:bg-right border border-white/60 text-xs sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.2em] font-semibold text-white shadow-[0_10px_32px_rgba(14,165,233,0.45)] hover:scale-105 active:scale-95 transition-all duration-500 cursor-pointer touch-manipulation"
                 >
-                  <Heart className="w-4 h-4 text-[#F5D58A] fill-[#F5D58A] animate-pulse shrink-0" />
+                  <Heart className="w-4 h-4 text-[#A7F3D0] fill-[#A7F3D0] animate-pulse shrink-0" />
                   <span>{UNIVERSE_CONFIG.flowerIntro.touchHeartButtonText}</span>
                 </button>
               </div>
@@ -1413,7 +1425,7 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.92 }}
               exit={{ opacity: 0 }}
-              className="font-serif italic text-sm sm:text-lg md:text-xl text-[#F5D58A]/95 tracking-wide py-2"
+              className="font-serif italic text-sm sm:text-lg md:text-xl text-[#E0F2FE]/95 tracking-wide py-2 drop-shadow-[0_1px_10px_rgba(6,56,62,0.45)]"
             >
               {UNIVERSE_CONFIG.flowerIntro.growingText}
             </motion.p>

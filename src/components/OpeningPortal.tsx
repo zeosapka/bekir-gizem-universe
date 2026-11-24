@@ -234,9 +234,21 @@ export function OpeningPortal({ onEnterUniverse }: OpeningPortalProps) {
         paddingTop: "max(4.25rem, env(safe-area-inset-top, 0px))",
         paddingBottom:
           "max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 0.75rem))",
+        backgroundImage: [
+          "radial-gradient(circle at 20% 22%, rgba(167, 243, 208, 0.42) 0%, transparent 52%)",
+          "radial-gradient(circle at 82% 24%, rgba(186, 230, 253, 0.42) 0%, transparent 52%)",
+          "radial-gradient(circle at 50% 82%, rgba(110, 231, 183, 0.24) 0%, transparent 56%)",
+          "linear-gradient(135deg, #169882 0%, #1DB59A 32%, #24A4C8 68%, #1D82C4 100%)",
+        ].join(", "),
       }}
-      className="fixed inset-0 w-full h-full z-50 flex flex-col items-center justify-center px-5 sm:px-6 overflow-y-auto overflow-x-hidden bg-[radial-gradient(circle_at_22%_24%,rgba(110,231,183,0.32),transparent_50%),radial-gradient(circle_at_78%_28%,rgba(125,211,252,0.32),transparent_50%),linear-gradient(135deg,#136F63_0%,#17857B_34%,#1C7DA6_68%,#1E5F8E_100%)] select-none"
+      className="fixed inset-0 w-full h-full z-50 flex flex-col items-center justify-center px-5 sm:px-6 overflow-y-auto overflow-x-hidden select-none"
     >
+      {/* Canva Tarzı Zarif Botanik Çerçeve */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-4 sm:inset-7 rounded-[2rem] border border-white/25 shadow-[inset_0_0_60px_rgba(255,255,255,0.12)] z-0"
+      />
+
       {/* TAM EKRAN Vektörel Kalp Geçiş Kanvası — Asla kare kutu kesilmesi yapmaz */}
       <canvas
         ref={portalCanvasRef}
@@ -245,8 +257,8 @@ export function OpeningPortal({ onEnterUniverse }: OpeningPortalProps) {
 
       {/* Subtle Ambient Rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[20rem] h-[20rem] md:w-[30rem] md:h-[30rem] rounded-full border border-[#F5D58A]/10 animate-ping [animation-duration:6s]" />
-        <div className="absolute w-[15rem] h-[15rem] md:w-[22rem] md:h-[22rem] rounded-full border border-[#E83E70]/20 animate-pulse" />
+        <div className="w-[20rem] h-[20rem] md:w-[30rem] md:h-[30rem] rounded-full border border-white/20 animate-ping [animation-duration:6s]" />
+        <div className="absolute w-[15rem] h-[15rem] md:w-[22rem] md:h-[22rem] rounded-full border border-[#A7F3D0]/35 animate-pulse" />
       </div>
 
       {/* Heart Portal Core */}
@@ -256,8 +268,8 @@ export function OpeningPortal({ onEnterUniverse }: OpeningPortalProps) {
           viewport.isCompactHeight ? "mb-4" : "mb-6 md:mb-8"
         }`}
       >
-        <div className="relative flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#E83E70] via-[#FF91B5] to-[#F5D58A] p-[2px] shadow-[0_0_60px_rgba(232,62,112,0.75)]">
-          <div className="flex items-center justify-center w-full h-full rounded-full bg-[#12071D]/90 backdrop-blur-md">
+        <div className="relative flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-[#34D399] via-[#38BDF8] to-[#FDE68A] p-[2px] shadow-[0_0_50px_rgba(56,189,248,0.55)]">
+          <div className="flex items-center justify-center w-full h-full rounded-full bg-[#06383E]/85 backdrop-blur-md">
             <motion.div
               animate={
                 isReducedMotion
@@ -265,9 +277,9 @@ export function OpeningPortal({ onEnterUniverse }: OpeningPortalProps) {
                   : {
                       scale: [1, 1.16, 1, 1.12, 1],
                       filter: [
-                        "drop-shadow(0 0 12px rgba(232,62,112,0.7))",
-                        "drop-shadow(0 0 28px rgba(245,213,138,0.95))",
-                        "drop-shadow(0 0 12px rgba(232,62,112,0.7))",
+                        "drop-shadow(0 0 12px rgba(52,211,153,0.7))",
+                        "drop-shadow(0 0 28px rgba(186,230,253,0.95))",
+                        "drop-shadow(0 0 12px rgba(52,211,153,0.7))",
                       ],
                     }
               }
@@ -278,7 +290,7 @@ export function OpeningPortal({ onEnterUniverse }: OpeningPortalProps) {
               }}
             >
               <Heart
-                className="w-12 h-12 md:w-14 md:h-14 text-[#E83E70] fill-[#E83E70]"
+                className="w-12 h-12 md:w-14 md:h-14 text-[#6EE7B7] fill-[#6EE7B7]"
                 strokeWidth={1.5}
               />
             </motion.div>
@@ -295,7 +307,7 @@ export function OpeningPortal({ onEnterUniverse }: OpeningPortalProps) {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
-          className="font-serif italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#FFF8FC]/95 leading-relaxed tracking-wide px-2"
+          className="font-serif italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white/95 leading-relaxed tracking-wide px-2 drop-shadow-[0_2px_16px_rgba(6,56,62,0.35)]"
         >
           &ldquo;{UNIVERSE_CONFIG.opening.quote}&rdquo;
         </motion.p>
@@ -306,16 +318,16 @@ export function OpeningPortal({ onEnterUniverse }: OpeningPortalProps) {
           transition={{ duration: 0.9, delay: 0.65 }}
           className="mt-6 md:mt-8 space-y-2"
         >
-          <h1 className="font-serif font-semibold text-3xl sm:text-4xl md:text-5xl bg-gradient-to-r from-[#FFF8FC] via-[#FF91B5] to-[#F5D58A] bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(232,62,112,0.45)]">
+          <h1 className="font-serif font-semibold text-3xl sm:text-4xl md:text-5xl bg-gradient-to-r from-[#FFFFFF] via-[#D1FAE5] to-[#E0F2FE] bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(6,56,62,0.45)]">
             {UNIVERSE_CONFIG.opening.greeting}
           </h1>
 
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#4A102D]/40 border border-[#F5D58A]/30">
-            <Sparkles className="w-3.5 h-3.5 text-[#F5D58A]" />
-            <span className="text-xs sm:text-sm md:text-base tracking-[0.28em] uppercase text-[#F5D58A] font-medium">
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#06383E]/55 backdrop-blur-md border border-[#A7F3D0]/45">
+            <Sparkles className="w-3.5 h-3.5 text-[#A7F3D0]" />
+            <span className="text-xs sm:text-sm md:text-base tracking-[0.28em] uppercase text-[#E0F2FE] font-medium">
               {UNIVERSE_CONFIG.opening.dateText}
             </span>
-            <Sparkles className="w-3.5 h-3.5 text-[#F5D58A]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#BAE6FD]" />
           </div>
         </motion.div>
 
@@ -329,10 +341,10 @@ export function OpeningPortal({ onEnterUniverse }: OpeningPortalProps) {
             type="button"
             onClick={handleEnterClick}
             disabled={isTransitioning}
-            className="group relative inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 min-h-[58px] rounded-full font-sans font-semibold text-sm sm:text-base tracking-[0.2em] uppercase text-[#FFF8FC] bg-gradient-to-r from-[#4A102D] via-[#E83E70] to-[#4A102D] bg-[length:200%_100%] hover:bg-right border border-[#F5D58A]/60 shadow-[0_0_35px_rgba(232,62,112,0.55)] active:scale-95 transition-all duration-500 cursor-pointer"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 min-h-[58px] rounded-full font-sans font-semibold text-sm sm:text-base tracking-[0.2em] uppercase text-white bg-gradient-to-r from-[#059669] via-[#0D9488] to-[#0284C7] bg-[length:200%_100%] hover:bg-right border border-white/60 shadow-[0_10px_35px_rgba(14,165,233,0.45)] active:scale-95 transition-all duration-500 cursor-pointer"
           >
             <span>{UNIVERSE_CONFIG.opening.buttonText}</span>
-            <Sparkles className="w-4 h-4 text-[#F5D58A] group-hover:rotate-45 transition-transform duration-300" />
+            <Sparkles className="w-4 h-4 text-[#A7F3D0] group-hover:rotate-45 transition-transform duration-300" />
           </button>
         </motion.div>
       </div>

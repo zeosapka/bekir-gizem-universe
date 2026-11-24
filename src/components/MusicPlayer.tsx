@@ -473,23 +473,23 @@ export function MusicPlayer() {
             ? UNIVERSE_CONFIG.musicPlayer.pauseAriaLabel
             : UNIVERSE_CONFIG.musicPlayer.playAriaLabel
         }
-        className="group flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 min-h-[46px] sm:min-h-[48px] rounded-full bg-[#12091E]/85 backdrop-blur-xl border border-[#F5D58A]/35 text-[#FFF8FC] shadow-[0_0_25px_rgba(232,62,112,0.28)] hover:border-[#F5D58A]/75 active:scale-95 transition-all duration-300 cursor-pointer touch-manipulation"
+        className="group flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 min-h-[46px] sm:min-h-[48px] rounded-full bg-[#06383E]/70 backdrop-blur-xl border border-[#A7F3D0]/45 text-white shadow-[0_8px_28px_rgba(6,56,62,0.3)] hover:border-white/75 active:scale-95 transition-all duration-300 cursor-pointer touch-manipulation"
       >
         <span
           className={`relative flex items-center justify-center w-7 h-7 shrink-0 rounded-full ${
             isPlaying
-              ? "bg-gradient-to-tr from-[#E83E70] to-[#F5D58A] text-[#080611]"
-              : "bg-[#4A102D]/70 text-[#FF91B5]"
+              ? "bg-gradient-to-tr from-[#10B981] to-[#38BDF8] text-white"
+              : "bg-[#0D9488]/55 text-[#A7F3D0]"
           } transition-colors`}
         >
           <Music className="w-3.5 h-3.5" />
           {isPlaying && !isMuted && (
-            <span className="absolute inset-0 rounded-full border border-[#F5D58A] animate-ping opacity-50" />
+            <span className="absolute inset-0 rounded-full border border-[#A7F3D0] animate-ping opacity-50" />
           )}
         </span>
 
         <div className="text-left pr-1 min-w-0">
-          <p className="text-[10px] sm:text-[11px] font-medium tracking-wider uppercase text-[#F5D58A] truncate">
+          <p className="text-[10px] sm:text-[11px] font-medium tracking-wider uppercase text-[#A7F3D0] truncate">
             {isPlaying
               ? `${currentTrackIndex + 1}/${playlist.length} • ${
                   isCrossfading
@@ -498,7 +498,7 @@ export function MusicPlayer() {
                 }`
               : UNIVERSE_CONFIG.musicPlayer.pausedLabel}
           </p>
-          <p className="text-[11px] sm:text-xs text-[#FFF8FC]/85 max-w-[135px] sm:max-w-[195px] truncate font-medium">
+          <p className="text-[11px] sm:text-xs text-[#E0F2FE]/90 max-w-[135px] sm:max-w-[195px] truncate font-medium">
             {activeTrack?.title || UNIVERSE_CONFIG.musicTrackTitle}
           </p>
         </div>
@@ -509,9 +509,9 @@ export function MusicPlayer() {
             className="flex items-end gap-0.5 h-3.5 ml-0.5 shrink-0"
             aria-hidden="true"
           >
-            <span className="w-0.5 bg-[#FF91B5] animate-[pulse_0.8s_ease-in-out_infinite] h-3" />
-            <span className="w-0.5 bg-[#F5D58A] animate-[pulse_1.1s_ease-in-out_infinite] h-2" />
-            <span className="w-0.5 bg-[#E83E70] animate-[pulse_0.6s_ease-in-out_infinite] h-3.5" />
+            <span className="w-0.5 bg-[#6EE7B7] animate-[pulse_0.8s_ease-in-out_infinite] h-3" />
+            <span className="w-0.5 bg-[#BAE6FD] animate-[pulse_1.1s_ease-in-out_infinite] h-2" />
+            <span className="w-0.5 bg-[#38BDF8] animate-[pulse_0.6s_ease-in-out_infinite] h-3.5" />
           </div>
         )}
       </button>
@@ -524,7 +524,7 @@ export function MusicPlayer() {
           onClick={handleNextTrackClick}
           title="Sıradaki şarkıya yumuşak geçiş yap"
           aria-label={UNIVERSE_CONFIG.musicPlayer.nextTrackAriaLabel}
-          className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-full bg-[#12091E]/85 backdrop-blur-xl border border-[#F5D58A]/30 text-[#F5D58A] hover:border-[#F5D58A]/75 hover:text-[#FFF8FC] active:scale-95 transition-all cursor-pointer touch-manipulation"
+          className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-full bg-[#06383E]/70 backdrop-blur-xl border border-[#A7F3D0]/40 text-[#A7F3D0] hover:border-white/75 hover:text-white active:scale-95 transition-all cursor-pointer touch-manipulation"
         >
           <SkipForward className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>

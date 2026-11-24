@@ -57,25 +57,25 @@ export function WishJar() {
   return (
     <section className="relative py-16 md:py-24 px-6 max-w-4xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-10">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4A1026]/55 border border-[#F5D58A]/30 mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-[#F5D58A]" />
-          <span className="text-xs tracking-[0.22em] uppercase text-[#F5D58A] font-medium">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06383E]/55 backdrop-blur-md border border-[#A7F3D0]/40 mb-3">
+          <Sparkles className="w-3.5 h-3.5 text-[#A7F3D0]" />
+          <span className="text-xs tracking-[0.22em] uppercase text-[#E0F2FE] font-medium">
             Ortak Dilek & Aşk Kavanozu
           </span>
         </div>
 
         <h2 className="font-serif text-3xl sm:text-5xl text-[#FFF8FC] font-semibold">
-          Geleceğe <span className="italic text-[#F5D58A]">Not Bırakın</span>
+          Geleceğe <span className="italic text-[#BAE6FD]">Not Bırakın</span>
         </h2>
 
-        <p className="mt-3 font-serif italic text-lg sm:text-xl text-[#FFF8FC]/75">
+        <p className="mt-3 font-serif italic text-lg sm:text-xl text-[#E0F2FE]/85">
           Kavanozdan rastgele bir aşk notu çekin ya da gelecek 17 Kasımlar için kendi dileğinizi ekleyin.
         </p>
       </div>
 
-      <div className="rounded-[2rem] p-6 sm:p-10 bg-gradient-to-b from-[#230A1A]/90 to-[#11060E]/95 border border-[#F5D58A]/30 shadow-[0_16px_45px_rgba(0,0,0,0.55)]">
+      <div className="rounded-[2rem] p-6 sm:p-10 bg-[#06383E]/65 backdrop-blur-xl border border-white/25 shadow-[0_16px_45px_rgba(6,56,62,0.32)]">
         {/* Active Drawn Note Card */}
-        <div className="min-h-[140px] flex items-center justify-center rounded-2xl p-6 bg-[#130610]/80 border border-[#F5D58A]/25 text-center mb-6">
+        <div className="min-h-[140px] flex items-center justify-center rounded-2xl p-6 bg-[#04282D]/60 border border-white/20 text-center mb-6">
           <AnimatePresence mode="wait">
             <motion.p
               key={drawnNote}
@@ -94,9 +94,9 @@ export function WishJar() {
           <button
             type="button"
             onClick={drawRandom}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#E11D48] to-[#F43F5E] hover:brightness-110 text-white text-sm font-semibold shadow-[0_6px_22px_rgba(225,29,72,0.45)] active:scale-95 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#059669] to-[#0284C7] hover:brightness-110 text-white text-sm font-semibold border border-white/40 shadow-[0_6px_22px_rgba(14,165,233,0.4)] active:scale-95 transition-all"
           >
-            <Heart className="w-4 h-4 fill-white" />
+            <Heart className="w-4 h-4 fill-[#A7F3D0] text-[#A7F3D0]" />
             Kavanozdan Yeni Not Çek ({allNotes.length})
           </button>
         </div>
@@ -109,11 +109,11 @@ export function WishJar() {
             onChange={(e) => setInputText(e.target.value)}
             maxLength={180}
             placeholder="Birlikte gerçekleştirmek istediğiniz bir dilek veya söz yazın..."
-            className="flex-1 px-5 py-3.5 rounded-full bg-white/[0.06] border border-[#F5D58A]/25 focus:border-[#F5D58A] focus:outline-none text-sm text-[#FFF8FC] placeholder:text-[#FFF8FC]/45"
+            className="flex-1 px-5 py-3.5 rounded-full bg-white/[0.1] border border-white/25 focus:border-[#A7F3D0] focus:outline-none text-sm text-white placeholder:text-white/55"
           />
           <button
             type="submit"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#F5D58A] hover:bg-[#fae2a6] text-[#1A0812] font-semibold text-sm transition-colors active:scale-95 shrink-0"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#A7F3D0] hover:bg-[#D1FAE5] text-[#06383E] font-semibold text-sm transition-colors active:scale-95 shrink-0"
           >
             <Send className="w-4 h-4" />
             Kavanoza At

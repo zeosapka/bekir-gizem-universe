@@ -126,16 +126,16 @@ export function CosmicBackground() {
       className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden"
       aria-hidden="true"
     >
-      {/* Dengeli Açık Yeşil ve Mavi Tonlarında Çok Katmanlı Arka Plan */}
+      {/* Dengeli Açık Yeşil ve Mavi Tonlarında Canva Tarzı Arka Plan */}
       <div
         className="absolute inset-0 w-full h-full"
         style={{
           background: [
-            "radial-gradient(circle at 20% 22%, rgba(110, 231, 183, 0.34) 0%, transparent 52%)",
-            "radial-gradient(circle at 80% 24%, rgba(125, 211, 252, 0.34) 0%, transparent 52%)",
-            "radial-gradient(circle at 28% 78%, rgba(52, 211, 153, 0.24) 0%, transparent 55%)",
-            "radial-gradient(circle at 75% 76%, rgba(56, 189, 248, 0.28) 0%, transparent 55%)",
-            "linear-gradient(135deg, #136F63 0%, #17857B 34%, #1C7DA6 68%, #1E5F8E 100%)",
+            "radial-gradient(circle at 18% 20%, rgba(167, 243, 208, 0.40) 0%, transparent 52%)",
+            "radial-gradient(circle at 82% 22%, rgba(186, 230, 253, 0.40) 0%, transparent 52%)",
+            "radial-gradient(circle at 25% 80%, rgba(110, 231, 183, 0.28) 0%, transparent 54%)",
+            "radial-gradient(circle at 78% 78%, rgba(125, 211, 252, 0.30) 0%, transparent 54%)",
+            "linear-gradient(135deg, #169882 0%, #1DB59A 32%, #24A4C8 68%, #1D82C4 100%)",
           ].join(", "),
         }}
       />

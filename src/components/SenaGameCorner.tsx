@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import {
@@ -43,7 +43,7 @@ export function SenaGameCorner() {
     <section className="relative py-16 md:py-24 px-6 max-w-6xl mx-auto">
       {/* Bölüm Başlığı */}
       <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4A102D]/55 border border-[#F5D58A]/35 mb-3 shadow-[0_0_25px_rgba(232,62,112,0.2)]">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06383E]/55 border border-[#F5D58A]/35 mb-3 shadow-[0_0_25px_rgba(232,62,112,0.2)]">
           <Gamepad2 className="w-4 h-4 text-[#F5D58A]" />
           <span className="text-xs tracking-[0.22em] uppercase text-[#F5D58A] font-semibold">
             {UNIVERSE_CONFIG.gamesSection.badgeText}
@@ -66,13 +66,13 @@ export function SenaGameCorner() {
           onClick={() => setActiveTab("catch-hearts")}
           className={`group text-left p-5 sm:p-6 rounded-3xl border transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[135px] ${
             activeTab === "catch-hearts"
-              ? "bg-gradient-to-br from-[#4A102D]/85 via-[#240B22]/95 to-[#12071D] border-[#F5D58A] shadow-[0_0_40px_rgba(232,62,112,0.35)] scale-[1.01]"
+              ? "bg-gradient-to-br from-[#06383E]/85 via-[#240B22]/95 to-[#06383E] border-[#F5D58A] shadow-[0_0_40px_rgba(232,62,112,0.35)] scale-[1.01]"
               : "bg-[#150821]/75 hover:bg-[#1F0B2E]/80 border-[#F5D58A]/25 opacity-85 hover:opacity-100"
           }`}
         >
           <div className="flex items-center justify-between mb-3">
-            <span className="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#E83E70]/25 border border-[#E83E70]/50 text-[#FF91B5]">
-              <Heart className="w-5 h-5 fill-[#E83E70] text-[#E83E70]" />
+            <span className="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#0EA5E9]/25 border border-[#0EA5E9]/50 text-[#A7F3D0]">
+              <Heart className="w-5 h-5 fill-[#0EA5E9] text-[#0EA5E9]" />
             </span>
             <span className="text-[11px] uppercase tracking-[0.2em] text-[#F5D58A]/80 font-medium">
               1. Oyun • 30 Sn
@@ -93,7 +93,7 @@ export function SenaGameCorner() {
           onClick={() => setActiveTab("find-star")}
           className={`group text-left p-5 sm:p-6 rounded-3xl border transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[135px] ${
             activeTab === "find-star"
-              ? "bg-gradient-to-br from-[#4A102D]/85 via-[#240B22]/95 to-[#12071D] border-[#F5D58A] shadow-[0_0_40px_rgba(245,213,138,0.3)] scale-[1.01]"
+              ? "bg-gradient-to-br from-[#06383E]/85 via-[#240B22]/95 to-[#06383E] border-[#F5D58A] shadow-[0_0_40px_rgba(245,213,138,0.3)] scale-[1.01]"
               : "bg-[#150821]/75 hover:bg-[#1F0B2E]/80 border-[#F5D58A]/25 opacity-85 hover:opacity-100"
           }`}
         >
@@ -120,13 +120,13 @@ export function SenaGameCorner() {
           onClick={() => setActiveTab("heart-cipher")}
           className={`group text-left p-5 sm:p-6 rounded-3xl border transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[135px] ${
             activeTab === "heart-cipher"
-              ? "bg-gradient-to-br from-[#4A102D]/85 via-[#240B22]/95 to-[#12071D] border-[#F5D58A] shadow-[0_0_40px_rgba(232,62,112,0.35)] scale-[1.01]"
+              ? "bg-gradient-to-br from-[#06383E]/85 via-[#240B22]/95 to-[#06383E] border-[#F5D58A] shadow-[0_0_40px_rgba(232,62,112,0.35)] scale-[1.01]"
               : "bg-[#150821]/75 hover:bg-[#1F0B2E]/80 border-[#F5D58A]/25 opacity-85 hover:opacity-100"
           }`}
         >
           <div className="flex items-center justify-between mb-3">
-            <span className="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#FF91B5]/20 border border-[#FF91B5]/50 text-[#FF91B5]">
-              <Lock className="w-5 h-5 text-[#FF91B5]" />
+            <span className="inline-flex items-center justify-center w-11 h-11 rounded-2xl bg-[#A7F3D0]/20 border border-[#A7F3D0]/50 text-[#A7F3D0]">
+              <Lock className="w-5 h-5 text-[#A7F3D0]" />
             </span>
             <span className="text-[11px] uppercase tracking-[0.2em] text-[#F5D58A]/80 font-medium">
               3. Oyun • 3 Aşama
@@ -144,7 +144,7 @@ export function SenaGameCorner() {
       </div>
 
       {/* Aktif Oyun Sahnesi */}
-      <div className="relative rounded-[2.25rem] p-6 sm:p-10 bg-gradient-to-b from-[#1B0A28]/90 via-[#11071C]/95 to-[#080611]/95 backdrop-blur-2xl border border-[#F5D58A]/35 shadow-[0_20px_70px_rgba(8,6,17,0.9)] overflow-hidden">
+      <div className="relative rounded-[2.25rem] p-6 sm:p-10 bg-gradient-to-b from-[#1B0A28]/90 via-[#11071C]/95 to-[#04282D]/95 backdrop-blur-2xl border border-[#F5D58A]/35 shadow-[0_20px_70px_rgba(8,6,17,0.9)] overflow-hidden">
         <AnimatePresence mode="wait">
           {activeTab === "catch-hearts" && (
             <motion.div
@@ -198,7 +198,7 @@ function CatchHeartsGame() {
   const [hearts, setHearts] = useState<SpawnedHeart[]>([]);
   const nextHeartId = useRef(1);
 
-  const colors = ["#E83E70", "#FF91B5", "#F5D58A"];
+  const colors = ["#0EA5E9", "#A7F3D0", "#F5D58A"];
 
   const createRandomHeart = (): SpawnedHeart => {
     const id = nextHeartId.current++;
@@ -236,7 +236,7 @@ function CatchHeartsGame() {
             particleCount: 70,
             spread: 100,
             origin: { y: 0.6 },
-            colors: ["#E83E70", "#FF91B5", "#F5D58A", "#FFF8FC"],
+            colors: ["#0EA5E9", "#A7F3D0", "#F5D58A", "#FFF8FC"],
           });
           return 0;
         }
@@ -285,7 +285,7 @@ function CatchHeartsGame() {
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="px-4 py-2 rounded-2xl bg-[#4A102D]/60 border border-[#F5D58A]/35 text-center min-w-[95px]">
+          <div className="px-4 py-2 rounded-2xl bg-[#06383E]/60 border border-[#F5D58A]/35 text-center min-w-[95px]">
             <span className="block text-[10px] uppercase tracking-[0.2em] text-[#F5D58A]/80">
               {cfg.scoreLabel}
             </span>
@@ -294,8 +294,8 @@ function CatchHeartsGame() {
             </span>
           </div>
 
-          <div className="px-4 py-2 rounded-2xl bg-[#160924] border border-[#FF91B5]/35 text-center min-w-[95px]">
-            <span className="block text-[10px] uppercase tracking-[0.2em] text-[#FF91B5]/80">
+          <div className="px-4 py-2 rounded-2xl bg-[#160924] border border-[#A7F3D0]/35 text-center min-w-[95px]">
+            <span className="block text-[10px] uppercase tracking-[0.2em] text-[#A7F3D0]/80">
               {cfg.timeLabel}
             </span>
             <span className="font-serif font-bold text-2xl text-[#F5D58A] tabular-nums">
@@ -309,8 +309,8 @@ function CatchHeartsGame() {
       <div className="relative w-full h-[340px] sm:h-[380px] rounded-3xl bg-[radial-gradient(circle_at_center,#2B0B22_0%,#0B0514_80%)] border border-[#F5D58A]/25 overflow-hidden select-none">
         {status === "idle" && (
           <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-            <div className="w-16 h-16 rounded-full bg-[#E83E70]/20 border border-[#E83E70]/50 flex items-center justify-center mb-4">
-              <Heart className="w-8 h-8 text-[#E83E70] fill-[#E83E70] animate-pulse" />
+            <div className="w-16 h-16 rounded-full bg-[#0EA5E9]/20 border border-[#0EA5E9]/50 flex items-center justify-center mb-4">
+              <Heart className="w-8 h-8 text-[#0EA5E9] fill-[#0EA5E9] animate-pulse" />
             </div>
             <p className="font-serif italic text-xl sm:text-2xl text-[#FFF8FC]/90 max-w-md mb-6">
               {cfg.startPrompt}
@@ -318,7 +318,7 @@ function CatchHeartsGame() {
             <button
               type="button"
               onClick={startGame}
-              className="inline-flex items-center gap-2.5 px-8 py-4 min-h-[54px] rounded-full font-sans font-semibold text-sm uppercase tracking-[0.2em] text-[#FFF8FC] bg-gradient-to-r from-[#E83E70] to-[#4A102D] border border-[#F5D58A]/60 shadow-[0_0_30px_rgba(232,62,112,0.5)] active:scale-95 transition-all cursor-pointer"
+              className="inline-flex items-center gap-2.5 px-8 py-4 min-h-[54px] rounded-full font-sans font-semibold text-sm uppercase tracking-[0.2em] text-[#FFF8FC] bg-gradient-to-r from-[#0EA5E9] to-[#06383E] border border-[#F5D58A]/60 shadow-[0_0_30px_rgba(232,62,112,0.5)] active:scale-95 transition-all cursor-pointer"
             >
               <Play className="w-4 h-4 fill-current" />
               <span>{UNIVERSE_CONFIG.gamesSection.playButtonText}</span>
@@ -342,7 +342,7 @@ function CatchHeartsGame() {
                   top: `${h.y}%`,
                 }}
                 aria-label="Kalbi yakala"
-                className="absolute -translate-x-1/2 -translate-y-1/2 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center bg-[#4A102D]/55 border border-[#F5D58A]/40 shadow-[0_0_25px_rgba(232,62,112,0.6)] active:scale-125 cursor-pointer touch-manipulation"
+                className="absolute -translate-x-1/2 -translate-y-1/2 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center bg-[#06383E]/55 border border-[#F5D58A]/40 shadow-[0_0_25px_rgba(232,62,112,0.6)] active:scale-125 cursor-pointer touch-manipulation"
               >
                 <Heart
                   className="w-8 h-8 sm:w-9 sm:h-9 transition-transform"
@@ -357,9 +357,9 @@ function CatchHeartsGame() {
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-[#080611]/85 backdrop-blur-md"
+            className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-[#04282D]/85 backdrop-blur-md"
           >
-            <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#E83E70] to-[#F5D58A] flex items-center justify-center text-[#080611] shadow-[0_0_35px_rgba(245,213,138,0.6)] mb-4">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#0EA5E9] to-[#F5D58A] flex items-center justify-center text-[#04282D] shadow-[0_0_35px_rgba(245,213,138,0.6)] mb-4">
               <Trophy className="w-8 h-8" />
             </div>
 
@@ -367,14 +367,14 @@ function CatchHeartsGame() {
               {cfg.collectedSummaryPrefix} {score} Puan ({score / 10} Kalp)
             </p>
 
-            <h4 className="mt-2 font-serif font-bold text-2xl sm:text-4xl bg-gradient-to-r from-[#FFF8FC] via-[#FF91B5] to-[#F5D58A] bg-clip-text text-transparent">
+            <h4 className="mt-2 font-serif font-bold text-2xl sm:text-4xl bg-gradient-to-r from-[#FFF8FC] via-[#A7F3D0] to-[#F5D58A] bg-clip-text text-transparent">
               {cfg.finalMessage}
             </h4>
 
             <button
               type="button"
               onClick={startGame}
-              className="mt-6 inline-flex items-center gap-2 px-7 py-3.5 min-h-[50px] rounded-full text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-[#FFF8FC] bg-[#4A102D] hover:bg-[#E83E70] border border-[#F5D58A]/50 transition-colors cursor-pointer"
+              className="mt-6 inline-flex items-center gap-2 px-7 py-3.5 min-h-[50px] rounded-full text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-[#FFF8FC] bg-[#06383E] hover:bg-[#0EA5E9] border border-[#F5D58A]/50 transition-colors cursor-pointer"
             >
               <RotateCcw className="w-4 h-4" />
               <span>{UNIVERSE_CONFIG.gamesSection.playAgainButtonText}</span>
@@ -435,7 +435,7 @@ function FindSecretStarGame() {
         particleCount: 85,
         spread: 115,
         origin: { y: 0.6 },
-        colors: ["#F5D58A", "#FFF8FC", "#FF91B5", "#E83E70"],
+        colors: ["#F5D58A", "#FFF8FC", "#A7F3D0", "#0EA5E9"],
       });
     } else {
       setHintText(cfg.wrongStarHint);
@@ -455,7 +455,7 @@ function FindSecretStarGame() {
         <button
           type="button"
           onClick={generateStarField}
-          className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-full text-xs uppercase tracking-[0.18em] text-[#F5D58A] bg-[#4A102D]/50 hover:bg-[#4A102D] border border-[#F5D58A]/35 transition-colors cursor-pointer"
+          className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-full text-xs uppercase tracking-[0.18em] text-[#F5D58A] bg-[#06383E]/50 hover:bg-[#06383E] border border-[#F5D58A]/35 transition-colors cursor-pointer"
         >
           <RotateCcw className="w-3.5 h-3.5" />
           <span>{cfg.playAgainText}</span>
@@ -487,7 +487,7 @@ function FindSecretStarGame() {
             className={`absolute -translate-x-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center cursor-pointer touch-manipulation transition-shadow ${
               s.isSecretGolden
                 ? "bg-[#F5D58A]/15 shadow-[0_0_28px_rgba(245,213,138,0.75)] border border-[#F5D58A]/50"
-                : "bg-[#FFF8FC]/5 hover:bg-[#FF91B5]/15"
+                : "bg-[#FFF8FC]/5 hover:bg-[#A7F3D0]/15"
             }`}
           >
             <Star
@@ -495,7 +495,7 @@ function FindSecretStarGame() {
               className={
                 s.isSecretGolden
                   ? "text-[#F5D58A] fill-[#F5D58A] drop-shadow-[0_0_12px_rgba(245,213,138,0.95)]"
-                  : "text-[#FFF8FC]/80 fill-[#FF91B5]/40"
+                  : "text-[#FFF8FC]/80 fill-[#A7F3D0]/40"
               }
             />
           </motion.button>
@@ -514,21 +514,21 @@ function FindSecretStarGame() {
                 initial={{ rotate: -20, scale: 0.5 }}
                 animate={{ rotate: 0, scale: 1 }}
                 transition={{ type: "spring", stiffness: 200, damping: 14 }}
-                className="w-20 h-20 rounded-full bg-gradient-to-br from-[#F5D58A] via-[#FF91B5] to-[#E83E70] p-0.5 shadow-[0_0_60px_rgba(245,213,138,0.9)] mb-5 flex items-center justify-center"
+                className="w-20 h-20 rounded-full bg-gradient-to-br from-[#F5D58A] via-[#A7F3D0] to-[#0EA5E9] p-0.5 shadow-[0_0_60px_rgba(245,213,138,0.9)] mb-5 flex items-center justify-center"
               >
-                <div className="w-full h-full rounded-full bg-[#12071D] flex items-center justify-center">
+                <div className="w-full h-full rounded-full bg-[#06383E] flex items-center justify-center">
                   <Sparkles className="w-10 h-10 text-[#F5D58A]" />
                 </div>
               </motion.div>
 
-              <h4 className="font-serif font-bold text-3xl sm:text-5xl bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#FF91B5] bg-clip-text text-transparent drop-shadow-[0_2px_25px_rgba(245,213,138,0.6)]">
+              <h4 className="font-serif font-bold text-3xl sm:text-5xl bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#A7F3D0] bg-clip-text text-transparent drop-shadow-[0_2px_25px_rgba(245,213,138,0.6)]">
                 {cfg.finalMessage}
               </h4>
 
               <button
                 type="button"
                 onClick={generateStarField}
-                className="mt-7 inline-flex items-center gap-2 px-7 py-3.5 min-h-[50px] rounded-full text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-[#080611] bg-gradient-to-r from-[#F5D58A] to-[#FF91B5] shadow-[0_0_30px_rgba(245,213,138,0.5)] cursor-pointer"
+                className="mt-7 inline-flex items-center gap-2 px-7 py-3.5 min-h-[50px] rounded-full text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-[#04282D] bg-gradient-to-r from-[#F5D58A] to-[#A7F3D0] shadow-[0_0_30px_rgba(245,213,138,0.5)] cursor-pointer"
               >
                 <RotateCcw className="w-4 h-4" />
                 <span>{UNIVERSE_CONFIG.gamesSection.playAgainButtonText}</span>
@@ -569,7 +569,7 @@ function HeartCipherGame() {
           particleCount: 80,
           spread: 110,
           origin: { y: 0.6 },
-          colors: ["#E83E70", "#FF91B5", "#F5D58A", "#FFF8FC"],
+          colors: ["#0EA5E9", "#A7F3D0", "#F5D58A", "#FFF8FC"],
         });
       }
     } else {
@@ -634,9 +634,9 @@ function HeartCipherGame() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.4 }}
-            className="p-6 sm:p-8 rounded-3xl bg-[radial-gradient(circle_at_top,#2B0C21_0%,#0D0618_85%)] border border-[#F5D58A]/25 space-y-6"
+            className="p-6 sm:p-8 rounded-3xl bg-[radial-gradient(circle_at_top,#2B0C21_0%,#04282D_85%)] border border-[#F5D58A]/25 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#4A102D]/60 border border-[#F5D58A]/30 text-xs uppercase tracking-[0.2em] text-[#F5D58A]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#06383E]/60 border border-[#F5D58A]/30 text-xs uppercase tracking-[0.2em] text-[#F5D58A]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>
                 {cfg.stagePrefix} {currentStageIdx + 1} / {cfg.stages.length}
@@ -653,7 +653,7 @@ function HeartCipherGame() {
                   key={idx}
                   type="button"
                   onClick={() => handleSelectOption(idx)}
-                  className="w-full text-left px-6 py-4 min-h-[56px] rounded-2xl bg-[#160A26]/85 hover:bg-[#4A102D]/75 border border-[#F5D58A]/30 hover:border-[#F5D58A] text-base sm:text-lg text-[#FFF8FC] font-medium flex items-center justify-between gap-4 transition-all active:scale-[0.99] cursor-pointer"
+                  className="w-full text-left px-6 py-4 min-h-[56px] rounded-2xl bg-[#160A26]/85 hover:bg-[#06383E]/75 border border-[#F5D58A]/30 hover:border-[#F5D58A] text-base sm:text-lg text-[#FFF8FC] font-medium flex items-center justify-between gap-4 transition-all active:scale-[0.99] cursor-pointer"
                 >
                   <span>{option}</span>
                   <CheckCircle2 className="w-5 h-5 shrink-0 text-[#F5D58A]/50" />
@@ -665,7 +665,7 @@ function HeartCipherGame() {
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="p-4 rounded-2xl bg-[#4A102D]/50 border border-[#FF91B5]/40 text-sm sm:text-base text-[#FF91B5] font-serif italic"
+                className="p-4 rounded-2xl bg-[#06383E]/50 border border-[#A7F3D0]/40 text-sm sm:text-base text-[#A7F3D0] font-serif italic"
               >
                 {hintMessage}
               </motion.div>
@@ -679,18 +679,18 @@ function HeartCipherGame() {
             transition={{ duration: 0.6 }}
             className="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#2B0C20] via-[#160822] to-[#0B0514] border-2 border-[#F5D58A]/60 shadow-[0_0_60px_rgba(232,62,112,0.35)] text-center space-y-6"
           >
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#F5D58A] to-[#E83E70] p-0.5 shadow-[0_0_45px_rgba(245,213,138,0.7)]">
-              <div className="w-full h-full rounded-full bg-[#12071D] flex items-center justify-center">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#F5D58A] to-[#0EA5E9] p-0.5 shadow-[0_0_45px_rgba(245,213,138,0.7)]">
+              <div className="w-full h-full rounded-full bg-[#06383E] flex items-center justify-center">
                 <MailOpen className="w-9 h-9 text-[#F5D58A]" />
               </div>
             </div>
 
             <div className="space-y-3 max-w-2xl mx-auto">
-              <span className="inline-block px-4 py-1 rounded-full bg-[#4A102D]/70 border border-[#F5D58A]/40 text-xs uppercase tracking-[0.22em] text-[#F5D58A]">
+              <span className="inline-block px-4 py-1 rounded-full bg-[#06383E]/70 border border-[#F5D58A]/40 text-xs uppercase tracking-[0.22em] text-[#F5D58A]">
                 {cfg.unlockedBadge}
               </span>
 
-              <h4 className="font-serif font-bold text-2xl sm:text-4xl md:text-5xl bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#FF91B5] bg-clip-text text-transparent leading-tight">
+              <h4 className="font-serif font-bold text-2xl sm:text-4xl md:text-5xl bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#A7F3D0] bg-clip-text text-transparent leading-tight">
                 {cfg.finalMessage}
               </h4>
 
@@ -703,7 +703,7 @@ function HeartCipherGame() {
               <button
                 type="button"
                 onClick={resetCipher}
-                className="inline-flex items-center gap-2 px-7 py-3.5 min-h-[50px] rounded-full text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-[#F5D58A] bg-[#4A102D]/70 hover:bg-[#E83E70] hover:text-[#FFF8FC] border border-[#F5D58A]/45 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-7 py-3.5 min-h-[50px] rounded-full text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-[#F5D58A] bg-[#06383E]/70 hover:bg-[#0EA5E9] hover:text-[#FFF8FC] border border-[#F5D58A]/45 transition-colors cursor-pointer"
               >
                 <RotateCcw className="w-4 h-4" />
                 <span>{UNIVERSE_CONFIG.gamesSection.playAgainButtonText}</span>

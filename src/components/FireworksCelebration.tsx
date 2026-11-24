@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Sparkles, X, Flame } from "lucide-react";
 import { UNIVERSE_CONFIG } from "../config/universeConfig";
@@ -26,7 +26,7 @@ interface FireworkSpark {
   size: number;
 }
 
-const PALETTE = ["#E83E70", "#FF91B5", "#F5D58A", "#FFF8FC"];
+const PALETTE = ["#0EA5E9", "#A7F3D0", "#F5D58A", "#FFF8FC"];
 
 export function FireworksCelebration() {
   const [isActive, setIsActive] = useState(false);
@@ -254,11 +254,11 @@ export function FireworksCelebration() {
 
   return (
     <section className="relative py-16 md:py-24 px-6 max-w-5xl mx-auto">
-      <div className="relative rounded-[2.25rem] p-8 sm:p-12 md:p-16 bg-gradient-to-br from-[#2B0C20]/80 via-[#12071D]/90 to-[#080611]/95 backdrop-blur-2xl border border-[#E83E70]/35 shadow-[0_0_80px_rgba(232,62,112,0.22)] text-center overflow-hidden">
-        <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[#E83E70]/20 blur-[110px]" />
+      <div className="relative rounded-[2.25rem] p-8 sm:p-12 md:p-16 bg-gradient-to-br from-[#2B0C20]/80 via-[#06383E]/90 to-[#04282D]/95 backdrop-blur-2xl border border-[#0EA5E9]/35 shadow-[0_0_80px_rgba(232,62,112,0.22)] text-center overflow-hidden">
+        <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[#0EA5E9]/20 blur-[110px]" />
 
         <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4A102D]/60 border border-[#F5D58A]/35 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06383E]/60 border border-[#F5D58A]/35 mb-4">
             <Flame className="w-4 h-4 text-[#F5D58A]" />
             <span className="text-xs tracking-[0.22em] uppercase text-[#F5D58A] font-medium">
               {UNIVERSE_CONFIG.fireworks.badgeText}
@@ -276,9 +276,9 @@ export function FireworksCelebration() {
           <button
             type="button"
             onClick={() => setIsActive(true)}
-            className="mt-8 group relative inline-flex items-center justify-center gap-3 px-8 sm:px-12 py-5 min-h-[60px] rounded-full font-sans font-bold text-sm sm:text-base tracking-[0.18em] uppercase text-[#080611] bg-gradient-to-r from-[#F5D58A] via-[#FF91B5] to-[#F5D58A] bg-[length:200%_100%] hover:bg-right shadow-[0_0_45px_rgba(245,213,138,0.65)] active:scale-95 transition-all duration-500 cursor-pointer"
+            className="mt-8 group relative inline-flex items-center justify-center gap-3 px-8 sm:px-12 py-5 min-h-[60px] rounded-full font-sans font-bold text-sm sm:text-base tracking-[0.18em] uppercase text-[#04282D] bg-gradient-to-r from-[#F5D58A] via-[#A7F3D0] to-[#F5D58A] bg-[length:200%_100%] hover:bg-right shadow-[0_0_45px_rgba(245,213,138,0.65)] active:scale-95 transition-all duration-500 cursor-pointer"
           >
-            <Sparkles className="w-5 h-5 shrink-0 text-[#4A102D]" />
+            <Sparkles className="w-5 h-5 shrink-0 text-[#06383E]" />
             <span>{UNIVERSE_CONFIG.fireworks.buttonText}</span>
           </button>
         </div>
@@ -292,7 +292,7 @@ export function FireworksCelebration() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#080611]/95 overflow-hidden select-none"
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#04282D]/95 overflow-hidden select-none"
           >
             <canvas
               ref={canvasRef}
@@ -324,7 +324,7 @@ export function FireworksCelebration() {
               <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#F5D58A] mb-4 font-semibold">
                 {UNIVERSE_CONFIG.fireworks.modalTopHint}
               </p>
-              <h2 className="font-serif font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#FF91B5] bg-clip-text text-transparent drop-shadow-[0_4px_45px_rgba(232,62,112,0.85)]">
+              <h2 className="font-serif font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#A7F3D0] bg-clip-text text-transparent drop-shadow-[0_4px_45px_rgba(232,62,112,0.85)]">
                 {UNIVERSE_CONFIG.fireworks.skyMessage}
               </h2>
               <p className="mt-6 text-xs sm:text-sm tracking-[0.18em] uppercase text-[#FFF8FC]/75">

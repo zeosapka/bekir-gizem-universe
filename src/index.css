@@ -5,13 +5,13 @@
 @layer base {
   html {
     font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-    background-color: #146E6F;
+    background-color: #169882;
     background-image: linear-gradient(
       135deg,
-      #136F63 0%,
-      #17857B 34%,
-      #1C7DA6 68%,
-      #1E5F8E 100%
+      #169882 0%,
+      #1DB59A 32%,
+      #24A4C8 68%,
+      #1D82C4 100%
     );
     color: #FFF8FC;
     scroll-behavior: smooth;
@@ -32,13 +32,13 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: #146E6F;
+    background-color: #169882;
     background-image: linear-gradient(
       135deg,
-      #136F63 0%,
-      #17857B 34%,
-      #1C7DA6 68%,
-      #1E5F8E 100%
+      #169882 0%,
+      #1DB59A 32%,
+      #24A4C8 68%,
+      #1D82C4 100%
     );
   }
 

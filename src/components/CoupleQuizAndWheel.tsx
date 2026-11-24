@@ -4,14 +4,14 @@ import confetti from "canvas-confetti";
 import { Dices, HeartHandshake, RotateCw, Sparkles, Trophy } from "lucide-react";
 
 const DATE_IDEAS = [
-  { label: "Yıldız Altında Kahve ☕", color: "#9F1239" },
-  { label: "Evde Sinema Maratonu 🎬", color: "#BE123C" },
-  { label: "Birlikte Yemek Yapma 🍝", color: "#881337" },
-  { label: "Fotoğraf Turu 📸", color: "#E11D48" },
-  { label: "Nostalji Şarkı Gecesi 🎶", color: "#9D174D" },
-  { label: "Tatlı & Kahve Avı 🍰", color: "#B91C1C" },
-  { label: "Uzun Gece Yürüyüşü 🌙", color: "#7F1D1D" },
-  { label: "Sürpriz Piknik 🌷", color: "#DB2777" },
+  { label: "Yıldız Altında Kahve ☕", color: "#0D9488" },
+  { label: "Evde Sinema Maratonu 🎬", color: "#0284C7" },
+  { label: "Birlikte Yemek Yapma 🍝", color: "#059669" },
+  { label: "Fotoğraf Turu 📸", color: "#0EA5E9" },
+  { label: "Nostalji Şarkı Gecesi 🎶", color: "#14B8A6" },
+  { label: "Tatlı & Kahve Avı 🍰", color: "#0369A1" },
+  { label: "Uzun Gece Yürüyüşü 🌙", color: "#0F766E" },
+  { label: "Sürpriz Piknik 🌷", color: "#06B6D4" },
 ];
 
 interface QuizQuestion {
@@ -132,30 +132,30 @@ export function CoupleQuizAndWheel() {
   return (
     <section className="relative py-16 md:py-24 px-6 max-w-5xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-10">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4A1026]/55 border border-[#F5D58A]/30 mb-3">
-          <HeartHandshake className="w-3.5 h-3.5 text-[#F5D58A]" />
-          <span className="text-xs tracking-[0.22em] uppercase text-[#F5D58A] font-medium">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06383E]/55 backdrop-blur-md border border-[#A7F3D0]/40 mb-3">
+          <HeartHandshake className="w-3.5 h-3.5 text-[#A7F3D0]" />
+          <span className="text-xs tracking-[0.22em] uppercase text-[#E0F2FE] font-medium">
             İkinize Özel İnteraktif Köşe
           </span>
         </div>
 
         <h2 className="font-serif text-3xl sm:text-5xl text-[#FFF8FC] font-semibold">
-          Randevu Çarkı & <span className="italic text-[#F5D58A]">Uyum Testi</span>
+          Randevu Çarkı & <span className="italic text-[#BAE6FD]">Uyum Testi</span>
         </h2>
 
-        <p className="mt-3 font-serif italic text-lg sm:text-xl text-[#FFF8FC]/75">
+        <p className="mt-3 font-serif italic text-lg sm:text-xl text-[#E0F2FE]/85">
           Bir sonraki randevunuzu şansa bırakın ya da 17 Kasım uyum testini birlikte çözün!
         </p>
 
         {/* Tab switcher */}
-        <div className="mt-6 inline-flex p-1.5 rounded-full bg-[#1C0815]/90 border border-[#F5D58A]/25">
+        <div className="mt-6 inline-flex p-1.5 rounded-full bg-[#06383E]/65 backdrop-blur-md border border-white/25">
           <button
             type="button"
             onClick={() => setActiveTab("wheel")}
             className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
               activeTab === "wheel"
-                ? "bg-gradient-to-r from-[#E11D48] to-[#F43F5E] text-white shadow-[0_4px_18px_rgba(225,29,72,0.45)]"
-                : "text-[#FFF8FC]/75 hover:text-[#FFF8FC]"
+                ? "bg-gradient-to-r from-[#059669] to-[#0284C7] text-white shadow-[0_6px_18px_rgba(14,165,233,0.4)]"
+                : "text-[#E0F2FE]/80 hover:text-white"
             }`}
           >
             <Dices className="w-4 h-4" />
@@ -166,8 +166,8 @@ export function CoupleQuizAndWheel() {
             onClick={() => setActiveTab("quiz")}
             className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
               activeTab === "quiz"
-                ? "bg-gradient-to-r from-[#E11D48] to-[#F43F5E] text-white shadow-[0_4px_18px_rgba(225,29,72,0.45)]"
-                : "text-[#FFF8FC]/75 hover:text-[#FFF8FC]"
+                ? "bg-gradient-to-r from-[#059669] to-[#0284C7] text-white shadow-[0_6px_18px_rgba(14,165,233,0.4)]"
+                : "text-[#E0F2FE]/80 hover:text-white"
             }`}
           >
             <Sparkles className="w-4 h-4" />
@@ -176,7 +176,7 @@ export function CoupleQuizAndWheel() {
         </div>
       </div>
 
-      <div className="rounded-[2rem] p-6 sm:p-10 bg-gradient-to-b from-[#230A1A]/90 to-[#11060E]/95 border border-[#F5D58A]/30 shadow-[0_18px_50px_rgba(0,0,0,0.55)]">
+      <div className="rounded-[2rem] p-6 sm:p-10 bg-[#06383E]/65 backdrop-blur-xl border border-white/25 shadow-[0_18px_50px_rgba(6,56,62,0.32)]">
         {activeTab === "wheel" ? (
           <div className="flex flex-col items-center">
             {/* Pointer */}
@@ -251,7 +251,7 @@ export function CoupleQuizAndWheel() {
               type="button"
               onClick={spinWheel}
               disabled={isSpinning}
-              className="mt-7 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#E11D48] via-[#F43F5E] to-[#E11D48] text-white font-semibold text-sm tracking-wide shadow-[0_8px_26px_rgba(225,29,72,0.5)] hover:brightness-110 active:scale-95 transition-all disabled:opacity-60"
+              className="mt-7 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#059669] via-[#0D9488] to-[#0284C7] text-white font-semibold text-sm tracking-wide border border-white/45 shadow-[0_8px_26px_rgba(14,165,233,0.45)] hover:brightness-110 active:scale-95 transition-all disabled:opacity-60"
             >
               <RotateCw className={`w-4 h-4 ${isSpinning ? "animate-spin" : ""}`} />
               {isSpinning ? "Çark Dönüyor..." : "Bir Sonraki Randevuyu Seç!"}

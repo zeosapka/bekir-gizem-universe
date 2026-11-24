@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import { useReward } from "react-rewards";
@@ -30,14 +30,14 @@ export function FinalSurprise() {
         angle: 60,
         spread: 65,
         origin: { x: 0, y: 0.65 },
-        colors: ["#E83E70", "#FF91B5", "#F5D58A", "#FFF8FC"],
+        colors: ["#0EA5E9", "#A7F3D0", "#F5D58A", "#FFF8FC"],
       });
       confetti({
         particleCount: isReducedMotion ? 2 : 5,
         angle: 120,
         spread: 65,
         origin: { x: 1, y: 0.65 },
-        colors: ["#E83E70", "#FF91B5", "#F5D58A", "#FFF8FC"],
+        colors: ["#0EA5E9", "#A7F3D0", "#F5D58A", "#FFF8FC"],
       });
 
       if (Date.now() < end) {
@@ -76,9 +76,9 @@ export function FinalSurprise() {
           onClick={handleOpenSurprise}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.95 }}
-          className="group relative inline-flex items-center justify-center gap-4 px-8 sm:px-14 py-6 min-h-[68px] rounded-full font-serif font-bold text-lg sm:text-2xl tracking-[0.12em] uppercase text-[#FFF8FC] bg-gradient-to-r from-[#4A102D] via-[#E83E70] to-[#4A102D] bg-[length:200%_100%] hover:bg-right border-2 border-[#F5D58A]/70 shadow-[0_0_60px_rgba(232,62,112,0.65)] transition-all duration-500 cursor-pointer"
+          className="group relative inline-flex items-center justify-center gap-4 px-8 sm:px-14 py-6 min-h-[68px] rounded-full font-serif font-bold text-lg sm:text-2xl tracking-[0.12em] uppercase text-[#FFF8FC] bg-gradient-to-r from-[#06383E] via-[#0EA5E9] to-[#06383E] bg-[length:200%_100%] hover:bg-right border-2 border-[#F5D58A]/70 shadow-[0_0_60px_rgba(232,62,112,0.65)] transition-all duration-500 cursor-pointer"
         >
-          <Heart className="w-7 h-7 shrink-0 text-[#F5D58A] fill-[#E83E70] group-hover:scale-125 transition-transform" />
+          <Heart className="w-7 h-7 shrink-0 text-[#F5D58A] fill-[#0EA5E9] group-hover:scale-125 transition-transform" />
           <span>{UNIVERSE_CONFIG.surprise.buttonText}</span>
           <Sparkles className="w-6 h-6 shrink-0 text-[#F5D58A]" />
         </motion.button>
@@ -92,7 +92,7 @@ export function FinalSurprise() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.85 }}
-            className="fixed inset-0 w-full h-full z-50 flex flex-col items-center justify-center p-6 bg-[radial-gradient(circle_at_center,#2D091D_0%,#080611_75%)] overflow-hidden select-none"
+            className="fixed inset-0 w-full h-full z-50 flex flex-col items-center justify-center p-6 bg-[radial-gradient(circle_at_center,#2D091D_0%,#04282D_75%)] overflow-hidden select-none"
           >
             {/* Yükselen Küçük Kalpler */}
             {!isReducedMotion && (
@@ -134,8 +134,8 @@ export function FinalSurprise() {
                           idx % 3 === 0
                             ? "#F5D58A"
                             : idx % 2 === 0
-                            ? "#FF91B5"
-                            : "#E83E70",
+                            ? "#A7F3D0"
+                            : "#0EA5E9",
                       }}
                     >
                       {idx % 4 === 0 ? "✦" : "❤️"}
@@ -167,9 +167,9 @@ export function FinalSurprise() {
               transition={{ duration: 1.1, delay: 0.3 }}
               className="relative z-20 max-w-3xl mx-auto text-center space-y-8 px-4"
             >
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#E83E70] to-[#F5D58A] p-0.5 shadow-[0_0_55px_rgba(232,62,112,0.8)]">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#0EA5E9] to-[#F5D58A] p-0.5 shadow-[0_0_55px_rgba(232,62,112,0.8)]">
                 <div className="w-full h-full rounded-full bg-[#12061B] flex items-center justify-center">
-                  <Heart className="w-10 h-10 text-[#E83E70] fill-[#E83E70] animate-pulse" />
+                  <Heart className="w-10 h-10 text-[#0EA5E9] fill-[#0EA5E9] animate-pulse" />
                 </div>
               </div>
 
@@ -177,7 +177,7 @@ export function FinalSurprise() {
                 &ldquo;{UNIVERSE_CONFIG.surprise.mainMessage}&rdquo;
               </h2>
 
-              <p className="font-serif font-bold text-2xl sm:text-4xl bg-gradient-to-r from-[#F5D58A] via-[#FF91B5] to-[#E83E70] bg-clip-text text-transparent">
+              <p className="font-serif font-bold text-2xl sm:text-4xl bg-gradient-to-r from-[#F5D58A] via-[#A7F3D0] to-[#0EA5E9] bg-clip-text text-transparent">
                 {UNIVERSE_CONFIG.surprise.subMessage}
               </p>
 
@@ -189,10 +189,10 @@ export function FinalSurprise() {
                       particleCount: Math.round(90 * particleCountMultiplier),
                       spread: 120,
                       origin: { y: 0.6 },
-                      colors: ["#E83E70", "#FF91B5", "#F5D58A", "#FFF8FC"],
+                      colors: ["#0EA5E9", "#A7F3D0", "#F5D58A", "#FFF8FC"],
                     });
                   }}
-                  className="inline-flex items-center gap-2 px-6 py-3 min-h-[48px] rounded-full bg-[#4A102D]/70 border border-[#F5D58A]/50 text-xs sm:text-sm uppercase tracking-[0.2em] text-[#F5D58A] hover:bg-[#E83E70] hover:text-[#FFF8FC] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-3 min-h-[48px] rounded-full bg-[#06383E]/70 border border-[#F5D58A]/50 text-xs sm:text-sm uppercase tracking-[0.2em] text-[#F5D58A] hover:bg-[#0EA5E9] hover:text-[#FFF8FC] transition-colors cursor-pointer"
                 >
                   <Sparkles className="w-4 h-4 shrink-0" />
                   <span>{UNIVERSE_CONFIG.surprise.moreConfettiButton}</span>

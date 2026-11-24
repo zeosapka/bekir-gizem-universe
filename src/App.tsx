@@ -27,7 +27,13 @@ export function App() {
   useViewportMetrics();
 
   return (
-    <div className="relative w-full max-w-full min-h-[100dvh] overflow-x-hidden bg-[linear-gradient(135deg,#136F63_0%,#17857B_34%,#1C7DA6_68%,#1E5F8E_100%)] text-[#FFF8FC] selection:bg-[#34D399]/35 selection:text-[#FFF8FC]">
+    <div
+      style={{
+        backgroundImage:
+          "radial-gradient(circle at 20% 22%, rgba(167, 243, 208, 0.34) 0%, transparent 50%), radial-gradient(circle at 80% 24%, rgba(186, 230, 253, 0.34) 0%, transparent 50%), linear-gradient(135deg, #169882 0%, #1DB59A 32%, #24A4C8 68%, #1D82C4 100%)",
+      }}
+      className="relative w-full max-w-full min-h-[100dvh] overflow-x-hidden text-[#FFF8FC] selection:bg-[#34D399]/35 selection:text-[#FFF8FC]"
+    >
       {/* Persistent Cosmic Starfield & Rising Hearts */}
       <CosmicBackground />
 
