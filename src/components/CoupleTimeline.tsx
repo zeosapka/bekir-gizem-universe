@@ -15,12 +15,12 @@ interface Milestone {
 const MILESTONES: Milestone[] = [
   {
     id: "m-17kasim",
-    badge: "Bölüm I • 17 Kasım",
+    badge: "Bölüm I • 17 Kasım 2023",
     title: "İki Kalbin Aynı Ritimde Buluşması",
     emoji: "🌹",
     summary: "Her şeyin başladığı, zamanın anlam kazandığı o unutulmaz gün.",
     detail:
-      "17 Kasım sadece takvimde bir tarih değil; Bekir ile Gizem'in hikâyesinin ilk satırı, en güzel 'iyi ki'nin başlangıcı.",
+      "17 Kasım 2023 sadece takvimde bir tarih değil; Bekir ile Gizem'in hikâyesinin ilk satırı, en güzel 'iyi ki'nin başlangıcı.",
     flowerTag: "Kadife Gül • Tutku & Sadakat",
   },
   {
@@ -88,7 +88,7 @@ export function CoupleTimeline() {
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4A1026]/55 border border-[#F5D58A]/30 mb-3">
           <CalendarHeart className="w-3.5 h-3.5 text-[#F5D58A]" />
           <span className="text-xs tracking-[0.22em] uppercase text-[#F5D58A] font-medium">
-            17 Kasım • Bizim Zaman Çizelgemiz
+            17 Kasım 2023 • Bizim Zaman Çizelgemiz
           </span>
         </div>
 

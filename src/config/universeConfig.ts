@@ -17,10 +17,10 @@ export interface MomentItem {
 export const UNIVERSE_CONFIG = {
   recipientName: "Gizem",
   coupleNames: "Bekir & Gizem",
-  siteTitle: "BEKİR & GİZEM — 17 KASIM • BİZİM KÜÇÜK EVRENİMİZ",
+  siteTitle: "BEKİR & GİZEM — 17 KASIM 2023 • BİZİM KÜÇÜK EVRENİMİZ",
   // Hedef Yıldönümü Tarihi: 17 Kasım 2027, 00:00:00 (Bir sonraki 17 Kasım yıldönümü)
   birthdayIsoDate: "2027-11-17T00:00:00",
-  birthdayDisplayDate: "17 Kasım",
+  birthdayDisplayDate: "17 Kasım 2023",
 
   // 4 Şarkılık Tam Süreli & Yumuşak Geçişli Romantik Müzik Listesi (/public/music/ içindeki MP3 kayıtları)
   crossfadeSeconds: 6.0,
@@ -74,12 +74,12 @@ export const UNIVERSE_CONFIG = {
 
   // 0. Sinematik Çiçek Açma Katmanı (Gül, Lale ve Papatya Buketi)
   flowerIntro: {
-    badgeText: "17 Kasım • Bekir & Gizem'in Çiçek Bahçesi",
+    badgeText: "17 Kasım 2023 • Bekir & Gizem'in Çiçek Bahçesi",
     growingText:
-      "17 Kasım'ın en güzel hatırası için güller, laleler ve papatyalar senin için açıyor... 🌹🌷🌼",
-    message: "Bu güller, laleler ve papatyalar bizim aşkımıza açılsın Gizem. ❤️",
+      "17 Kasım 2023'ün en güzel hatırası için güller, laleler ve papatyalar senin için açıyor... 🌹🌷🌼",
+    message: "Yıldönümümüz kutlu olsun biricik aşkım. ❤️",
     novemberSubtext:
-      "17 Kasım'da başlayan en güzel hikâyemize, Bekir'den Gizem'e...",
+      "17 Kasım 2023'te başlayan en güzel hikâyemize, Bekir'den Gizem'e...",
     touchHeartButtonText: "Gülün Kalbine Dokun ❤️",
     skipButtonText: "Animasyonu Geç",
     continueHint: "Karşılama ekranına geçiliyor...",
@@ -88,16 +88,16 @@ export const UNIVERSE_CONFIG = {
   // 1. Açılış Ekranı (First Impression)
   opening: {
     quote: "İki kalbin aynı ritimde atmaya başladığı o gün, bütün evren güzelleşir.",
-    greeting: "Yıldönümümüz kutlu olsun Gizem'im! ❤️",
-    dateText: "17 Kasım • Bekir & Gizem",
+    greeting: "Yıldönümümüz kutlu olsun biricik aşkım ❤️",
+    dateText: "17 Kasım 2023 • Bekir & Gizem",
     buttonText: "BİZİM KÜÇÜK EVRENİMİZE GİR",
   },
 
   // 2. Ana Kutlama Ekranı (Hero Celebration)
   hero: {
     headlinePrefix: "Yıldönümümüz kutlu olsun,",
-    headlineHighlight: "güzel Gizem'im.",
-    subheadline: "17 Kasım'dan beri her günüm seninle daha anlamlı, daha güzel.",
+    headlineHighlight: "biricik aşkım.",
+    subheadline: "17 Kasım 2023'ten beri her günüm seninle daha anlamlı, daha güzel.",
     touchHint: "Küçük kalpleri uyandırmak için evrenin herhangi bir yerine dokun ✨",
     scrollButtonText: "Hikâyemizi Keşfet",
   },
@@ -107,9 +107,9 @@ export const UNIVERSE_CONFIG = {
     preTitle: "BİR SONRAKİ 17 KASIM YILDÖNÜMÜMÜZE",
     titlePrefix: "Her Saniye Aşkımızı",
     titleHighlight: "Bir Ömre Daha Yaklaştırıyor",
-    celebrationHeadline: "17 KASIM — YILDÖNÜMÜMÜZ KUTLU OLSUN!",
+    celebrationHeadline: "17 KASIM — YILDÖNÜMÜMÜZ KUTLU OLSUN BİRİCİK AŞKIM!",
     celebrationSubtext:
-      "Bekir & Gizem — 17 Kasım'da başlayan hikâyemiz, bugün ve her gün tüm evreni aydınlatıyor. ❤️",
+      "Bekir & Gizem — 17 Kasım 2023'te başlayan hikâyemiz, bugün ve her gün tüm evreni aydınlatıyor. ❤️",
     units: {
       days: "Gün",
       hours: "Saat",
@@ -123,7 +123,7 @@ export const UNIVERSE_CONFIG = {
   // 4. İnteraktif Aşk Mektubu (Interactive Love Letter)
   loveLetter: {
     badgeText: "Bekir'den Gizem'e • Yıldız Işığıyla Mühürlendi",
-    envelopePrompt: "17 Kasım'a özel, yalnızca sana yazılmış bir mektup...",
+    envelopePrompt: "17 Kasım 2023'e özel, yalnızca sana yazılmış bir mektup...",
     sealInitials: "B ❤️ G",
     openEnvelopeAriaLabel: "Gizem için yazılan yıldönümü mektubunu aç",
     touchSealHint: "Açmak İçin Altın Mühre Dokun",
@@ -132,16 +132,16 @@ export const UNIVERSE_CONFIG = {
     foldButton: "Zarfı Kapat",
     salutation: "Canım Sevgilim Gizem,",
     paragraphs: [
-      "17 Kasım, hayatımın en güzel döneminin başladığı, kalbimin seninle tamamlandığı o en özel gün.",
+      "17 Kasım 2023, hayatımın en güzel döneminin başladığı, kalbimin seninle tamamlandığı o en özel gün.",
       "Seninle geçen her an, bir gülün zarafeti, bir lalenin asaleti ve bir papatyanın saf sıcaklığı gibi içimi ısıtıyor.",
       "Yanımdayken zamanın nasıl geçtiğini anlamıyorum; en sıradan günler bile senin gülüşünle unutulmaz bir anıya dönüşüyor.",
       "Bana verdiğin sevgi, huzur, güven ve paylaştığımız bütün güzel anılar için sana ne kadar teşekkür etsem az.",
       "Birlikte daha nice 17 Kasımlar kutlamayı, el ele nice güzel yollar yürümeyi ve her yeni günde seni yeniden sevmeyi diliyorum.",
-      "Yıldönümümüz kutlu olsun güzel Gizem'im.",
+      "Yıldönümümüz kutlu olsun biricik aşkım.",
       "İyi ki hayatımdasın, iyi ki benimlesin.",
     ],
     signOff: "Seni çok seven Bekir... ❤️",
-    foreverBadge: "17 Kasım • Sonsuza Dek",
+    foreverBadge: "17 Kasım 2023 • Sonsuza Dek",
   },
 
   // 5. Havai Fişek Kutlaması (Fireworks Celebration)
@@ -151,7 +151,7 @@ export const UNIVERSE_CONFIG = {
     sectionSubtitle:
       "Bir saniyeliğine gözlerini kapat, bizim için en güzel dileğini tut ve aşağıdaki yıldız ışığına dokun.",
     buttonText: "BİZİM İÇİN BİR DİLEK TUT GİZEM ✨",
-    modalTopHint: "✦ 17 Kasım • Bekir & Gizem ✦",
+    modalTopHint: "✦ 17 Kasım 2023 • Bekir & Gizem ✦",
     skyMessage: "SENİNLE HER GÜNÜM BİR MUCİZE, GİZEM.",
     touchSkyHint:
       "Kalp havai fişekleri fırlatmak için gökyüzünün herhangi bir yerine dokun ❤️",
@@ -164,7 +164,7 @@ export const UNIVERSE_CONFIG = {
     badgeText: "Bekir & Gizem • Yıldız Işığı Galerisi",
     title: "BİZİM KÜÇÜK ANILARIMIZ",
     subtitle:
-      "17 Kasım'dan bugüne biriktirdiğimiz en güzel anıları, içten gülümsemeleri ve birlikte geçen huzurlu saniyeleri saklamak için ayrılmış özel çerçeveler.",
+      "17 Kasım 2023'ten bugüne biriktirdiğimiz en güzel anıları, içten gülümsemeleri ve birlikte geçen huzurlu saniyeleri saklamak için ayrılmış özel çerçeveler.",
     helperNote:
       "3B döndürmek için çerçevelere dokun • Büyütmek için 'Tam Ekran' butonunu seç",
     flipBadgeText: "3B Çevir",
@@ -178,10 +178,10 @@ export const UNIVERSE_CONFIG = {
     items: [
       {
         id: "moment-1",
-        title: "17 Kasım — Başlangıcımız",
+        title: "17 Kasım 2023 — Başlangıcımız",
         subtitle: "Hikâyemizin başladığı o en özel gün için ayrıldı",
         dateLabel: "Anı Çerçevesi I",
-        quote: "17 Kasım'da başlayan bu güzel hikâye, hayatımın en kıymetli armağanı.",
+        quote: "17 Kasım 2023'te başlayan bu güzel hikâye, hayatımın en kıymetli armağanı.",
         imageUrl: "",
         accentColor: "#E83E70",
         constellationName: "Lyra • Uyum Takımyıldızı",
@@ -278,7 +278,7 @@ export const UNIVERSE_CONFIG = {
       stagePrefix: "Aşama",
       unlockedBadge: "Kilit Açıldı ✨",
       finalMessage:
-        "Bu küçük sürprizin şifresi: 17 KASIM • YILDÖNÜMÜMÜZ KUTLU OLSUN GİZEM! ❤️",
+        "Bu küçük sürprizin şifresi: 17 KASIM 2023 • YILDÖNÜMÜMÜZ KUTLU OLSUN BİRİCİK AŞKIM! ❤️",
       finalLetterSubtext:
         "Kalbin bütün kilitlerini sevgiyle açtın. Nice mutlu 17 Kasımlara el ele...",
       stages: [
@@ -300,7 +300,7 @@ export const UNIVERSE_CONFIG = {
             "2. Bilmece: Takvimdeki yüzlerce gün arasından bizim hikâyemizin başladığı o en özel gün hangisidir?",
           options: [
             "Sıradan bir pazartesi",
-            "17 Kasım — Sevgili Olma Yıldönümümüz",
+            "17 Kasım 2023 — Sevgili Olma Yıldönümümüz",
             "Yılın ilk günü",
           ],
           correctIndex: 1,
@@ -402,19 +402,19 @@ export const UNIVERSE_CONFIG = {
         isGrandSpecial: true,
         headline: "En Büyük Sürpriz ❤️",
         message:
-          "Hayatımın en güzel sürprizi sensin Gizem. 17 Kasım'dan sonsuza dek iyi ki varsın, iyi ki hayatımdasın. Seni çok seviyorum.",
-        subNote: "Bekir ❤️ Gizem — 17 Kasım",
+          "Hayatımın en güzel sürprizi sensin biricik aşkım. 17 Kasım 2023'ten sonsuza dek iyi ki varsın, iyi ki hayatımdasın. Yıldönümümüz kutlu olsun!",
+        subNote: "Bekir ❤️ Gizem — 17 Kasım 2023",
       },
     ],
   },
 
   // 7. Son Sürpriz Butonu ve Final (Final Surprise)
   surprise: {
-    preTitle: "✦ 17 Kasım'dan Sonsuza Dek ✦",
+    preTitle: "✦ 17 Kasım 2023'ten Sonsuza Dek ✦",
     buttonText: "SON BİR SÜRPRİZİM VAR ❤️",
     mainMessage:
       "Bu koca evrende yollarımızın kesişmiş ve kalplerimizin birleşmiş olmasına çok mutluyum.",
-    subMessage: "Yıldönümümüz kutlu olsun Gizem'im. ❤️ — Bekir",
+    subMessage: "Yıldönümümüz kutlu olsun biricik aşkım. ❤️ — Bekir",
     moreConfettiButton: "Daha Fazla Altın ve Pembe Konfeti Yağdır",
     closeButtonText: "Kapat",
     closeAriaLabel: "Sürpriz ekranını kapat",

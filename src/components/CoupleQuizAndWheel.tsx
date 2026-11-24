@@ -52,14 +52,14 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     sweetReaction: "Sevgi her zaman gururdan büyük!",
   },
   {
-    question: "17 Kasım deyince kalbinde ilk ne uyanıyor?",
+    question: "17 Kasım 2023 deyince kalbinde ilk ne uyanıyor?",
     options: [
       "İyi ki yollarımız kesişmiş hissi 💫",
       "Sıcacık bir huzur ve güven 🤍",
       "İlk günkü heyecan ve tatlı gülümseme 🌹",
       "Birlikte yazacağımız koca bir ömür ✨",
     ],
-    sweetReaction: "17 Kasım, bizim en güzel başlangıcımız!",
+    sweetReaction: "17 Kasım 2023, bizim en güzel başlangıcımız!",
   },
 ];
 
