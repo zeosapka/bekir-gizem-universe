@@ -8,11 +8,15 @@ import { FlowerBloomIntro } from "./components/FlowerBloomIntro";
 import { OpeningPortal } from "./components/OpeningPortal";
 import { HeroCelebration } from "./components/HeroCelebration";
 import { BirthdayCountdown } from "./components/BirthdayCountdown";
+import { CoupleTimeline } from "./components/CoupleTimeline";
 import { InteractiveLoveLetter } from "./components/InteractiveLoveLetter";
+import { LoveCoupons } from "./components/LoveCoupons";
 import { FireworksCelebration } from "./components/FireworksCelebration";
 import { OurLittleMoments } from "./components/OurLittleMoments";
+import { CoupleQuizAndWheel } from "./components/CoupleQuizAndWheel";
 import { SenaGameCorner } from "./components/SenaGameCorner";
 import { SenaSurpriseGifts } from "./components/SenaSurpriseGifts";
+import { WishJar } from "./components/WishJar";
 import { FinalSurprise } from "./components/FinalSurprise";
 import { UNIVERSE_CONFIG } from "./config/universeConfig";
 import { useViewportMetrics } from "./hooks/useViewportMetrics";
@@ -23,7 +27,7 @@ export function App() {
   useViewportMetrics();
 
   return (
-    <div className="relative w-full max-w-full min-h-[100dvh] overflow-x-hidden bg-[radial-gradient(circle_at_50%_42%,#4A102D_0%,#160618_58%,#080611_100%)] text-[#FFF8FC] selection:bg-[#E83E70]/40 selection:text-[#FFF8FC]">
+    <div className="relative w-full max-w-full min-h-[100dvh] overflow-x-hidden bg-[radial-gradient(circle_at_50%_38%,#4A0E22_0%,#190713_56%,#09050B_100%)] text-[#FFF8FC] selection:bg-[#E11D48]/40 selection:text-[#FFF8FC]">
       {/* Persistent Cosmic Starfield & Rising Hearts */}
       <CosmicBackground />
 
@@ -61,11 +65,17 @@ export function App() {
             <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-[#F5D58A]" />
           </div>
 
-          {/* 2. Real-Time Birthday Countdown to 21 Nov 2026 */}
+          {/* 2. Real-Time Anniversary Countdown to 17 Nov */}
           <BirthdayCountdown />
+
+          {/* 2.5. Bekir & Gizem'in 17 Kasım Aşk Zaman Çizelgesi */}
+          <CoupleTimeline />
 
           {/* 3. Interactive Golden Wax-Sealed Love Letter */}
           <InteractiveLoveLetter />
+
+          {/* 3.5. Gizem'in Altın Aşk Kupon Defteri */}
+          <LoveCoupons />
 
           {/* 4. Fullscreen Make A Wish Fireworks Celebration */}
           <FireworksCelebration />
@@ -73,11 +83,17 @@ export function App() {
           {/* 5. Our Little Moments 3D Gallery */}
           <OurLittleMoments />
 
-          {/* 5.5. Sena'nın Oyun Köşesi (Mini Games) */}
+          {/* 5.3. Randevu Çarkı & 17 Kasım Çift Uyum Testi */}
+          <CoupleQuizAndWheel />
+
+          {/* 5.5. Mini Games Corner */}
           <SenaGameCorner />
 
-          {/* 5.8. Sena'nın Küçük Sürprizleri (5 İnteraktif Hediye Kutusu) */}
+          {/* 5.8. 5 Interactive Surprise Gift Boxes */}
           <SenaSurpriseGifts />
+
+          {/* 5.9. Ortak Dilek & Aşk Kavanozu */}
+          <WishJar />
 
           {/* 6. Final Surprise Button & Finale */}
           <FinalSurprise />
