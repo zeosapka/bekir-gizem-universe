@@ -772,17 +772,63 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
       ctx.restore();
     };
 
-    // 2. ZARİF LALE (ROYAL TULIP)
+    // 2. ZARİF LALE (ROYAL TULIP — Gerçekçi Çok Renkli Lale Paletleri)
+    const tulipPalettes: Record<
+      string,
+      {
+        aura0: string;
+        aura1: string;
+        back: [string, string, string];
+        side: [string, string, string];
+        front: [string, string, string];
+        tip: string;
+        stroke: string;
+      }
+    > = {
+      // Mercan / Turuncu Hollanda Lalesi
+      coral: {
+        aura0: "rgba(251, 146, 60, 0.32)",
+        aura1: "rgba(249, 115, 22, 0.14)",
+        back: ["#7C2D12", "#C2410C", "#FB923C"],
+        side: ["#9A3412", "#EA580C", "#FDBA74"],
+        front: ["#B45309", "#F97316", "#FED7AA"],
+        tip: "#FFF7ED",
+        stroke: "rgba(254, 215, 170, 0.75)",
+      },
+      // Güneş Sarısı Doğal Lale
+      yellow: {
+        aura0: "rgba(250, 204, 21, 0.34)",
+        aura1: "rgba(234, 179, 8, 0.14)",
+        back: ["#713F12", "#CA8A04", "#FACC15"],
+        side: ["#854D0E", "#EAB308", "#FDE047"],
+        front: ["#A16207", "#FACC15", "#FEF08A"],
+        tip: "#FEFCE8",
+        stroke: "rgba(254, 249, 195, 0.8)",
+      },
+      // Doğal Leylak / Mor Lale
+      lilac: {
+        aura0: "rgba(192, 132, 252, 0.32)",
+        aura1: "rgba(147, 51, 234, 0.14)",
+        back: ["#4C1D95", "#7E22CE", "#C084FC"],
+        side: ["#5B21B6", "#9333EA", "#D8B4FE"],
+        front: ["#6D28D9", "#A855F7", "#E9D5FF"],
+        tip: "#FAF5FF",
+        stroke: "rgba(243, 232, 255, 0.8)",
+      },
+    };
+
     const drawRoyalTulip = (
       x: number,
       y: number,
       scale: number,
       bloomProgress: number,
       timeSec: number,
-      tiltAngle = 0
+      tiltAngle = 0,
+      colorVariant: "coral" | "yellow" | "lilac" = "coral"
     ) => {
       if (bloomProgress <= 0.005) return;
 
+      const pal = tulipPalettes[colorVariant] ?? tulipPalettes.coral;
       const openT = easeOutCubic(bloomProgress);
       const breathe = Math.sin(timeSec * 1.7 + tiltAngle * 3) * 0.03 * openT;
 
@@ -792,13 +838,13 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
       ctx.scale(scale * (0.35 + 0.65 * openT), scale * (0.35 + 0.65 * openT));
 
       // Arka lale ışık halesi
-      const aura = ctx.createRadialGradient(0, -35, 5, 0, -35, 75);
-      aura.addColorStop(0, "rgba(255, 145, 181, 0.42)");
-      aura.addColorStop(0.55, "rgba(232, 62, 112, 0.2)");
-      aura.addColorStop(1, "rgba(8, 6, 17, 0)");
+      const aura = ctx.createRadialGradient(0, -35, 5, 0, -35, 72);
+      aura.addColorStop(0, pal.aura0);
+      aura.addColorStop(0.55, pal.aura1);
+      aura.addColorStop(1, "rgba(255, 255, 255, 0)");
       ctx.fillStyle = aura;
       ctx.beginPath();
-      ctx.arc(0, -35, 75, 0, Math.PI * 2);
+      ctx.arc(0, -35, 72, 0, Math.PI * 2);
       ctx.fill();
 
       const h = 76;
@@ -819,7 +865,7 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
         grad.addColorStop(0, c0);
         grad.addColorStop(0.55, c1);
         grad.addColorStop(0.9, c2);
-        grad.addColorStop(1, "#FFF0F5");
+        grad.addColorStop(1, pal.tip);
         ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.moveTo(0, 8);
@@ -841,20 +887,20 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
         );
         ctx.closePath();
         ctx.fill();
-        ctx.strokeStyle = "rgba(245, 213, 138, 0.65)";
+        ctx.strokeStyle = pal.stroke;
         ctx.lineWidth = 1.0;
         ctx.stroke();
         ctx.restore();
       };
 
       // Arka 2 yaprak
-      drawCupPetal(-0.34, "#4A0A22", "#B81D4D", "#FF75A0", 0.72, 0.94);
-      drawCupPetal(0.34, "#4A0A22", "#B81D4D", "#FF75A0", 0.72, 0.94);
+      drawCupPetal(-0.34, pal.back[0], pal.back[1], pal.back[2], 0.72, 0.94);
+      drawCupPetal(0.34, pal.back[0], pal.back[1], pal.back[2], 0.72, 0.94);
       // Yan 2 kucaklayıcı lale yaprağı
-      drawCupPetal(-0.2, "#5E0E2C", "#E12D63", "#FF9EC0", 0.82, 0.98);
-      drawCupPetal(0.2, "#5E0E2C", "#E12D63", "#FF9EC0", 0.82, 0.98);
-      // Ön merkez lale yaprağı (altın uç parıltılı)
-      drawCupPetal(0, "#751438", "#F0467C", "#F5D58A", 0.86, 1.04);
+      drawCupPetal(-0.2, pal.side[0], pal.side[1], pal.side[2], 0.82, 0.98);
+      drawCupPetal(0.2, pal.side[0], pal.side[1], pal.side[2], 0.82, 0.98);
+      // Ön merkez lale yaprağı
+      drawCupPetal(0, pal.front[0], pal.front[1], pal.front[2], 0.86, 1.04);
 
       ctx.restore();
     };
@@ -923,6 +969,9 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
         );
         ctx.closePath();
         ctx.fill();
+        ctx.strokeStyle = "rgba(100, 116, 139, 0.35)";
+        ctx.lineWidth = 0.9;
+        ctx.stroke();
 
         ctx.strokeStyle = "rgba(255, 182, 210, 0.45)";
         ctx.lineWidth = 0.7;
@@ -972,19 +1021,43 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
       ctx.save();
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const bgGrad = ctx.createRadialGradient(
-        vpW * 0.5,
-        vpH * 0.4,
-        10,
-        vpW * 0.5,
-        vpH * 0.45,
-        Math.max(vpW, vpH) * 0.85
-      );
-      bgGrad.addColorStop(0, "#4A102D");
-      bgGrad.addColorStop(0.55, "#160618");
-      bgGrad.addColorStop(1, "#080611");
-      ctx.fillStyle = bgGrad;
+      // Canva Tarzı Ferah Bebek Mavisi (Üst) + Hafif Açık Yeşil (Alt) Arka Plan
+      ctx.clearRect(0, 0, vpW, vpH);
+      const skyGrad = ctx.createLinearGradient(0, 0, 0, vpH);
+      skyGrad.addColorStop(0, "#CDEEFF");   // Yumuşak bebek mavisi
+      skyGrad.addColorStop(0.52, "#E3F6FF"); // Ferah bulut beyazı-mavi geçiş
+      skyGrad.addColorStop(0.55, "#E2F7E7"); // Temiz ayrım: hafif açık nane yeşili
+      skyGrad.addColorStop(1, "#C5EED1");    // Yumuşak pastel bahar yeşili
+      ctx.fillStyle = skyGrad;
       ctx.fillRect(0, 0, vpW, vpH);
+
+      // Canva Tarzı Yumuşak Pastel Blok Şekiller (Renkleri birbirine çamurlamadan)
+      ctx.save();
+      ctx.fillStyle = "rgba(147, 217, 255, 0.35)";
+      ctx.beginPath();
+      ctx.arc(vpW * 0.14, vpH * 0.16, Math.min(vpW, vpH) * 0.24, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = "rgba(167, 243, 208, 0.42)";
+      ctx.beginPath();
+      ctx.arc(vpW * 0.86, vpH * 0.84, Math.min(vpW, vpH) * 0.26, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Ortada zarif Canva krem-beyaz botanik kemer kartı
+      const archW = Math.min(vpW * 0.9, 640);
+      const archH = Math.min(vpH * 0.86, 760);
+      const archX = (vpW - archW) / 2;
+      const archY = (vpH - archH) / 2;
+      const archR = Math.min(archW * 0.48, 220);
+
+      ctx.fillStyle = "rgba(255, 255, 255, 0.56)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.9)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(archX, archY, archW, archH, [archR, archR, 36, 36]);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
 
       const isPortrait = vpH > vpW;
       const isShortScreen = vpH < 750;
@@ -1062,13 +1135,20 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
               !!branch.isMainCenter
             );
           } else if (branch.flowerType === "tulip") {
+            const tulipColor =
+              branch.id === "upper-left-tulip"
+                ? "coral"
+                : branch.id === "upper-right-tulip"
+                ? "yellow"
+                : "lilac";
             drawRoyalTulip(
               pt.x,
               pt.y,
               branch.flowerScale,
               bloomP,
               timeSec,
-              branch.tiltAngle || 0
+              branch.tiltAngle || 0,
+              tulipColor
             );
           } else {
             drawRadiantDaisy(
@@ -1110,23 +1190,23 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
         const rings = [
           {
             delay: 0,
-            colorInner: "#FFF8FC",
-            colorMid: "#F5D58A",
-            colorOuter: "#E83E70",
+            colorInner: "#FFFFFF",
+            colorMid: "#BAE6FD",
+            colorOuter: "#38BDF8",
             alpha: 0.96,
           },
           {
             delay: 0.12,
-            colorInner: "#FFF8FC",
-            colorMid: "#FF91B5",
-            colorOuter: "#8E1D47",
+            colorInner: "#FFFFFF",
+            colorMid: "#A7F3D0",
+            colorOuter: "#10B981",
             alpha: 0.98,
           },
           {
             delay: 0.24,
-            colorInner: "#4A102D",
-            colorMid: "#1B071A",
-            colorOuter: "#080611",
+            colorInner: "#1DB59A",
+            colorMid: "#169882",
+            colorOuter: "#1D82C4",
             alpha: 1,
           },
         ];
@@ -1369,10 +1449,10 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
 
       {/* Üst Rozet */}
       <div className="relative z-20 mt-13 sm:mt-14 xl:mt-1.5 text-center pointer-events-none px-2 shrink-0 max-w-full">
-        <span className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#06383E]/55 backdrop-blur-md border border-[#A7F3D0]/45 text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#E0F2FE] shadow-[0_8px_24px_rgba(6,56,62,0.3)] max-w-full">
-          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#A7F3D0]" />
+        <span className="inline-flex items-center gap-2 px-4 sm:px-5 py-1.5 rounded-full bg-white/85 backdrop-blur-md border border-[#7DD3FC] text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#0F4C5C] font-semibold shadow-[0_6px_20px_rgba(14,116,144,0.12)] max-w-full">
+          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#0EA5E9]" />
           <span className="truncate">{UNIVERSE_CONFIG.flowerIntro.badgeText}</span>
-          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#BAE6FD]" />
+          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#10B981]" />
         </span>
       </div>
 
@@ -1392,7 +1472,7 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
               className="space-y-1.5 sm:space-y-2.5 flex flex-col items-center"
             >
               <h2
-                className={`font-serif italic font-semibold bg-gradient-to-r from-[#FFFFFF] via-[#D1FAE5] to-[#E0F2FE] bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(6,56,62,0.55)] leading-snug ${
+                className={`font-serif italic font-semibold text-[#0F3D3E] drop-shadow-[0_1px_12px_rgba(255,255,255,0.9)] leading-snug ${
                   viewport.isCompactHeight
                     ? "text-xl sm:text-2xl md:text-3xl"
                     : "text-xl sm:text-3xl md:text-4xl"
@@ -1401,7 +1481,7 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
                 &ldquo;{UNIVERSE_CONFIG.flowerIntro.message}&rdquo;
               </h2>
 
-              <p className="font-serif italic text-xs sm:text-sm md:text-base text-[#E0F2FE]/95 tracking-wide max-w-lg leading-relaxed drop-shadow-[0_1px_10px_rgba(6,56,62,0.4)]">
+              <p className="font-serif italic text-xs sm:text-sm md:text-base text-[#1E5F5B] font-medium tracking-wide max-w-lg leading-relaxed">
                 {UNIVERSE_CONFIG.flowerIntro.novemberSubtext}
               </p>
 
@@ -1412,9 +1492,9 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
                     e.stopPropagation();
                     triggerCinematicHeartDive();
                   }}
-                  className="group inline-flex items-center justify-center gap-2 sm:gap-2.5 px-6 sm:px-7 py-2.5 sm:py-3.5 min-h-[46px] sm:min-h-[50px] rounded-full bg-gradient-to-r from-[#059669] via-[#0D9488] to-[#0284C7] bg-[length:200%_100%] hover:bg-right border border-white/60 text-xs sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.2em] font-semibold text-white shadow-[0_10px_32px_rgba(14,165,233,0.45)] hover:scale-105 active:scale-95 transition-all duration-500 cursor-pointer touch-manipulation"
+                  className="group inline-flex items-center justify-center gap-2 sm:gap-2.5 px-7 sm:px-8 py-2.5 sm:py-3.5 min-h-[46px] sm:min-h-[50px] rounded-full bg-gradient-to-r from-[#0EA5E9] to-[#10B981] hover:brightness-105 border-2 border-white text-xs sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.2em] font-semibold text-white shadow-[0_10px_28px_rgba(14,165,233,0.32)] hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer touch-manipulation"
                 >
-                  <Heart className="w-4 h-4 text-[#A7F3D0] fill-[#A7F3D0] animate-pulse shrink-0" />
+                  <Heart className="w-4 h-4 text-white fill-white animate-pulse shrink-0" />
                   <span>{UNIVERSE_CONFIG.flowerIntro.touchHeartButtonText}</span>
                 </button>
               </div>
@@ -1425,7 +1505,7 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.92 }}
               exit={{ opacity: 0 }}
-              className="font-serif italic text-sm sm:text-lg md:text-xl text-[#E0F2FE]/95 tracking-wide py-2 drop-shadow-[0_1px_10px_rgba(6,56,62,0.45)]"
+              className="font-serif italic text-sm sm:text-lg md:text-xl text-[#0F4C5C] font-medium tracking-wide py-2"
             >
               {UNIVERSE_CONFIG.flowerIntro.growingText}
             </motion.p>
