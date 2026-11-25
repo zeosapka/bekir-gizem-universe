@@ -8,6 +8,7 @@ import { FlowerBloomIntro } from "./components/FlowerBloomIntro";
 import { OpeningPortal } from "./components/OpeningPortal";
 import { HeroCelebration } from "./components/HeroCelebration";
 import { RomanticShowcaseBanner } from "./components/RomanticShowcaseBanner";
+import { SidePhotoStreams } from "./components/SidePhotoStreams";
 import { BirthdayCountdown } from "./components/BirthdayCountdown";
 import { CoupleTimeline } from "./components/CoupleTimeline";
 import { InteractiveLoveLetter } from "./components/InteractiveLoveLetter";
@@ -56,7 +57,11 @@ export function App() {
 
       {/* Main Universe Experience */}
       {hasEntered && (
-        <motion.main
+        <>
+          {/* Sağ ve Sol Boşluklarda Sürekli Akan Yarı Şeffaf Filigranlı Fotoğraf Şeritleri */}
+          <SidePhotoStreams />
+
+          <motion.main
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.1, ease: "easeOut" }}
@@ -117,6 +122,7 @@ export function App() {
             </div>
           </footer>
         </motion.main>
+        </>
       )}
     </div>
   );

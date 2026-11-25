@@ -69,6 +69,32 @@
 }
 
 /* Safari & iPadOS WebKit 3D Card Flip Fixes */
+@keyframes streamUp {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes streamDown {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-stream-up {
+  animation: streamUp 52s linear infinite;
+}
+
+.animate-stream-down {
+  animation: streamDown 56s linear infinite;
+}
+
 .safari-perspective {
   perspective: 1200px;
   -webkit-perspective: 1200px;
