@@ -17,7 +17,7 @@ const FRAME_SLOTS: FrameSlot[] = [
     label: "En Güzel Anımız",
     caption: "Gülüşümüz & Neşemiz",
     emoji: "🌷",
-    defaultImage: "./moments/gz-18.jpeg",
+    defaultImage: "./moments/pick-1.jpg",
   },
   {
     id: "slot-center",
@@ -32,7 +32,7 @@ const FRAME_SLOTS: FrameSlot[] = [
     label: "Biricik Aşkım",
     caption: "Seninle Güzel Günlerimiz",
     emoji: "🌼",
-    defaultImage: "./moments/gz-15.jpeg",
+    defaultImage: "./moments/pick-4.jpg",
   },
 ];
 
