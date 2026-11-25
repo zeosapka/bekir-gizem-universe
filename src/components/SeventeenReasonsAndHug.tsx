@@ -444,7 +444,7 @@ export function SeventeenReasonsAndHug() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#06383E]/70 via-transparent to-transparent" />
                         <span className="absolute bottom-1.5 right-2 text-[9px] text-[#A7F3D0] font-semibold">
-                          B&amp;G • 17.11.23
+                          G&amp;B • 17.11.23
                         </span>
                       </div>
                     )}

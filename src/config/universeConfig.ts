@@ -16,8 +16,8 @@ export interface MomentItem {
 
 export const UNIVERSE_CONFIG = {
   recipientName: "Gizem",
-  coupleNames: "Bekir & Gizem",
-  siteTitle: "BEKİR & GİZEM — 17 KASIM 2023 • BİZİM KÜÇÜK EVRENİMİZ",
+  coupleNames: "Gizem & Bekir",
+  siteTitle: "GİZEM & BEKİR — 17 KASIM 2023 • BİZİM KÜÇÜK EVRENİMİZ",
   // Hedef Yıldönümü Tarihi: 17 Kasım 2027, 00:00:00 (Bir sonraki 17 Kasım yıldönümü)
   birthdayIsoDate: "2027-11-17T00:00:00",
   birthdayDisplayDate: "17 Kasım 2023",
@@ -50,7 +50,7 @@ export const UNIVERSE_CONFIG = {
 
   // 0. Sinematik Çiçek Açma Katmanı (Gül, Lale ve Papatya Buketi)
   flowerIntro: {
-    badgeText: "17 Kasım 2023 • Bekir & Gizem'in Çiçek Bahçesi",
+    badgeText: "17 Kasım 2023 • Gizem & Bekir'in Çiçek Bahçesi",
     growingText:
       "17 Kasım 2023'ün en güzel hatırası için güller, laleler ve papatyalar senin için açıyor... 🌹🌷🌼",
     message: "Yıldönümümüz kutlu olsun biricik aşkım. ❤️",
@@ -65,7 +65,7 @@ export const UNIVERSE_CONFIG = {
   opening: {
     quote: "İki kalbin aynı ritimde atmaya başladığı o gün, bütün evren güzelleşir.",
     greeting: "Yıldönümümüz kutlu olsun biricik aşkım ❤️",
-    dateText: "17 Kasım 2023 • Bekir & Gizem",
+    dateText: "17 Kasım 2023 • Gizem & Bekir",
     buttonText: "BİZİM KÜÇÜK EVRENİMİZE GİR",
   },
 
@@ -85,7 +85,7 @@ export const UNIVERSE_CONFIG = {
     titleHighlight: "Birlikte Büyütüyor",
     celebrationHeadline: "17 KASIM — YILDÖNÜMÜMÜZ KUTLU OLSUN BİRİCİK AŞKIM!",
     celebrationSubtext:
-      "Bekir & Gizem — 17 Kasım 2023'te başlayan hikâyemiz, bugün ve her gün tüm evreni aydınlatıyor. ❤️",
+      "Gizem & Bekir — 17 Kasım 2023'te başlayan hikâyemiz, bugün ve her gün tüm evreni aydınlatıyor. ❤️",
     units: {
       days: "Gün",
       hours: "Saat",
@@ -125,7 +125,7 @@ export const UNIVERSE_CONFIG = {
     sectionSubtitle:
       "Bir saniyeliğine gözlerini kapat, bizim için en güzel dileğini tut ve aşağıdaki yıldız ışığına dokun.",
     buttonText: "BİZİM İÇİN BİR DİLEK TUT GİZEM ✨",
-    modalTopHint: "✦ 17 Kasım 2023 • Bekir & Gizem ✦",
+    modalTopHint: "✦ 17 Kasım 2023 • Gizem & Bekir ✦",
     skyMessage: "SENİNLE HER GÜNÜM BİR MUCİZE, GİZEM.",
     touchSkyHint:
       "Kalp havai fişekleri fırlatmak için gökyüzünün herhangi bir yerine dokun ❤️",
@@ -135,7 +135,7 @@ export const UNIVERSE_CONFIG = {
 
   // 6. Bizim Küçük Anılarımız (Our Little Moments)
   momentsSection: {
-    badgeText: "Bekir & Gizem • Yıldız Işığı Galerisi",
+    badgeText: "Gizem & Bekir • Yıldız Işığı Galerisi",
     title: "BİZİM KÜÇÜK ANILARIMIZ",
     subtitle:
       "17 Kasım 2023'ten bugüne biriktirdiğimiz en güzel anıları, içten gülümsemeleri ve birlikte geçen huzurlu saniyeleri saklamak için ayrılmış özel çerçeveler.",
@@ -215,7 +215,7 @@ export const UNIVERSE_CONFIG = {
 
   // 6.5. Oyun Köşesi (Mini Games Section)
   gamesSection: {
-    badgeText: "BEKİR & GİZEM OYUN KÖŞESİ ❤️",
+    badgeText: "GİZEM & BEKİR OYUN KÖŞESİ ❤️",
     title: "Biraz da Eğlenelim Gizem! ❤️",
     subtitle: "Yıldönümümüz için sana üç küçük sürpriz hazırladım.",
     playButtonText: "Oyunu Başlat",
@@ -377,7 +377,7 @@ export const UNIVERSE_CONFIG = {
         headline: "En Büyük Sürpriz ❤️",
         message:
           "Hayatımın en güzel sürprizi sensin biricik aşkım. 17 Kasım 2023'ten sonsuza dek iyi ki varsın, iyi ki hayatımdasın. Yıldönümümüz kutlu olsun!",
-        subNote: "Bekir ❤️ Gizem — 17 Kasım 2023",
+        subNote: "Gizem ❤️ Bekir — 17 Kasım 2023",
       },
     ],
   },

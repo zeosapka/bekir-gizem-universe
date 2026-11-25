@@ -19,7 +19,7 @@ const FRAME_SLOTS: FrameSlot[] = [
   },
   {
     id: "slot-center",
-    label: "Bekir & Gizem",
+    label: "Gizem & Bekir",
     caption: "Birlikte En Güzel Karemiz",
     emoji: "❤️",
     isCenter: true,
@@ -109,13 +109,13 @@ export function RomanticShowcaseBanner() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-[#A7F3D0]/45 mb-3">
               <Sparkles className="w-3.5 h-3.5 text-[#A7F3D0]" />
               <span className="text-[11px] sm:text-xs tracking-[0.22em] uppercase text-[#E0F2FE] font-semibold">
-                Bekir &amp; Gizem • Özel Fotoğraf Vitrini
+                Gizem &amp; Bekir • Özel Fotoğraf Vitrini
               </span>
               <Sparkles className="w-3.5 h-3.5 text-[#BAE6FD]" />
             </div>
 
             <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-semibold bg-gradient-to-r from-[#FFFFFF] via-[#A7F3D0] to-[#BAE6FD] bg-clip-text text-transparent">
-              Bekir &amp; Gizem’in Özel Kareleri
+              Gizem &amp; Bekir’in Özel Kareleri
             </h2>
 
             <p className="mt-2.5 font-serif italic text-base sm:text-lg text-[#E0F2FE]/85">

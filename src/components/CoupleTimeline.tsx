@@ -20,7 +20,7 @@ const MILESTONES: Milestone[] = [
     emoji: "🌹",
     summary: "Her şeyin başladığı, zamanın anlam kazandığı o unutulmaz gün.",
     detail:
-      "17 Kasım 2023 sadece takvimde bir tarih değil; Bekir ile Gizem'in hikâyesinin ilk satırı, en güzel 'iyi ki'nin başlangıcı.",
+      "17 Kasım 2023 sadece takvimde bir tarih değil; Gizem ile Bekir'in hikâyesinin ilk satırı, en güzel 'iyi ki'nin başlangıcı.",
     flowerTag: "Kadife Gül • Tutku & Sadakat",
   },
   {
@@ -51,7 +51,7 @@ const MILESTONES: Milestone[] = [
     summary: "Birlikte kurulacak hayaller, gezilecek şehirler ve sonsuz sevgi.",
     detail:
       "En güzel anılarımız henüz yaşamadıklarımız... Her yeni yıldönümünde birbirimizi daha da çok severek.",
-    flowerTag: "Sonsuz Buket • Bekir & Gizem",
+    flowerTag: "Sonsuz Buket • Gizem & Bekir",
   },
 ];
 
@@ -93,7 +93,7 @@ export function CoupleTimeline() {
         </div>
 
         <h2 className="font-serif text-3xl sm:text-5xl text-[#FFF8FC] font-semibold">
-          Bekir & Gizem’in <span className="italic text-[#BAE6FD]">Yolculuğu</span>
+          Gizem & Bekir’in <span className="italic text-[#BAE6FD]">Yolculuğu</span>
         </h2>
 
         <p className="mt-3 font-serif italic text-lg sm:text-xl text-[#FFF8FC]/75">

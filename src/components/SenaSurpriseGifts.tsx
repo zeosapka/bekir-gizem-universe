@@ -66,52 +66,66 @@ export function SenaSurpriseGifts() {
   }, [openedBoxIds]);
 
   const spawnInitialFlowers = () => {
-    const palette = ["#A7F3D0", "#0EA5E9", "#FFB8D2", "#F5D58A", "#FF6B9D"];
+    const palette = [
+      "#E11D48", // Canlı Gül Kırmızısı
+      "#F97316", // Sıcak Mercan Turuncu
+      "#EAB308", // Güneş Sarısı
+      "#9333EA", // Doğal Leylak Moru
+      "#0284C7", // Gökyüzü Mavisi
+      "#EC4899", // Bahar Pembesi
+    ];
     const initial: BloomingFlowerNode[] = [];
     for (let i = 0; i < 12; i++) {
       initial.push({
         id: i + 1,
         x: 10 + ((i * 23) % 80),
-        y: 15 + ((i * 29) % 70),
-        size: 32 + (i % 4) * 10,
+        y: 15 + ((i * 29) % 66),
+        size: 38 + (i % 4) * 10,
         hue: palette[i % palette.length],
-        delay: i * 0.07,
+        delay: i * 0.06,
       });
     }
     setFlowers(initial);
   };
 
   const addMoreFlowers = () => {
-    const palette = ["#A7F3D0", "#0EA5E9", "#FFB8D2", "#F5D58A", "#FF6B9D"];
+    const palette = [
+      "#E11D48",
+      "#F97316",
+      "#EAB308",
+      "#9333EA",
+      "#0284C7",
+      "#EC4899",
+    ];
     setFlowers((prev) => {
       const nextId = prev.length + 1;
       const added: BloomingFlowerNode[] = [
         {
           id: nextId,
           x: 12 + Math.random() * 76,
-          y: 14 + Math.random() * 72,
-          size: 36 + Math.random() * 18,
+          y: 14 + Math.random() * 68,
+          size: 40 + Math.random() * 18,
           hue: palette[nextId % palette.length],
           delay: 0,
         },
         {
           id: nextId + 1,
           x: 12 + Math.random() * 76,
-          y: 14 + Math.random() * 72,
-          size: 32 + Math.random() * 16,
+          y: 14 + Math.random() * 68,
+          size: 36 + Math.random() * 16,
           hue: palette[(nextId + 1) % palette.length],
           delay: 0.06,
         },
         {
           id: nextId + 2,
           x: 12 + Math.random() * 76,
-          y: 14 + Math.random() * 72,
-          size: 38 + Math.random() * 14,
+          y: 14 + Math.random() * 68,
+          size: 42 + Math.random() * 14,
           hue: palette[(nextId + 2) % palette.length],
           delay: 0.12,
         },
       ];
-      return [...prev.slice(-21), ...added];
+      return [...prev.slice(-24), ...added];
     });
   };
 
@@ -430,12 +444,12 @@ export function SenaSurpriseGifts() {
               exit={{ opacity: 0, scale: 0.92, y: 16 }}
               transition={{ duration: 0.45, ease: "easeOut" }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-2xl max-h-[86dvh] overflow-y-auto overscroll-contain rounded-[2.25rem] p-6 sm:p-10 bg-gradient-to-b from-[#260B21] via-[#15081E] to-[#0A0512] border-2 border-[#F5D58A]/65 shadow-[0_25px_90px_rgba(14, 165, 233,0.45)] text-center"
+              className="relative w-full max-w-2xl max-h-[86dvh] overflow-y-auto overscroll-contain rounded-[2.25rem] p-6 sm:p-10 bg-gradient-to-br from-[#DCF5FF] via-[#E8FCF3] to-[#C8EEFF] border-2 border-white shadow-[0_25px_85px_rgba(14,165,233,0.35)] text-center text-[#0F3D3E]"
             >
               {/* Sağ Üst Kapatma Butonu */}
-              <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#F5D58A]/20">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#06383E]/70 border border-[#F5D58A]/40 text-xs uppercase tracking-[0.2em] text-[#F5D58A]">
-                  <Gift className="w-3.5 h-3.5" />
+              <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#0EA5E9]/20">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/80 border border-[#7DD3FC] text-xs uppercase tracking-[0.2em] text-[#0F4C5C] font-semibold">
+                  <Gift className="w-3.5 h-3.5 text-[#0EA5E9]" />
                   <span>
                     {activeBox.numberLabel}. Sürpriz • {activeBox.title}
                   </span>
@@ -445,7 +459,7 @@ export function SenaSurpriseGifts() {
                   type="button"
                   onClick={() => setActiveModalBoxId(null)}
                   aria-label={cfg.closeModalAriaLabel}
-                  className="flex items-center justify-center w-11 h-11 rounded-full bg-[#06383E]/80 border border-[#F5D58A]/45 text-[#FFF8FC] hover:bg-[#0EA5E9] active:scale-95 transition-all cursor-pointer touch-manipulation"
+                  className="flex items-center justify-center w-11 h-11 rounded-full bg-white/85 border border-[#7DD3FC] text-[#0F3D3E] hover:bg-[#0EA5E9] hover:text-white active:scale-95 transition-all cursor-pointer touch-manipulation"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -458,24 +472,24 @@ export function SenaSurpriseGifts() {
                     initial={{ scale: 0.8 }}
                     animate={{ scale: [1, 1.08, 1] }}
                     transition={{ duration: 2.6, repeat: Infinity }}
-                    className="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-[#A7F3D0] to-[#0EA5E9] p-0.5 shadow-[0_0_40px_rgba(14, 165, 233,0.6)] flex items-center justify-center"
+                    className="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-[#10B981] to-[#0EA5E9] p-1 shadow-[0_10px_30px_rgba(14,165,233,0.3)] flex items-center justify-center"
                   >
-                    <div className="w-full h-full rounded-full bg-[#14071E] flex items-center justify-center">
-                      <Mail className="w-9 h-9 text-[#A7F3D0]" />
+                    <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                      <Mail className="w-9 h-9 text-[#0D9488]" />
                     </div>
                   </motion.div>
 
-                  <h3 className="font-serif text-3xl sm:text-4xl text-[#F5D58A] font-semibold italic">
+                  <h3 className="font-serif text-3xl sm:text-4xl text-[#0F3D3E] font-semibold italic">
                     {activeBox.headline}
                   </h3>
 
-                  <div className="p-6 sm:p-8 rounded-3xl bg-[#12061A]/85 border border-[#F5D58A]/30 shadow-inner">
-                    <p className="font-serif italic text-xl sm:text-2xl text-[#FFF8FC]/95 leading-relaxed">
+                  <div className="p-6 sm:p-8 rounded-3xl bg-white/80 border border-[#A7F3D0] shadow-sm">
+                    <p className="font-serif italic text-xl sm:text-2xl text-[#0F3D3E] leading-relaxed">
                       &ldquo;{activeBox.message}&rdquo;
                     </p>
                   </div>
 
-                  <p className="text-xs uppercase tracking-[0.22em] text-[#A7F3D0]">
+                  <p className="text-xs uppercase tracking-[0.22em] text-[#0F766E] font-semibold">
                     {activeBox.subNote}
                   </p>
                 </div>
@@ -491,7 +505,7 @@ export function SenaSurpriseGifts() {
                     onKeyDown={(e) => {
                       if (e.key === "Enter" || e.key === " ") addMoreFlowers();
                     }}
-                    className="relative w-full h-56 sm:h-64 rounded-3xl bg-[radial-gradient(circle_at_center,#3B0E28_0%,#0E0515_85%)] border border-[#A7F3D0]/40 overflow-hidden cursor-pointer select-none"
+                    className="relative w-full h-56 sm:h-64 rounded-3xl bg-gradient-to-b from-[#CBEFFF] via-[#E3FAEE] to-[#BDEFD2] border-2 border-white shadow-inner overflow-hidden cursor-pointer select-none"
                   >
                     {flowers.map((fl) => (
                       <motion.div
@@ -510,34 +524,52 @@ export function SenaSurpriseGifts() {
                         }}
                         className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                       >
-                        <Flower2
-                          style={{
-                            width: fl.size,
-                            height: fl.size,
-                            color: fl.hue,
-                          }}
-                          className="drop-shadow-[0_0_14px_rgba(255,145,181,0.8)]"
-                        />
+                        <svg
+                          viewBox="0 0 64 64"
+                          style={{ width: fl.size, height: fl.size }}
+                          className="drop-shadow-[0_4px_10px_rgba(15,61,62,0.22)]"
+                        >
+                          {/* Yeşil Yapraklar */}
+                          <ellipse cx="22" cy="48" rx="9" ry="5" transform="rotate(-28 22 48)" fill="#16A34A" />
+                          <ellipse cx="42" cy="48" rx="9" ry="5" transform="rotate(28 42 48)" fill="#22C55E" />
+                          {/* 6 Canlı Taç Yaprak */}
+                          {[0, 60, 120, 180, 240, 300].map((deg) => (
+                            <ellipse
+                              key={deg}
+                              cx="32"
+                              cy="16"
+                              rx="8.5"
+                              ry="13"
+                              fill={fl.hue}
+                              stroke="rgba(255,255,255,0.65)"
+                              strokeWidth="1"
+                              transform={`rotate(${deg} 32 30)`}
+                            />
+                          ))}
+                          {/* Altın Çiçek Merkezi */}
+                          <circle cx="32" cy="30" r="8" fill="#FACC15" stroke="#FFFBEB" strokeWidth="1.5" />
+                          <circle cx="32" cy="30" r="3.5" fill="#EA580C" opacity="0.7" />
+                        </svg>
                       </motion.div>
                     ))}
                     <div className="absolute bottom-3 inset-x-0 text-center pointer-events-none">
-                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#06383E]/85 border border-[#F5D58A]/35 text-[11px] uppercase tracking-[0.18em] text-[#F5D58A]">
-                        <Sparkles className="w-3 h-3" />
+                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/85 border border-[#7DD3FC] text-[11px] uppercase tracking-[0.18em] text-[#0F4C5C] font-semibold shadow-sm">
+                        <Sparkles className="w-3 h-3 text-[#0EA5E9]" />
                         <span>{activeBox.subNote}</span>
                       </span>
                     </div>
                   </div>
 
-                  <h3 className="font-serif italic font-semibold text-2xl sm:text-3xl md:text-4xl bg-gradient-to-r from-[#FFF8FC] via-[#A7F3D0] to-[#F5D58A] bg-clip-text text-transparent leading-snug">
+                  <h3 className="font-serif italic font-semibold text-2xl sm:text-3xl md:text-4xl text-[#0F3D3E] leading-snug">
                     &ldquo;{activeBox.message}&rdquo;
                   </h3>
 
                   <button
                     type="button"
                     onClick={addMoreFlowers}
-                    className="inline-flex items-center gap-2 px-6 py-3 min-h-[46px] rounded-full bg-[#06383E]/80 hover:bg-[#0EA5E9] border border-[#F5D58A]/45 text-xs uppercase tracking-[0.2em] text-[#FFF8FC] transition-colors cursor-pointer touch-manipulation"
+                    className="inline-flex items-center gap-2 px-6 py-3 min-h-[46px] rounded-full bg-gradient-to-r from-[#0EA5E9] to-[#10B981] hover:brightness-105 border-2 border-white text-xs uppercase tracking-[0.2em] font-semibold text-white shadow-[0_8px_22px_rgba(14,165,233,0.3)] transition-all cursor-pointer touch-manipulation"
                   >
-                    <Flower2 className="w-4 h-4 text-[#F5D58A]" />
+                    <Flower2 className="w-4 h-4 text-white" />
                     <span>Daha Fazla Çiçek Açtır 🌸</span>
                   </button>
                 </div>
@@ -556,7 +588,7 @@ export function SenaSurpriseGifts() {
                         ),
                         spread: 90,
                         origin: { y: 0.55 },
-                        colors: ["#F5D58A", "#FFF8FC", "#A7F3D0"],
+                        colors: ["#FACC15", "#0EA5E9", "#10B981", "#FFFFFF"],
                       });
                     }}
                     role="button"
@@ -566,7 +598,7 @@ export function SenaSurpriseGifts() {
                         setStarWishCount((c) => c + 1);
                       }
                     }}
-                    className="relative w-full h-56 sm:h-64 rounded-3xl bg-[radial-gradient(circle_at_center,#2B1338_0%,#090514_85%)] border border-[#F5D58A]/45 flex flex-col items-center justify-center overflow-hidden cursor-pointer select-none"
+                    className="relative w-full h-56 sm:h-64 rounded-3xl bg-gradient-to-b from-[#BAE6FD] via-[#D8F3FF] to-[#D1FAE5] border-2 border-white flex flex-col items-center justify-center overflow-hidden cursor-pointer select-none shadow-inner"
                   >
                     {/* Kayan Yıldız Hüzmesi */}
                     <motion.div
@@ -579,18 +611,18 @@ export function SenaSurpriseGifts() {
                         scale: [1, 1.18, 1],
                       }}
                       transition={{ duration: 1.8, repeat: Infinity }}
-                      className="relative flex items-center justify-center w-28 h-28 rounded-full bg-[#F5D58A]/15 border border-[#F5D58A]/50 shadow-[0_0_70px_rgba(245,213,138,0.85)]"
+                      className="relative flex items-center justify-center w-28 h-28 rounded-full bg-white/75 border-2 border-[#FACC15] shadow-[0_0_50px_rgba(250,204,21,0.6)]"
                     >
-                      <Star className="w-16 h-16 text-[#F5D58A] fill-[#F5D58A] drop-shadow-[0_0_25px_rgba(245,213,138,1)]" />
+                      <Star className="w-16 h-16 text-[#F59E0B] fill-[#FACC15]" />
                     </motion.div>
 
-                    <span className="mt-4 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#06383E]/80 border border-[#F5D58A]/35 text-[11px] uppercase tracking-[0.18em] text-[#F5D58A]">
-                      <Sparkles className="w-3 h-3" />
+                    <span className="mt-4 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/85 border border-[#7DD3FC] text-[11px] uppercase tracking-[0.18em] text-[#0F4C5C] font-semibold">
+                      <Sparkles className="w-3 h-3 text-[#0EA5E9]" />
                       <span>{activeBox.subNote}</span>
                     </span>
                   </div>
 
-                  <h3 className="font-serif italic font-semibold text-2xl sm:text-3xl md:text-4xl bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#A7F3D0] bg-clip-text text-transparent leading-snug">
+                  <h3 className="font-serif italic font-semibold text-2xl sm:text-3xl md:text-4xl text-[#0F3D3E] leading-snug">
                     &ldquo;{activeBox.message}&rdquo;
                   </h3>
                 </div>
@@ -602,18 +634,18 @@ export function SenaSurpriseGifts() {
                   <motion.div
                     animate={{ rotate: [-5, 5, -5] }}
                     transition={{ duration: 4, repeat: Infinity }}
-                    className="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-[#F5D58A] to-[#A7F3D0] p-0.5 shadow-[0_0_45px_rgba(245,213,138,0.55)] flex items-center justify-center"
+                    className="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-[#0EA5E9] to-[#10B981] p-1 shadow-[0_10px_30px_rgba(14,165,233,0.3)] flex items-center justify-center"
                   >
-                    <div className="w-full h-full rounded-full bg-[#14071E] flex items-center justify-center">
-                      <Moon className="w-9 h-9 text-[#F5D58A] fill-[#F5D58A]/30" />
+                    <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                      <Moon className="w-9 h-9 text-[#0284C7] fill-[#BAE6FD]" />
                     </div>
                   </motion.div>
 
-                  <h3 className="font-serif text-2xl sm:text-4xl text-[#F5D58A] font-semibold italic">
+                  <h3 className="font-serif text-2xl sm:text-4xl text-[#0F3D3E] font-semibold italic">
                     {activeBox.headline}
                   </h3>
 
-                  <p className="font-serif italic text-lg sm:text-xl text-[#FFF8FC]/90 leading-relaxed">
+                  <p className="font-serif italic text-lg sm:text-xl text-[#134E4A] leading-relaxed">
                     &ldquo;{activeBox.message}&rdquo;
                   </p>
 
@@ -625,7 +657,7 @@ export function SenaSurpriseGifts() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: dIdx * 0.12 }}
-                          className="p-4 rounded-2xl bg-[#160824]/90 border border-[#F5D58A]/30 text-sm sm:text-base text-[#FFF8FC]/95 font-medium flex items-center gap-2.5"
+                          className="p-4 rounded-2xl bg-white/85 border border-[#7DD3FC] text-sm sm:text-base text-[#0F3D3E] font-medium flex items-center gap-2.5 shadow-sm"
                         >
                           <span>{dream}</span>
                         </motion.div>
@@ -633,7 +665,7 @@ export function SenaSurpriseGifts() {
                     </div>
                   )}
 
-                  <p className="text-xs uppercase tracking-[0.2em] text-[#F5D58A]/85">
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#0F766E] font-semibold">
                     {activeBox.subNote}
                   </p>
                 </div>
@@ -643,34 +675,34 @@ export function SenaSurpriseGifts() {
               {activeBox.id === 5 && (
                 <div className="space-y-6 py-3">
                   <div className="relative py-4 flex items-center justify-center">
-                    <div className="pointer-events-none absolute w-44 h-44 rounded-full bg-[#0EA5E9]/35 blur-2xl animate-pulse" />
+                    <div className="pointer-events-none absolute w-44 h-44 rounded-full bg-[#38BDF8]/30 blur-2xl animate-pulse" />
                     <motion.div
                       animate={{ scale: [1, 1.18, 1, 1.14, 1] }}
                       transition={{ duration: 2.2, repeat: Infinity }}
-                      className="relative z-10 w-28 h-28 rounded-full bg-gradient-to-br from-[#F5D58A] via-[#A7F3D0] to-[#0EA5E9] p-1 shadow-[0_0_70px_rgba(14, 165, 233,0.9)] flex items-center justify-center"
+                      className="relative z-10 w-28 h-28 rounded-full bg-gradient-to-br from-[#10B981] via-[#0EA5E9] to-[#FDE68A] p-1 shadow-[0_12px_40px_rgba(14,165,233,0.38)] flex items-center justify-center"
                     >
-                      <div className="w-full h-full rounded-full bg-[#16061A] flex items-center justify-center">
-                        <Heart className="w-14 h-14 text-[#0EA5E9] fill-[#0EA5E9]" />
+                      <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                        <Heart className="w-14 h-14 text-[#0D9488] fill-[#0D9488]" />
                       </div>
                     </motion.div>
                   </div>
 
-                  <h3 className="font-serif italic font-bold text-2xl sm:text-4xl md:text-5xl bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#A7F3D0] bg-clip-text text-transparent leading-tight drop-shadow-[0_2px_30px_rgba(14, 165, 233,0.65)]">
+                  <h3 className="font-serif italic font-bold text-2xl sm:text-4xl md:text-5xl text-[#0F3D3E] leading-tight">
                     &ldquo;{activeBox.message}&rdquo;
                   </h3>
 
-                  <p className="text-xs sm:text-sm uppercase tracking-[0.24em] text-[#F5D58A]">
+                  <p className="text-xs sm:text-sm uppercase tracking-[0.24em] text-[#0F766E] font-semibold">
                     {activeBox.subNote}
                   </p>
                 </div>
               )}
 
               {/* Alt Kapat / Hediyelere Dön Butonu */}
-              <div className="pt-6 mt-6 border-t border-[#F5D58A]/20 flex flex-wrap items-center justify-center gap-3">
+              <div className="pt-6 mt-6 border-t border-[#0EA5E9]/20 flex flex-wrap items-center justify-center gap-3">
                 <button
                   type="button"
                   onClick={() => setActiveModalBoxId(null)}
-                  className="inline-flex items-center gap-2 px-8 py-3.5 min-h-[48px] rounded-full bg-gradient-to-r from-[#06383E] via-[#0EA5E9] to-[#06383E] border border-[#F5D58A]/65 text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-[#FFF8FC] shadow-[0_0_30px_rgba(14, 165, 233,0.5)] active:scale-95 transition-all cursor-pointer touch-manipulation"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 min-h-[48px] rounded-full bg-gradient-to-r from-[#0EA5E9] to-[#10B981] hover:brightness-105 border-2 border-white text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-white shadow-[0_10px_28px_rgba(14,165,233,0.32)] active:scale-95 transition-all cursor-pointer touch-manipulation"
                 >
                   <RotateCcw className="w-4 h-4" />
                   <span>{cfg.closeModalButtonText}</span>

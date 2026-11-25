@@ -22,7 +22,7 @@ interface QuizQuestion {
 
 const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
-    question: "Bekir & Gizem için en güzel randevu hangisi?",
+    question: "Gizem & Bekir için en güzel randevu hangisi?",
     options: [
       "Saatlerce sohbet edilen sıcak bir kahve akşamı ☕",
       "El ele uzun bir sahil/gece yürüyüşü 🌙",
@@ -241,7 +241,7 @@ export function CoupleQuizAndWheel() {
                     textAnchor="middle"
                     dominantBaseline="middle"
                   >
-                    B♥G
+                    G♥B
                   </text>
                 </motion.svg>
               </div>
@@ -290,7 +290,7 @@ export function CoupleQuizAndWheel() {
                   %100 — Mükemmel Uyum! ❤️
                 </h3>
                 <p className="mt-3 font-serif italic text-lg text-[#FFF8FC]/80">
-                  Bekir & Gizem: Gülün tutkusu, lalenin zarafeti ve papatyanın saf sevgisi gibi birbirini tamamlayan iki kalp.
+                  Gizem & Bekir: Gülün tutkusu, lalenin zarafeti ve papatyanın saf sevgisi gibi birbirini tamamlayan iki kalp.
                 </p>
                 <button
                   type="button"
@@ -307,7 +307,7 @@ export function CoupleQuizAndWheel() {
                   <span>
                     Soru {qIndex + 1} / {QUIZ_QUESTIONS.length}
                   </span>
-                  <span>Bekir & Gizem</span>
+                  <span>Gizem & Bekir</span>
                 </div>
 
                 <h3 className="font-serif text-2xl sm:text-3xl text-[#FFF8FC] font-medium mb-6">

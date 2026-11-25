@@ -34,7 +34,7 @@ const MAP_REGIONS: MapRegion[] = [
     title: "1. Bölge: Geçmişimiz",
     subtitle: "Hikâyemizin başladığı o ilk kıvılcım",
     emoji: "🌹",
-    question: "Bekir & Gizem'in güzel hikâyesi takvimde hangi özel günde başladı?",
+    question: "Gizem & Bekir'in güzel hikâyesi takvimde hangi özel günde başladı?",
     options: ["17 Kasım 2023", "1 Ocak 2024", "14 Şubat 2023"],
     correctIndex: 0,
     rewardTitle: "Geçmişimiz Kilidi Açıldı!",
