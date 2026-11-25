@@ -11,6 +11,7 @@ import { RomanticShowcaseBanner } from "./components/RomanticShowcaseBanner";
 import { SidePhotoStreams } from "./components/SidePhotoStreams";
 import { BirthdayCountdown } from "./components/BirthdayCountdown";
 import { CoupleTimeline } from "./components/CoupleTimeline";
+import { SeventeenReasonsAndHug } from "./components/SeventeenReasonsAndHug";
 import { InteractiveLoveLetter } from "./components/InteractiveLoveLetter";
 import { LoveCoupons } from "./components/LoveCoupons";
 import { FireworksCelebration } from "./components/FireworksCelebration";
@@ -85,6 +86,9 @@ export function App() {
 
           {/* 2.5. Bekir & Gizem'in 17 Kasım Aşk Zaman Çizelgesi */}
           <CoupleTimeline />
+
+          {/* 2.8. Her Gün Bir Neden, Sonsuz Sarılma Butonu & Bekir'in 17 Nedeni */}
+          <SeventeenReasonsAndHug />
 
           {/* 3. Interactive Golden Wax-Sealed Love Letter */}
           <InteractiveLoveLetter />
