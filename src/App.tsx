@@ -7,6 +7,7 @@ import { MusicPlayer } from "./components/MusicPlayer";
 import { FlowerBloomIntro } from "./components/FlowerBloomIntro";
 import { OpeningPortal } from "./components/OpeningPortal";
 import { HeroCelebration } from "./components/HeroCelebration";
+import { RomanticShowcaseBanner } from "./components/RomanticShowcaseBanner";
 import { BirthdayCountdown } from "./components/BirthdayCountdown";
 import { CoupleTimeline } from "./components/CoupleTimeline";
 import { InteractiveLoveLetter } from "./components/InteractiveLoveLetter";
@@ -64,14 +65,17 @@ export function App() {
           {/* 1. Hero Celebration Screen */}
           <HeroCelebration />
 
-          {/* Ornamental Divider */}
-          <div className="flex items-center justify-center gap-4 max-w-xs mx-auto opacity-50">
-            <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-[#F5D58A]" />
-            <Sparkles className="w-4 h-4 text-[#F5D58A]" />
-            <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-[#F5D58A]" />
+          {/* Iridescent Shimmering Ornamental Divider */}
+          <div className="flex items-center justify-center gap-4 max-w-sm mx-auto opacity-85 px-6">
+            <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent via-[#A7F3D0] to-[#7DD3FC]" />
+            <Sparkles className="w-4 h-4 text-[#A7F3D0] animate-pulse" />
+            <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent via-[#7DD3FC] to-[#A7F3D0]" />
           </div>
 
-          {/* 2. Real-Time Anniversary Countdown to 17 Nov */}
+          {/* 1.5. Yanarlı Dönerli Çift Bannerı & Filigranlı 3'lü Fotoğraf Vitrini */}
+          <RomanticShowcaseBanner />
+
+          {/* 2. Real-Time Elapsed Time Since 17 Nov 2023 */}
           <BirthdayCountdown />
 
           {/* 2.5. Bekir & Gizem'in 17 Kasım Aşk Zaman Çizelgesi */}

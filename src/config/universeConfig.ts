@@ -22,44 +22,20 @@ export const UNIVERSE_CONFIG = {
   birthdayIsoDate: "2027-11-17T00:00:00",
   birthdayDisplayDate: "17 Kasım 2023",
 
-  // 4 Şarkılık Tam Süreli & Yumuşak Geçişli Romantik Müzik Listesi (/public/music/ içindeki MP3 kayıtları)
-  crossfadeSeconds: 6.0,
+  // Tek Şarkılık Tam Süreli Romantik Müzik (/public/music/ içindeki MP3 kaydı)
+  crossfadeSeconds: 4.0,
   musicPlaylist: [
     {
-      id: "piyanist",
-      title: "Ferdi Özbeğen — Piyanist 🎹",
-      src: "/music/Ferdi Özbeğen - Piyanist.mp3",
+      id: "haydi-gel-benimle-ol",
+      title: "Sezen Aksu — Haydi Gel Benimle Ol ❤️",
+      src: "/music/Sezen Aksu - Haydi Gel Benimle Ol.mp3",
       startAtSeconds: 0,
-      excerptDurationSeconds: 226,
+      excerptDurationSeconds: 300,
       volumeScale: 1.0,
-    },
-    {
-      id: "gurbette-sevgilim",
-      title: "Ferdi Özbeğen — Gurbette Sevgilim 🌹",
-      src: "/music/Ferdi Özbeğen - Gurbette Sevgilim.mp3",
-      startAtSeconds: 0,
-      excerptDurationSeconds: 266,
-      volumeScale: 1.0,
-    },
-    {
-      id: "hani-benim-olacaktin",
-      title: "Haluk Levent — Hani Benim Olacaktın ❤️",
-      src: "/music/Haluk Levent  -  Hani Benim Olacaktın - SENDE Bİ DİNLE.mp3",
-      startAtSeconds: 0,
-      excerptDurationSeconds: 232,
-      volumeScale: 0.86,
-    },
-    {
-      id: "ayrilik",
-      title: "Selda Bağcan — Ayrılık ✨",
-      src: "/music/Ayrılık - Selda Bağcan.mp3",
-      startAtSeconds: 0,
-      excerptDurationSeconds: 278,
-      volumeScale: 0.88,
     },
   ],
-  customAudioSrc: "/music/Ferdi Özbeğen - Piyanist.mp3",
-  musicTrackTitle: "Ferdi Özbeğen — Piyanist 🎹",
+  customAudioSrc: "/music/Sezen Aksu - Haydi Gel Benimle Ol.mp3",
+  musicTrackTitle: "Sezen Aksu — Haydi Gel Benimle Ol ❤️",
 
   // Müzik Oynatıcı Metinleri
   musicPlayer: {
