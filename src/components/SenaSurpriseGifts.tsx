@@ -18,13 +18,196 @@ import { usePerformanceProfile } from "../hooks/usePerformanceProfile";
 
 const STORAGE_KEY = "bekir_gizem_opened_gifts_v1";
 
+type GardenFlowerSpecies =
+  | "rose"
+  | "orchid"
+  | "sunflower"
+  | "tulip"
+  | "lily"
+  | "sakura";
+
 interface BloomingFlowerNode {
   id: number;
   x: number;
   y: number;
   size: number;
   hue: string;
+  species: GardenFlowerSpecies;
   delay: number;
+}
+
+const GARDEN_SPECIES: GardenFlowerSpecies[] = [
+  "rose",
+  "orchid",
+  "sunflower",
+  "tulip",
+  "lily",
+  "sakura",
+];
+
+function RealisticGardenFlowerSvg({
+  species,
+  hue,
+  size,
+}: {
+  species: GardenFlowerSpecies;
+  hue: string;
+  size: number;
+}) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      style={{ width: size, height: size }}
+      className="drop-shadow-[0_4px_10px_rgba(15,61,62,0.24)]"
+    >
+      {/* Yeşil Yapraklar */}
+      <ellipse
+        cx="21"
+        cy="50"
+        rx="9"
+        ry="4.5"
+        transform="rotate(-26 21 50)"
+        fill="#16A34A"
+      />
+      <ellipse
+        cx="43"
+        cy="50"
+        rx="9"
+        ry="4.5"
+        transform="rotate(26 43 50)"
+        fill="#22C55E"
+      />
+
+      {species === "rose" && (
+        <g>
+          {[0, 72, 144, 216, 288].map((deg) => (
+            <ellipse
+              key={deg}
+              cx="32"
+              cy="19"
+              rx="10"
+              ry="12"
+              fill={hue}
+              stroke="rgba(255,255,255,0.45)"
+              strokeWidth="0.9"
+              transform={`rotate(${deg} 32 30)`}
+            />
+          ))}
+          {[36, 108, 180, 252, 324].map((deg) => (
+            <ellipse
+              key={deg}
+              cx="32"
+              cy="23"
+              rx="7.5"
+              ry="9"
+              fill="#FB7185"
+              stroke="rgba(255,255,255,0.5)"
+              strokeWidth="0.8"
+              transform={`rotate(${deg} 32 30)`}
+            />
+          ))}
+          <circle cx="32" cy="30" r="6" fill="#9F1239" />
+          <circle cx="32" cy="30" r="3" fill="#FDA4AF" />
+        </g>
+      )}
+
+      {species === "orchid" && (
+        <g>
+          {[0, 120, 240].map((deg) => (
+            <ellipse
+              key={deg}
+              cx="32"
+              cy="16"
+              rx="7"
+              ry="13"
+              fill={hue}
+              stroke="rgba(255,255,255,0.65)"
+              strokeWidth="0.9"
+              transform={`rotate(${deg} 32 30)`}
+            />
+          ))}
+          <ellipse cx="22" cy="31" rx="9" ry="7" fill="#E879F9" stroke="#FAF5FF" strokeWidth="0.9" />
+          <ellipse cx="42" cy="31" rx="9" ry="7" fill="#E879F9" stroke="#FAF5FF" strokeWidth="0.9" />
+          <path d="M26,32 Q32,44 38,32 Q32,27 26,32 Z" fill="#FACC15" stroke="#9333EA" strokeWidth="1" />
+          <circle cx="32" cy="30" r="3" fill="#FFFBEB" />
+        </g>
+      )}
+
+      {species === "sunflower" && (
+        <g>
+          {Array.from({ length: 12 }, (_, idx) => idx * 30).map((deg) => (
+            <ellipse
+              key={deg}
+              cx="32"
+              cy="13"
+              rx="4.5"
+              ry="12"
+              fill={deg % 60 === 0 ? "#FACC15" : "#F59E0B"}
+              stroke="#FEF9C3"
+              strokeWidth="0.7"
+              transform={`rotate(${deg} 32 30)`}
+            />
+          ))}
+          <circle cx="32" cy="30" r="10.5" fill="#78350F" stroke="#FDE047" strokeWidth="1.2" />
+          <circle cx="29" cy="28" r="1.3" fill="#FDE047" opacity="0.7" />
+          <circle cx="35" cy="31" r="1.3" fill="#FDE047" opacity="0.7" />
+          <circle cx="31" cy="33" r="1.3" fill="#FDE047" opacity="0.7" />
+        </g>
+      )}
+
+      {species === "tulip" && (
+        <g>
+          <rect x="30.5" y="34" width="3" height="17" rx="1.5" fill="#15803D" />
+          <path d="M20,32 C17,16 26,10 32,20 C38,10 47,16 44,32 C42,40 22,40 20,32 Z" fill={hue} stroke="#FFF7ED" strokeWidth="1" />
+          <path d="M25,33 C24,18 32,12 32,12 C32,12 40,18 39,33 C37,39 27,39 25,33 Z" fill="#FDBA74" opacity="0.55" />
+        </g>
+      )}
+
+      {species === "lily" && (
+        <g>
+          {[0, 60, 120, 180, 240, 300].map((deg) => (
+            <path
+              key={deg}
+              d="M32,30 C26,20 27,10 32,5 C37,10 38,20 32,30 Z"
+              fill={deg % 120 === 0 ? "#FFFFFF" : "#E0F2FE"}
+              stroke={hue}
+              strokeWidth="1"
+              transform={`rotate(${deg} 32 30)`}
+            />
+          ))}
+          <circle cx="32" cy="30" r="4.5" fill="#FACC15" />
+          {[30, 150, 270].map((deg) => (
+            <line
+              key={deg}
+              x1="32"
+              y1="30"
+              x2="32"
+              y2="20"
+              stroke="#EA580C"
+              strokeWidth="1.2"
+              transform={`rotate(${deg} 32 30)`}
+            />
+          ))}
+        </g>
+      )}
+
+      {species === "sakura" && (
+        <g>
+          {[0, 72, 144, 216, 288].map((deg) => (
+            <path
+              key={deg}
+              d="M32,30 C23,22 22,10 29,9 C31,9 32,12 32,12 C32,12 33,9 35,9 C42,10 41,22 32,30 Z"
+              fill={hue}
+              stroke="#FFF1F2"
+              strokeWidth="1"
+              transform={`rotate(${deg} 32 30)`}
+            />
+          ))}
+          <circle cx="32" cy="30" r="5" fill="#FDE047" />
+        </g>
+      )}
+    </svg>
+  );
 }
 
 export function SenaSurpriseGifts() {
@@ -80,8 +263,9 @@ export function SenaSurpriseGifts() {
         id: i + 1,
         x: 10 + ((i * 23) % 80),
         y: 15 + ((i * 29) % 66),
-        size: 38 + (i % 4) * 10,
+        size: 40 + (i % 4) * 9,
         hue: palette[i % palette.length],
+        species: GARDEN_SPECIES[i % GARDEN_SPECIES.length],
         delay: i * 0.06,
       });
     }
@@ -106,14 +290,16 @@ export function SenaSurpriseGifts() {
           y: 14 + Math.random() * 68,
           size: 40 + Math.random() * 18,
           hue: palette[nextId % palette.length],
+          species: GARDEN_SPECIES[nextId % GARDEN_SPECIES.length],
           delay: 0,
         },
         {
           id: nextId + 1,
           x: 12 + Math.random() * 76,
           y: 14 + Math.random() * 68,
-          size: 36 + Math.random() * 16,
+          size: 38 + Math.random() * 16,
           hue: palette[(nextId + 1) % palette.length],
+          species: GARDEN_SPECIES[(nextId + 1) % GARDEN_SPECIES.length],
           delay: 0.06,
         },
         {
@@ -122,6 +308,7 @@ export function SenaSurpriseGifts() {
           y: 14 + Math.random() * 68,
           size: 42 + Math.random() * 14,
           hue: palette[(nextId + 2) % palette.length],
+          species: GARDEN_SPECIES[(nextId + 2) % GARDEN_SPECIES.length],
           delay: 0.12,
         },
       ];
@@ -524,32 +711,11 @@ export function SenaSurpriseGifts() {
                         }}
                         className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                       >
-                        <svg
-                          viewBox="0 0 64 64"
-                          style={{ width: fl.size, height: fl.size }}
-                          className="drop-shadow-[0_4px_10px_rgba(15,61,62,0.22)]"
-                        >
-                          {/* Yeşil Yapraklar */}
-                          <ellipse cx="22" cy="48" rx="9" ry="5" transform="rotate(-28 22 48)" fill="#16A34A" />
-                          <ellipse cx="42" cy="48" rx="9" ry="5" transform="rotate(28 42 48)" fill="#22C55E" />
-                          {/* 6 Canlı Taç Yaprak */}
-                          {[0, 60, 120, 180, 240, 300].map((deg) => (
-                            <ellipse
-                              key={deg}
-                              cx="32"
-                              cy="16"
-                              rx="8.5"
-                              ry="13"
-                              fill={fl.hue}
-                              stroke="rgba(255,255,255,0.65)"
-                              strokeWidth="1"
-                              transform={`rotate(${deg} 32 30)`}
-                            />
-                          ))}
-                          {/* Altın Çiçek Merkezi */}
-                          <circle cx="32" cy="30" r="8" fill="#FACC15" stroke="#FFFBEB" strokeWidth="1.5" />
-                          <circle cx="32" cy="30" r="3.5" fill="#EA580C" opacity="0.7" />
-                        </svg>
+                        <RealisticGardenFlowerSvg
+                          species={fl.species}
+                          hue={fl.hue}
+                          size={fl.size}
+                        />
                       </motion.div>
                     ))}
                     <div className="absolute bottom-3 inset-x-0 text-center pointer-events-none">
