@@ -6,14 +6,76 @@ import { Heart, Sparkles, X } from "lucide-react";
 import { UNIVERSE_CONFIG } from "../config/universeConfig";
 import { usePerformanceProfile } from "../hooks/usePerformanceProfile";
 
-interface FireworkParticle {
+interface SkyParticle {
   x: number;
   y: number;
+  targetX?: number;
+  targetY?: number;
   vx: number;
   vy: number;
   alpha: number;
   color: string;
   radius: number;
+  isText: boolean;
+  twinklePhase: number;
+}
+
+interface Rocket {
+  x: number;
+  y: number;
+  vy: number;
+  targetY: number;
+  color: string;
+  isTextRocket: boolean;
+}
+
+function sampleTextTargets(
+  w: number,
+  h: number
+): { x: number; y: number; color: string }[] {
+  const off = document.createElement("canvas");
+  off.width = Math.max(320, Math.floor(w));
+  off.height = Math.max(200, Math.floor(h * 0.42));
+  const octx = off.getContext("2d");
+  if (!octx) return [];
+
+  const isNarrow = w < 640;
+  const fontSize = isNarrow
+    ? Math.max(24, Math.min(34, Math.floor(w * 0.08)))
+    : Math.max(38, Math.min(62, Math.floor(w * 0.052)));
+
+  octx.clearRect(0, 0, off.width, off.height);
+  octx.fillStyle = "#FFFFFF";
+  octx.textAlign = "center";
+  octx.textBaseline = "middle";
+  octx.font = `700 ${fontSize}px Georgia, "Times New Roman", serif`;
+
+  const cy = off.height * 0.52;
+  if (isNarrow) {
+    octx.fillText("SENİ ÇOK SEVİYORUM", off.width / 2, cy - fontSize * 0.65);
+    octx.fillText("GİZEM ❤️", off.width / 2, cy + fontSize * 0.65);
+  } else {
+    octx.fillText("SENİ ÇOK SEVİYORUM GİZEM", off.width / 2, cy);
+  }
+
+  const img = octx.getImageData(0, 0, off.width, off.height).data;
+  const step = isNarrow ? 3 : 4;
+  const colors = ["#FDE68A", "#BAE6FD", "#A7F3D0", "#FDA4AF", "#FFFFFF"];
+  const points: { x: number; y: number; color: string }[] = [];
+
+  for (let y = 0; y < off.height; y += step) {
+    for (let x = 0; x < off.width; x += step) {
+      const alpha = img[(y * off.width + x) * 4 + 3];
+      if (alpha > 130) {
+        points.push({
+          x,
+          y: y + h * 0.05,
+          color: colors[(x + y) % colors.length],
+        });
+      }
+    }
+  }
+  return points;
 }
 
 export function FinalSurprise() {
@@ -40,15 +102,15 @@ export function FinalSurprise() {
         particleCount: isReducedMotion ? 2 : 5,
         angle: 60,
         spread: 65,
-        origin: { x: 0, y: 0.65 },
-        colors: ["#0EA5E9", "#10B981", "#F59E0B", "#E11D48", "#FFFFFF"],
+        origin: { x: 0, y: 0.68 },
+        colors: ["#38BDF8", "#34D399", "#FDE68A", "#FB7185", "#FFFFFF"],
       });
       confetti({
         particleCount: isReducedMotion ? 2 : 5,
         angle: 120,
         spread: 65,
-        origin: { x: 1, y: 0.65 },
-        colors: ["#0EA5E9", "#10B981", "#F59E0B", "#E11D48", "#FFFFFF"],
+        origin: { x: 1, y: 0.68 },
+        colors: ["#38BDF8", "#34D399", "#FDE68A", "#FB7185", "#FFFFFF"],
       });
 
       if (Date.now() < end) {
@@ -60,7 +122,7 @@ export function FinalSurprise() {
     return () => window.clearTimeout(timer);
   }, [isOpen, isReducedMotion]);
 
-  // Arka plan havai fişek kanvası (aydınlık tema üzerinde canlı patlamalar)
+  // Yukarıda Patlayan & "SENİ ÇOK SEVİYORUM GİZEM" Yazısı Çıkaran Havai Fişek Motoru
   useEffect(() => {
     if (!isOpen || isReducedMotion) return;
     const canvas = fireworksCanvasRef.current;
@@ -68,72 +130,166 @@ export function FinalSurprise() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const particles: FireworkParticle[] = [];
-    const colors = [
-      "#0284C7",
-      "#059669",
-      "#E11D48",
-      "#F59E0B",
-      "#7C3AED",
+    const particles: SkyParticle[] = [];
+    const rockets: Rocket[] = [];
+    const burstColors = [
+      "#FDE68A",
+      "#38BDF8",
+      "#34D399",
+      "#FB7185",
+      "#C084FC",
       "#FFFFFF",
     ];
 
-    const spawnBurst = (bx: number, by: number) => {
-      const count = 34;
+    let textTargets: { x: number; y: number; color: string }[] = [];
+    let lastW = 0;
+    let lastH = 0;
+
+    const spawnBurst = (bx: number, by: number, count = 42) => {
+      const baseColor =
+        burstColors[Math.floor(Math.random() * burstColors.length)];
       for (let i = 0; i < count; i++) {
         const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.2;
-        const speed = 1.8 + Math.random() * 3.6;
+        const speed = 1.6 + Math.random() * 4.2;
         particles.push({
           x: bx,
           y: by,
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
           alpha: 1,
-          color: colors[Math.floor(Math.random() * colors.length)],
-          radius: 2 + Math.random() * 2.2,
+          color: i % 3 === 0 ? "#FFFFFF" : baseColor,
+          radius: 1.8 + Math.random() * 2.2,
+          isText: false,
+          twinklePhase: Math.random() * Math.PI * 2,
         });
       }
     };
 
+    const explodeTextFirework = (originX: number, originY: number) => {
+      // Eski yazı parçacıklarını temizle
+      for (let i = particles.length - 1; i >= 0; i--) {
+        if (particles[i].isText) particles.splice(i, 1);
+      }
+
+      for (let i = 0; i < textTargets.length; i++) {
+        const t = textTargets[i];
+        particles.push({
+          x: originX + (Math.random() - 0.5) * 18,
+          y: originY + (Math.random() - 0.5) * 18,
+          targetX: t.x,
+          targetY: t.y,
+          vx: (Math.random() - 0.5) * 6,
+          vy: (Math.random() - 0.5) * 6,
+          alpha: 0.95,
+          color: t.color,
+          radius: 1.65,
+          isText: true,
+          twinklePhase: Math.random() * Math.PI * 2,
+        });
+      }
+      spawnBurst(originX, originY, 36);
+    };
+
     let rafId = 0;
-    let lastBurst = 0;
+    let lastAmbient = 0;
+    let lastTextLaunch = -9999;
 
     const render = (now: number) => {
       const w = canvas.clientWidth || window.innerWidth;
       const h = canvas.clientHeight || window.innerHeight;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      if (canvas.width !== Math.round(w * dpr) || canvas.height !== Math.round(h * dpr)) {
+
+      if (w !== lastW || h !== lastH) {
+        lastW = w;
+        lastH = h;
         canvas.width = Math.round(w * dpr);
         canvas.height = Math.round(h * dpr);
+        textTargets = sampleTextTargets(w, h);
       }
 
       ctx.save();
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, w, h);
 
-      if (now - lastBurst > 780) {
-        lastBurst = now;
-        spawnBurst(
-          w * (0.15 + Math.random() * 0.7),
-          h * (0.14 + Math.random() * 0.45)
-        );
+      // İlk anda ve her 7.5 saniyede bir yazılı havai fişek roketi fırlat
+      if (now - lastTextLaunch > 7500) {
+        lastTextLaunch = now;
+        rockets.push({
+          x: w * 0.5,
+          y: h * 0.85,
+          vy: -10.5,
+          targetY: h * 0.24,
+          color: "#FDE68A",
+          isTextRocket: true,
+        });
       }
 
+      // Yanlarda dekoratif havai fişek roketleri
+      if (now - lastAmbient > 1150) {
+        lastAmbient = now;
+        rockets.push({
+          x: w * (0.14 + Math.random() * 0.72),
+          y: h * 0.9,
+          vy: -(8.2 + Math.random() * 2.5),
+          targetY: h * (0.12 + Math.random() * 0.25),
+          color: burstColors[Math.floor(Math.random() * burstColors.length)],
+          isTextRocket: false,
+        });
+      }
+
+      // Roketleri çiz & patlat
+      for (let i = rockets.length - 1; i >= 0; i--) {
+        const r = rockets[i];
+        r.y += r.vy;
+        r.vy *= 0.985;
+
+        ctx.save();
+        ctx.fillStyle = r.color;
+        ctx.shadowColor = r.color;
+        ctx.shadowBlur = 12;
+        ctx.beginPath();
+        ctx.arc(r.x, r.y, r.isTextRocket ? 3.5 : 2.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        if (r.y <= r.targetY || r.vy > -1.8) {
+          if (r.isTextRocket) {
+            explodeTextFirework(r.x, r.y);
+          } else {
+            spawnBurst(r.x, r.y);
+          }
+          rockets.splice(i, 1);
+        }
+      }
+
+      // Parçacıkları güncelle & çiz
+      const timeSec = now * 0.005;
       for (let i = particles.length - 1; i >= 0; i--) {
         const p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
-        p.vy += 0.045;
-        p.alpha -= 0.014;
-        if (p.alpha <= 0.02) {
-          particles.splice(i, 1);
-          continue;
+        if (p.isText && p.targetX !== undefined && p.targetY !== undefined) {
+          p.x += (p.targetX - p.x) * 0.09;
+          p.y += (p.targetY - p.y) * 0.09;
+          const twinkle = 0.68 + 0.32 * Math.sin(timeSec + p.twinklePhase);
+          ctx.globalAlpha = p.alpha * twinkle;
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.045;
+          p.alpha -= 0.015;
+          if (p.alpha <= 0.02) {
+            particles.splice(i, 1);
+            continue;
+          }
+          ctx.globalAlpha = p.alpha;
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fill();
         }
-        ctx.globalAlpha = p.alpha;
-        ctx.fillStyle = p.color;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fill();
       }
 
       ctx.restore();
@@ -151,7 +307,7 @@ export function FinalSurprise() {
 
   const floatingHeartCount = Math.max(
     18,
-    Math.round(38 * particleCountMultiplier)
+    Math.round(34 * particleCountMultiplier)
   );
 
   return (
@@ -179,24 +335,21 @@ export function FinalSurprise() {
         </motion.button>
       </div>
 
-      {/* TAM EKRAN AYDINLIK FİNAL MODALI (Havai Fişek + Konfeti + Kalpler + Seni Çok Seviyorum) */}
+      {/* HAFİF KARANLIK AŞAĞIDAN YUKARI RENK GEÇİŞLİ & YAZILI HAVAİ FİŞEKLİ FİNAL */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.65 }}
+            transition={{ duration: 0.7 }}
             style={{
-              backgroundImage: [
-                "radial-gradient(circle at 22% 24%, rgba(167, 243, 208, 0.55) 0%, transparent 55%)",
-                "radial-gradient(circle at 80% 28%, rgba(186, 230, 253, 0.6) 0%, transparent 55%)",
-                "linear-gradient(135deg, #CBEFFF 0%, #DFF9EC 50%, #C2E8FF 100%)",
-              ].join(", "),
+              backgroundImage:
+                "linear-gradient(to top, #136F63 0%, #0D4B5C 36%, #072942 70%, #041528 100%)",
             }}
-            className="fixed inset-0 w-full h-full z-[70] flex flex-col items-center justify-center p-6 overflow-hidden select-none"
+            className="fixed inset-0 w-full h-full z-[70] flex flex-col items-center justify-end pb-8 sm:pb-12 px-4 overflow-hidden select-none"
           >
-            {/* Havai Fişek Kanvası */}
+            {/* Yukarıda Patlayan Yazılı Havai Fişek Kanvası */}
             <canvas
               ref={fireworksCanvasRef}
               className="pointer-events-none fixed inset-0 w-full h-full z-10 block"
@@ -212,7 +365,7 @@ export function FinalSurprise() {
                   const left = (idx * 97) % 100;
                   const delay = (idx % 10) * 0.35;
                   const duration = 5.5 + (idx % 6) * 1.1;
-                  const size = 16 + (idx % 5) * 6;
+                  const size = 15 + (idx % 5) * 5;
                   return (
                     <motion.span
                       key={idx}
@@ -223,9 +376,9 @@ export function FinalSurprise() {
                         scale: 0.4,
                       }}
                       animate={{
-                        opacity: [0, 0.9, 0],
+                        opacity: [0, 0.85, 0],
                         y: "-55vh",
-                        scale: [0.5, 1.15, 0.85],
+                        scale: [0.5, 1.12, 0.85],
                       }}
                       transition={{
                         duration,
@@ -262,57 +415,53 @@ export function FinalSurprise() {
                 marginTop: "env(safe-area-inset-top, 0px)",
                 marginRight: "env(safe-area-inset-right, 0px)",
               }}
-              className="fixed top-4 right-4 sm:top-5 sm:right-6 md:top-6 md:right-8 z-[75] inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 min-h-[46px] sm:min-h-[48px] rounded-full bg-white/85 backdrop-blur-xl border border-[#7DD3FC] text-xs sm:text-sm uppercase tracking-[0.18em] text-[#0F3D3E] font-semibold hover:bg-[#0EA5E9] hover:text-white active:scale-95 transition-all cursor-pointer touch-manipulation shadow-md"
+              className="fixed top-4 right-4 sm:top-5 sm:right-6 md:top-6 md:right-8 z-[75] inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 min-h-[46px] sm:min-h-[48px] rounded-full bg-[#06383E]/85 backdrop-blur-xl border border-[#A7F3D0]/50 text-xs sm:text-sm uppercase tracking-[0.18em] text-white font-semibold hover:bg-[#0EA5E9] active:scale-95 transition-all cursor-pointer touch-manipulation shadow-lg"
             >
-              <X className="w-4 h-4 shrink-0" />
+              <X className="w-4 h-4 shrink-0 text-[#A7F3D0]" />
               <span>{UNIVERSE_CONFIG.surprise.closeButtonText}</span>
             </button>
 
-            {/* Merkez Aydınlık Final Mesajı */}
+            {/* Alt-Orta Mesaj Kartı (Üstteki yazılı havai fişeği kapatmaz) */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 25 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.2 }}
-              className="relative z-20 max-w-3xl mx-auto text-center space-y-6 px-6 py-8 sm:p-10 rounded-[2.25rem] bg-white/70 backdrop-blur-xl border-2 border-white shadow-[0_20px_70px_rgba(14,165,233,0.28)]"
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.35 }}
+              className="relative z-20 max-w-2xl w-full mx-auto text-center space-y-4 px-5 py-6 sm:p-8 rounded-[2rem] bg-[#06383E]/65 backdrop-blur-xl border border-white/25 shadow-[0_18px_55px_rgba(4,21,40,0.5)]"
             >
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#10B981] to-[#0EA5E9] p-1 shadow-[0_10px_30px_rgba(14,165,233,0.35)]">
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                  <Heart className="w-10 h-10 text-[#E11D48] fill-[#E11D48] animate-pulse" />
-                </div>
-              </div>
+              {isReducedMotion && (
+                <p className="font-serif font-extrabold text-2xl sm:text-4xl text-[#FDE68A]">
+                  SENİ ÇOK SEVİYORUM GİZEM ❤️
+                </p>
+              )}
 
-              <p className="font-serif font-extrabold text-3xl sm:text-5xl md:text-6xl bg-gradient-to-r from-[#0F766E] via-[#0284C7] to-[#E11D48] bg-clip-text text-transparent tracking-wide">
-                SENİ ÇOK SEVİYORUM GİZEM ❤️
-              </p>
-
-              <h2 className="font-serif italic font-semibold text-2xl sm:text-3xl md:text-4xl text-[#0F3D3E] leading-snug">
+              <h2 className="font-serif italic font-semibold text-xl sm:text-3xl text-white leading-snug">
                 &ldquo;{UNIVERSE_CONFIG.surprise.mainMessage}&rdquo;
               </h2>
 
-              <p className="font-serif font-bold text-xl sm:text-2xl text-[#0F766E]">
+              <p className="font-serif font-bold text-lg sm:text-2xl bg-gradient-to-r from-[#FDE68A] via-[#A7F3D0] to-[#BAE6FD] bg-clip-text text-transparent">
                 {UNIVERSE_CONFIG.surprise.subMessage}
               </p>
 
-              <div className="pt-2">
+              <div className="pt-1">
                 <button
                   type="button"
                   onClick={() => {
                     confetti({
                       particleCount: Math.round(90 * particleCountMultiplier),
                       spread: 120,
-                      origin: { y: 0.6 },
+                      origin: { y: 0.65 },
                       colors: [
-                        "#0EA5E9",
-                        "#10B981",
-                        "#F59E0B",
-                        "#E11D48",
+                        "#38BDF8",
+                        "#34D399",
+                        "#FDE68A",
+                        "#FB7185",
                         "#FFFFFF",
                       ],
                     });
                   }}
-                  className="inline-flex items-center gap-2 px-7 py-3.5 min-h-[48px] rounded-full bg-gradient-to-r from-[#0EA5E9] to-[#10B981] hover:brightness-105 border-2 border-white text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-white shadow-[0_10px_28px_rgba(14,165,233,0.35)] transition-all cursor-pointer active:scale-95"
+                  className="inline-flex items-center gap-2 px-6 py-3 min-h-[46px] rounded-full bg-gradient-to-r from-[#059669] to-[#0284C7] hover:brightness-110 border border-white/45 text-xs sm:text-sm uppercase tracking-[0.18em] font-semibold text-white shadow-[0_8px_26px_rgba(14,165,233,0.4)] transition-all cursor-pointer active:scale-95"
                 >
-                  <Sparkles className="w-4 h-4 shrink-0" />
+                  <Sparkles className="w-4 h-4 shrink-0 text-[#FDE68A]" />
                   <span>Daha Fazla Konfeti &amp; Havai Fişek Yağdır</span>
                 </button>
               </div>
