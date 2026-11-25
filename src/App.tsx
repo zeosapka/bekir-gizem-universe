@@ -11,6 +11,7 @@ import { DiscoveryMap } from "./components/DiscoveryMap";
 import { RomanticShowcaseBanner } from "./components/RomanticShowcaseBanner";
 import { SidePhotoStreams } from "./components/SidePhotoStreams";
 import { BirthdayCountdown } from "./components/BirthdayCountdown";
+import { StarMapSection } from "./components/StarMapSection";
 import { CoupleTimeline } from "./components/CoupleTimeline";
 import { SeventeenReasonsAndHug } from "./components/SeventeenReasonsAndHug";
 import { InteractiveLoveLetter } from "./components/InteractiveLoveLetter";
@@ -87,6 +88,9 @@ export function App() {
 
           {/* 2. Real-Time Elapsed Time Since 17 Nov 2023 */}
           <BirthdayCountdown />
+
+          {/* 2.2. Serdivan, Sakarya — 17 Kasım 2023 Akşamı Gerçek Yıldız Haritası */}
+          <StarMapSection />
 
           {/* 2.5. Bekir & Gizem'in 17 Kasım Aşk Zaman Çizelgesi */}
           <CoupleTimeline />
