@@ -44,8 +44,8 @@ const SEVENTEEN_REASONS: ReasonCard[] = [
   {
     id: 2,
     type: "funny",
-    title: "Tatlı İnatlaşmalarımız",
-    content: "Küçük şeylere 3 dakika trip atıp 4. dakikada dayanamayıp gülmeni sevdiğim için! 😄",
+    title: "İki Saatlik Tatlı Triplerin",
+    content: "Küçük şeylere iki saat trip atsan bile o halini bile ayrı sevdiğim için! 😄❤️",
   },
   {
     id: 3,
@@ -81,15 +81,15 @@ const SEVENTEEN_REASONS: ReasonCard[] = [
   },
   {
     id: 8,
-    type: "funny",
-    title: "Film Gecesi Uykusu",
-    content: "Filmi büyük heyecanla seçip daha 15. dakikada omzumda uyuyakaldığın için! 🎬",
+    type: "message",
+    title: "Hayvanlara Olan Sevgin",
+    content: "Sokaktaki minik canlara bile sevgiyle yaklaşan o merhametli, kocaman yüreğin için. 🐾💚",
   },
   {
     id: 9,
     type: "message",
-    title: "Merhametli Kalbin",
-    content: "İnsanlara, hayvanlara ve bana karşı taşıdığın o güzel yüreğin için.",
+    title: "İnce Düşünceliğin",
+    content: "En küçük ayrıntıyı bile unutmayan o zarif ve ince düşünceliğinle beni hep mutlu ettiğin için.",
   },
   {
     id: 10,

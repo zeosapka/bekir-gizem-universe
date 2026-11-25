@@ -7,6 +7,7 @@ import { MusicPlayer } from "./components/MusicPlayer";
 import { FlowerBloomIntro } from "./components/FlowerBloomIntro";
 import { OpeningPortal } from "./components/OpeningPortal";
 import { HeroCelebration } from "./components/HeroCelebration";
+import { DiscoveryMap } from "./components/DiscoveryMap";
 import { RomanticShowcaseBanner } from "./components/RomanticShowcaseBanner";
 import { SidePhotoStreams } from "./components/SidePhotoStreams";
 import { BirthdayCountdown } from "./components/BirthdayCountdown";
@@ -77,6 +78,9 @@ export function App() {
             <Sparkles className="w-4 h-4 text-[#A7F3D0] animate-pulse" />
             <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent via-[#7DD3FC] to-[#A7F3D0]" />
           </div>
+
+          {/* 1.2. Gizem'in Keşif Yolculuğu (İnteraktif Harita Modu) */}
+          <DiscoveryMap />
 
           {/* 1.5. Yanarlı Dönerli Çift Bannerı & Filigranlı 3'lü Fotoğraf Vitrini */}
           <RomanticShowcaseBanner />
