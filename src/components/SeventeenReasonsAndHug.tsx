@@ -52,7 +52,7 @@ const SEVENTEEN_REASONS: ReasonCard[] = [
     type: "photo",
     title: "Özel Karemiz I",
     content: "Birlikte baktığımız her gökyüzü aynı güzellikte.",
-    imageUrl: "./moments/wall-6.png",
+    imageUrl: "./moments/gz-3.jpeg",
   },
   {
     id: 4,
@@ -71,7 +71,7 @@ const SEVENTEEN_REASONS: ReasonCard[] = [
     type: "photo",
     title: "Özel Karemiz II",
     content: "Seninle her mevsim bahar.",
-    imageUrl: "./moments/wall-21.png",
+    imageUrl: "./moments/gz-7.jpeg",
   },
   {
     id: 7,
@@ -96,7 +96,7 @@ const SEVENTEEN_REASONS: ReasonCard[] = [
     type: "photo",
     title: "Özel Karemiz III",
     content: "Aynı yıldızların altında el ele.",
-    imageUrl: "./moments/wall-16.png",
+    imageUrl: "./moments/gz-11.jpeg",
   },
   {
     id: 11,
@@ -121,7 +121,7 @@ const SEVENTEEN_REASONS: ReasonCard[] = [
     type: "photo",
     title: "Özel Karemiz IV",
     content: "Yolculuğumuzun en güzel durakları.",
-    imageUrl: "./moments/wall-4.png",
+    imageUrl: "./moments/gz-15.jpeg",
   },
   {
     id: 15,
@@ -444,7 +444,7 @@ export function SeventeenReasonsAndHug() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#06383E]/70 via-transparent to-transparent" />
                         <span className="absolute bottom-1.5 right-2 text-[9px] text-[#A7F3D0] font-semibold">
-                          G&amp;B • 17.11.23
+                          G&amp;B ❤️
                         </span>
                       </div>
                     )}

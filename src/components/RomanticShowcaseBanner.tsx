@@ -7,6 +7,7 @@ interface FrameSlot {
   label: string;
   caption: string;
   emoji: string;
+  defaultImage: string;
   isCenter?: boolean;
 }
 
@@ -16,12 +17,14 @@ const FRAME_SLOTS: FrameSlot[] = [
     label: "En Güzel Anımız",
     caption: "Gülüşümüz & Neşemiz",
     emoji: "🌷",
+    defaultImage: "./moments/gz-18.jpeg",
   },
   {
     id: "slot-center",
     label: "Gizem & Bekir",
     caption: "Birlikte En Güzel Karemiz",
     emoji: "❤️",
+    defaultImage: "./moments/gz-14.jpeg",
     isCenter: true,
   },
   {
@@ -29,6 +32,7 @@ const FRAME_SLOTS: FrameSlot[] = [
     label: "Biricik Aşkım",
     caption: "Seninle Güzel Günlerimiz",
     emoji: "🌼",
+    defaultImage: "./moments/gz-15.jpeg",
   },
 ];
 
@@ -141,7 +145,7 @@ export function RomanticShowcaseBanner() {
           {/* Yanlarda ve Ortada 3'lü Estetik Fotoğraf Alanı */}
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-7 items-center">
             {FRAME_SLOTS.map((slot) => {
-              const photoUrl = photos[slot.id];
+              const photoUrl = photos[slot.id] || slot.defaultImage;
 
               return (
                 <label

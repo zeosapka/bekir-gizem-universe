@@ -88,11 +88,11 @@
 }
 
 .animate-stream-up {
-  animation: streamUp 115s linear infinite;
+  animation: streamUp 65s linear infinite;
 }
 
 .animate-stream-down {
-  animation: streamDown 125s linear infinite;
+  animation: streamDown 72s linear infinite;
 }
 
 .safari-perspective {

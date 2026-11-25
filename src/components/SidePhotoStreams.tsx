@@ -9,15 +9,15 @@ export interface SidePhotoItem {
 }
 
 /**
- * Sağ ve sol yan akış şeritleri için C:\Users\Legolas\Downloads\wallpaper içindeki 38 görsel.
+ * Sağ ve sol yan akış şeritleri için Gizem & Bekir'in 18 gerçek fotoğrafı.
  * Sayfa her açıldığında rastgele karıştırılarak yanarlı dönerli, yarı şeffaf ve filigranlı olarak akar.
  */
 export const SIDE_STREAM_PHOTOS: SidePhotoItem[] = Array.from(
-  { length: 38 },
+  { length: 18 },
   (_, index) => ({
-    id: `wall-${index + 1}`,
-    imageUrl: `./moments/wall-${index + 1}.png`,
-    caption: "17 Kasım 2023",
+    id: `gz-${index + 1}`,
+    imageUrl: `./moments/gz-${index + 1}.jpeg`,
+    caption: "Gizem & Bekir",
     emoji: index % 3 === 0 ? "🌹" : index % 3 === 1 ? "🌷" : "🌼",
   })
 );
@@ -66,7 +66,7 @@ function StreamCard({ item }: { item: SidePhotoItem }) {
           </span>
           <span className="inline-flex items-center gap-0.5 text-[9px] text-[#A7F3D0] font-semibold shrink-0">
             <Heart className="w-2.5 h-2.5 fill-[#A7F3D0]" />
-            17.11.23
+            G &amp; B
           </span>
         </div>
       </div>
