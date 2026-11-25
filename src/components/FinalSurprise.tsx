@@ -52,10 +52,10 @@ function sampleTextTargets(
 
   const cy = off.height * 0.52;
   if (isNarrow) {
-    octx.fillText("SENİ ÇOK SEVİYORUM", off.width / 2, cy - fontSize * 0.65);
-    octx.fillText("GİZEM ❤️", off.width / 2, cy + fontSize * 0.65);
+    octx.fillText("SENİ ÇOK", off.width / 2, cy - fontSize * 0.65);
+    octx.fillText("SEVİYORUM ❤️", off.width / 2, cy + fontSize * 0.65);
   } else {
-    octx.fillText("SENİ ÇOK SEVİYORUM GİZEM", off.width / 2, cy);
+    octx.fillText("SENİ ÇOK SEVİYORUM", off.width / 2, cy);
   }
 
   const img = octx.getImageData(0, 0, off.width, off.height).data;
@@ -77,6 +77,109 @@ function sampleTextTargets(
   }
   return points;
 }
+
+const LOVE_100_LANGUAGES: [string, string][] = [
+  ["Türkçe", "Seni çok seviyorum"],
+  ["İngilizce", "I love you"],
+  ["İspanyolca", "Te amo"],
+  ["Fransızca", "Je t'aime"],
+  ["İtalyanca", "Ti amo"],
+  ["Almanca", "Ich liebe dich"],
+  ["Portekizce", "Eu te amo"],
+  ["Rusça", "Ya lyublyu tebya"],
+  ["Arapça", "Uhibbuki"],
+  ["Japonca", "Aishiteru"],
+  ["Korece", "Saranghae"],
+  ["Çince", "Wo ai ni"],
+  ["Yunanca", "S'agapo"],
+  ["Hollandaca", "Ik hou van jou"],
+  ["İsveççe", "Jag älskar dig"],
+  ["Norveççe", "Jeg elsker deg"],
+  ["Danca", "Jeg elsker dig"],
+  ["Fince", "Minä rakastan sinua"],
+  ["Lehçe", "Kocham cię"],
+  ["Çekçe", "Miluji tě"],
+  ["Slovakça", "Ľúbim ťa"],
+  ["Macarca", "Szeretlek"],
+  ["Rumence", "Te iubesc"],
+  ["Bulgarca", "Obicham te"],
+  ["Sırpça", "Volim te"],
+  ["Hırvatça", "Volim te"],
+  ["Boşnakça", "Volim te"],
+  ["Arnavutça", "Të dua"],
+  ["Azerice", "Mən səni sevirəm"],
+  ["Özbekçe", "Men seni sevaman"],
+  ["Kazakça", "Men seni jaqsı köremin"],
+  ["Kırgızca", "Men seni süyöm"],
+  ["Türkmence", "Men seni söýýärin"],
+  ["Farsça", "Dooset daram"],
+  ["Hintçe", "Main tumse pyaar karta hoon"],
+  ["Urduca", "Mujhe tumse pyaar hai"],
+  ["Bengalce", "Ami tomake bhalobashi"],
+  ["Pencapça", "Main tainu pyaar karda haan"],
+  ["Tamilce", "Naan unnai kadhalikkiren"],
+  ["Teluguca", "Nenu ninnu premistunnanu"],
+  ["Tayca", "Phom rak khun"],
+  ["Vietnamca", "Anh yêu em"],
+  ["Endonezce", "Aku cinta kamu"],
+  ["Malayca", "Saya cinta padamu"],
+  ["Tagalog", "Mahal kita"],
+  ["Svahili", "Nakupenda"],
+  ["Zuluca", "Ngiyakuthanda"],
+  ["Afrikaans", "Ek het jou lief"],
+  ["Amharca", "Ewedihalehu"],
+  ["İbranice", "Ani ohev otach"],
+  ["Katalanca", "T'estimo"],
+  ["Baskça", "Maite zaitut"],
+  ["Galiçyaca", "Quérote"],
+  ["İrlandaca", "Tà grà agam duit"],
+  ["İskoçça", "Tha gaol agam ort"],
+  ["Galce", "Rwy'n dy garu di"],
+  ["İzlandaca", "Ég elska þig"],
+  ["Letonca", "Es tevi mīlu"],
+  ["Litvanca", "Aš tave myliu"],
+  ["Estonca", "Ma armastan sind"],
+  ["Ukraynaca", "Ya tebe kokhayu"],
+  ["Belarusça", "Ya cyabe kakhayu"],
+  ["Gürcüce", "Miqvarxar"],
+  ["Makedonca", "Te sakam"],
+  ["Slovence", "Ljubim te"],
+  ["Maltaca", "Inħobbok"],
+  ["Latince", "Te amo"],
+  ["Esperanto", "Mi amas vin"],
+  ["Hawaiice", "Aloha wau iā 'oe"],
+  ["Maorice", "Aroha ahau ki a koe"],
+  ["Samoaca", "Ou te alofa ia te oe"],
+  ["Tibetçe", "Nga khyed rang la dga' po yod"],
+  ["Moğolca", "Bi chamd hairtai"],
+  ["Nepalce", "Ma timilai maya garchu"],
+  ["Sinhalaca", "Mama oyata adarei"],
+  ["Kmerce", "Bong srolanh oun"],
+  ["Laoca", "Khoi hak jao"],
+  ["Birmanca", "Chit pa de"],
+  ["Cava Dili", "Aku tresno sliramu"],
+  ["Sunda Dili", "Abdi bogoh ka anjeun"],
+  ["Korsikaca", "Ti tengu caru"],
+  ["Lüksemburgca", "Ech hunn dech gär"],
+  ["Kürtçe", "Ez ji te hez dikim"],
+  ["Zazaca", "Ez to ra hez kena"],
+  ["Lazca", "Ma si maoropen"],
+  ["Çerkezce", "Se wo s'shiyag'u"],
+  ["Tatarca", "Min sine yaratam"],
+  ["Başkurtça", "Min hine yaratam"],
+  ["Uygurca", "Men sini söyimen"],
+  ["Kırım Tatarcası", "Men seni sevem"],
+  ["Gagavuzca", "Bän seni severim"],
+  ["Chichewa", "Ndimakukonda"],
+  ["Yoruba", "Mo ni fe re"],
+  ["Igbo", "A hụrụ m gị n'anya"],
+  ["Hausa", "Ina sonki"],
+  ["Somali", "Waan ku jeclahay"],
+  ["Malgaşça", "Tiako ianao"],
+  ["Kinyarwanda", "Ndagukunda"],
+  ["Shona", "Ndinokuda"],
+  ["Aymara", "Munsmawa"],
+];
 
 export function FinalSurprise() {
   const [isOpen, setIsOpen] = useState(false);
@@ -430,7 +533,7 @@ export function FinalSurprise() {
             >
               {isReducedMotion && (
                 <p className="font-serif font-extrabold text-2xl sm:text-4xl text-[#FDE68A]">
-                  SENİ ÇOK SEVİYORUM GİZEM ❤️
+                  SENİ ÇOK SEVİYORUM ❤️
                 </p>
               )}
 
@@ -438,9 +541,27 @@ export function FinalSurprise() {
                 &ldquo;{UNIVERSE_CONFIG.surprise.mainMessage}&rdquo;
               </h2>
 
-              <p className="font-serif font-bold text-lg sm:text-2xl bg-gradient-to-r from-[#FDE68A] via-[#A7F3D0] to-[#BAE6FD] bg-clip-text text-transparent">
-                {UNIVERSE_CONFIG.surprise.subMessage}
-              </p>
+              {/* 100 Dilde Seni Seviyorum (Önce Türkçe, sonra diğer 99 dil) */}
+              <div className="rounded-2xl bg-[#04282D]/65 border border-[#A7F3D0]/30 p-3.5 sm:p-4 text-left">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-[#FDE68A] font-semibold text-center mb-2.5">
+                  100 Dilde Seni Seviyorum • Önce Türkçe ❤️
+                </p>
+                <div className="max-h-28 sm:max-h-32 overflow-y-auto pr-1 flex flex-wrap items-center justify-center gap-1.5">
+                  {LOVE_100_LANGUAGES.map(([lang, phrase], idx) => (
+                    <span
+                      key={`${lang}-${idx}`}
+                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] ${
+                        idx === 0
+                          ? "bg-gradient-to-r from-[#059669] to-[#0284C7] text-white font-semibold border border-white/60 shadow"
+                          : "bg-white/10 text-[#E0F2FE]/90 border border-white/15"
+                      }`}
+                    >
+                      <span className="text-[#A7F3D0] font-medium">{lang}:</span>
+                      <span>{phrase}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
 
               <div className="pt-1">
                 <button
