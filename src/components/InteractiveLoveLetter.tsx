@@ -73,18 +73,18 @@ export function InteractiveLoveLetter() {
               if (e.key === "Enter" || e.key === " ") handleOpenEnvelope();
             }}
             aria-label={UNIVERSE_CONFIG.loveLetter.openEnvelopeAriaLabel}
-            className="group relative mx-auto max-w-2xl cursor-pointer select-none rounded-[2rem] p-8 sm:p-12 md:p-16 bg-gradient-to-br from-[#2B0B21] via-[#17091C] to-[#0E0514] border-2 border-[#F5D58A]/45 shadow-[0_20px_70px_rgba(14, 165, 233,0.28)] hover:border-[#F5D58A] transition-all duration-500 overflow-hidden"
+            className="group relative mx-auto max-w-2xl cursor-pointer select-none rounded-[2rem] p-8 sm:p-12 md:p-16 bg-gradient-to-br from-[#0D9488]/85 via-[#06383E]/90 to-[#0284C7]/85 backdrop-blur-xl border-2 border-[#A7F3D0]/55 shadow-[0_20px_70px_rgba(14,165,233,0.3)] hover:border-white transition-all duration-500 overflow-hidden"
           >
             {/* Zarf Kapağı Üçgen Kesim */}
             <div
-              className="pointer-events-none absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[#06383E]/60 to-transparent border-b border-[#F5D58A]/25"
+              className="pointer-events-none absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[#BAE6FD]/25 to-transparent border-b border-[#A7F3D0]/30"
               style={{
                 clipPath: "polygon(0 0, 100% 0, 50% 100%)",
               }}
             />
 
             {/* Işıltı Katmanı */}
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(245,213,138,0.16),transparent_65%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(167,243,208,0.22),transparent_65%)]" />
 
             <div className="relative z-10 flex flex-col items-center justify-center py-6 sm:py-10 text-center">
               {/* Altın Balmumu Mühür */}
@@ -119,13 +119,13 @@ export function InteractiveLoveLetter() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
-            className="relative mx-auto max-w-3xl rounded-[2.25rem] p-7 sm:p-12 md:p-16 bg-gradient-to-b from-[#1E0C26]/95 via-[#13081C]/95 to-[#0B0512]/95 backdrop-blur-2xl border-2 border-[#F5D58A]/45 shadow-[0_25px_90px_rgba(14, 165, 233,0.3)] overflow-hidden"
+            className="relative mx-auto max-w-3xl rounded-[2.25rem] p-7 sm:p-12 md:p-16 bg-gradient-to-b from-[#06383E]/90 via-[#04282D]/95 to-[#073349]/95 backdrop-blur-2xl border-2 border-[#A7F3D0]/50 shadow-[0_25px_90px_rgba(14,165,233,0.32)] overflow-hidden"
           >
-            {/* Altın Köşe Süslemeleri */}
-            <div className="pointer-events-none absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-[#F5D58A]/45 rounded-tl-xl" />
-            <div className="pointer-events-none absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-[#F5D58A]/45 rounded-tr-xl" />
-            <div className="pointer-events-none absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-[#F5D58A]/45 rounded-bl-xl" />
-            <div className="pointer-events-none absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-[#F5D58A]/45 rounded-br-xl" />
+            {/* Köşe Süslemeleri */}
+            <div className="pointer-events-none absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-[#A7F3D0]/50 rounded-tl-xl" />
+            <div className="pointer-events-none absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-[#BAE6FD]/50 rounded-tr-xl" />
+            <div className="pointer-events-none absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-[#BAE6FD]/50 rounded-bl-xl" />
+            <div className="pointer-events-none absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-[#A7F3D0]/50 rounded-br-xl" />
 
             {/* Üst Mühür & Kontroller */}
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#F5D58A]/20 pb-5 mb-8">
@@ -157,7 +157,7 @@ export function InteractiveLoveLetter() {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 min-h-[42px] rounded-full text-xs tracking-wider uppercase bg-[#1A0D26] text-[#A7F3D0] border border-[#A7F3D0]/30 hover:border-[#A7F3D0] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 min-h-[42px] rounded-full text-xs tracking-wider uppercase bg-[#06383E]/80 text-[#A7F3D0] border border-[#A7F3D0]/40 hover:border-white hover:text-white transition-colors cursor-pointer"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                   <span>{UNIVERSE_CONFIG.loveLetter.foldButton}</span>

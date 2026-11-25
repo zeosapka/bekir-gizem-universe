@@ -132,8 +132,8 @@ const SEVENTEEN_REASONS: ReasonCard[] = [
   {
     id: 16,
     type: "funny",
-    title: "Kahve Bahane",
-    content: "'Sadece bir kahve içip kalkacağız' deyip saatlerce sohbetten kalkamadığımız için! ☕",
+    title: "Tatlı Atışmalarımız",
+    content: "Birbirimizle yaptığımız o bitmeyen tatlı atışmaların sonunda yine gülümseyerek buluştuğumuz için! 😄💙",
   },
   {
     id: 17,
