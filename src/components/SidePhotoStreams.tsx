@@ -9,29 +9,23 @@ export interface SidePhotoItem {
 }
 
 /**
- * Sağ ve sol yan akış şeritleri için 12 adet hazır fotoğraf slotu (10-20 fotoğrafa kadar kolayca artırılabilir).
- * Fotoğraflar `/public/moments/` klasörüne eklendiğinde `imageUrl: "./moments/foto1.jpg"` şeklinde bağlanır.
- * Boşken sitenin yeşil-mavi temasıyla uyumlu yarı şeffaf filigranlı estetik kartlar akar.
+ * Sağ ve sol yan akış şeritleri için C:\Users\Legolas\Downloads\wallpaper içindeki 38 görsel.
+ * Sayfa her açıldığında rastgele karıştırılarak yanarlı dönerli, yarı şeffaf ve filigranlı olarak akar.
  */
-export const SIDE_STREAM_PHOTOS: SidePhotoItem[] = [
-  { id: "s1", imageUrl: "", caption: "17 Kasım 2023", emoji: "🌹" },
-  { id: "s2", imageUrl: "", caption: "İlk Tebessüm", emoji: "🌷" },
-  { id: "s3", imageUrl: "", caption: "Birlikte Kahve", emoji: "☕" },
-  { id: "s4", imageUrl: "", caption: "Güzel Günümüz", emoji: "🌼" },
-  { id: "s5", imageUrl: "", caption: "El Ele", emoji: "✨" },
-  { id: "s6", imageUrl: "", caption: "Aşkımız", emoji: "💚" },
-  { id: "s7", imageUrl: "", caption: "Anılarımız", emoji: "📸" },
-  { id: "s8", imageUrl: "", caption: "Mutluluk", emoji: "🦋" },
-  { id: "s9", imageUrl: "", caption: "Gülüşün", emoji: "🌸" },
-  { id: "s10", imageUrl: "", caption: "Sonsuza Dek", emoji: "💍" },
-  { id: "s11", imageUrl: "", caption: "Yolculuğumuz", emoji: "✈️" },
-  { id: "s12", imageUrl: "", caption: "Bekir & Gizem", emoji: "💙" },
-];
+export const SIDE_STREAM_PHOTOS: SidePhotoItem[] = Array.from(
+  { length: 38 },
+  (_, index) => ({
+    id: `wall-${index + 1}`,
+    imageUrl: `./moments/wall-${index + 1}.png`,
+    caption: "17 Kasım 2023",
+    emoji: index % 3 === 0 ? "🌹" : index % 3 === 1 ? "🌷" : "🌼",
+  })
+);
 
-function shuffleItems(items: SidePhotoItem[], seedOffset: number): SidePhotoItem[] {
+function shuffleItems(items: SidePhotoItem[]): SidePhotoItem[] {
   const arr = [...items];
   for (let i = arr.length - 1; i > 0; i--) {
-    const j = (i * 7 + seedOffset * 3) % (i + 1);
+    const j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;
@@ -82,12 +76,12 @@ function StreamCard({ item }: { item: SidePhotoItem }) {
 
 export function SidePhotoStreams() {
   const leftTrack = useMemo(() => {
-    const shuffled = shuffleItems(SIDE_STREAM_PHOTOS, 1);
+    const shuffled = shuffleItems(SIDE_STREAM_PHOTOS);
     return [...shuffled, ...shuffled];
   }, []);
 
   const rightTrack = useMemo(() => {
-    const shuffled = shuffleItems(SIDE_STREAM_PHOTOS, 5);
+    const shuffled = shuffleItems(SIDE_STREAM_PHOTOS);
     return [...shuffled, ...shuffled];
   }, []);
 
