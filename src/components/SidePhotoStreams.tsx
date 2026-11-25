@@ -91,8 +91,8 @@ export function SidePhotoStreams() {
       className="hidden lg:block fixed inset-0 pointer-events-none z-[55] overflow-hidden"
     >
       {/* Sol Yan Akan Fotoğraf Şeridi (Yukarı Akış) */}
-      <div className="absolute left-2 xl:left-4 2xl:left-6 top-0 bottom-0 w-24 xl:w-32 2xl:w-40 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
-        <div className="flex flex-col gap-5 animate-stream-up will-change-transform">
+      <div className="absolute left-2 xl:left-3 2xl:left-5 top-0 bottom-0 w-20 xl:w-28 2xl:w-36 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+        <div className="flex flex-col gap-4 xl:gap-5 animate-stream-up will-change-transform">
           {leftTrack.map((item, idx) => (
             <StreamCard key={`left-${item.id}-${idx}`} item={item} />
           ))}
@@ -100,8 +100,8 @@ export function SidePhotoStreams() {
       </div>
 
       {/* Sağ Yan Akan Fotoğraf Şeridi (Aşağı Akış) */}
-      <div className="absolute right-2 xl:right-4 2xl:right-6 top-0 bottom-0 w-24 xl:w-32 2xl:w-40 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
-        <div className="flex flex-col gap-5 animate-stream-down will-change-transform">
+      <div className="absolute right-2 xl:right-3 2xl:right-5 top-0 bottom-0 w-20 xl:w-28 2xl:w-36 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+        <div className="flex flex-col gap-4 xl:gap-5 animate-stream-down will-change-transform">
           {rightTrack.map((item, idx) => (
             <StreamCard key={`right-${item.id}-${idx}`} item={item} />
           ))}

@@ -65,11 +65,11 @@ export function App() {
       {hasEntered && (
         <>
           <motion.main
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.1, ease: "easeOut" }}
-          className="relative z-10 w-full max-w-full overflow-x-hidden pb-16"
-        >
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.1, ease: "easeOut" }}
+            className="relative z-10 w-full max-w-full overflow-x-hidden pb-16 lg:px-24 xl:px-36 2xl:px-44"
+          >
           {/* 1. Hero Celebration Screen */}
           <HeroCelebration />
 

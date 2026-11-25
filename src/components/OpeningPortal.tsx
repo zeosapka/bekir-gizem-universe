@@ -301,7 +301,7 @@ export function OpeningPortal({ onEnterUniverse }: OpeningPortalProps) {
       {/* Main Text & Call to Action */}
       <div
         ref={contentWrapperRef}
-        className="relative z-20 max-w-3xl mx-auto text-center flex flex-col items-center"
+        className="relative z-20 max-w-3xl mx-auto text-center flex flex-col items-center lg:px-28 xl:px-36 2xl:px-44"
       >
         <motion.p
           initial={{ opacity: 0, y: 18 }}
