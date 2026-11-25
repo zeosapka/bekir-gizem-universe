@@ -131,7 +131,7 @@ export function InteractiveLoveLetter() {
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#F5D58A]/20 pb-5 mb-8">
               <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[#F5D58A] to-[#C68F32] text-[#06383E] font-serif font-bold text-xs shadow-md">
-                  B ❤️ G
+                  G ❤️ B
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-[#F5D58A]">
