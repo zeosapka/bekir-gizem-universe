@@ -541,12 +541,12 @@ export function MusicPlayer() {
               ? UNIVERSE_CONFIG.musicPlayer.unmuteAriaLabel
               : UNIVERSE_CONFIG.musicPlayer.muteAriaLabel
           }
-          className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-full bg-[#12091E]/85 backdrop-blur-xl border border-[#F5D58A]/30 text-[#FFF8FC] hover:border-[#F5D58A]/75 active:scale-95 transition-all cursor-pointer touch-manipulation"
+          className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-full bg-[#06383E]/70 backdrop-blur-xl border border-[#A7F3D0]/40 text-white hover:border-white/75 active:scale-95 transition-all cursor-pointer touch-manipulation"
         >
           {isMuted ? (
-            <VolumeX className="w-5 h-5 text-[#FF91B5]" />
+            <VolumeX className="w-5 h-5 text-[#BAE6FD]" />
           ) : (
-            <Volume2 className="w-5 h-5 text-[#F5D58A]" />
+            <Volume2 className="w-5 h-5 text-[#A7F3D0]" />
           )}
         </button>
       )}

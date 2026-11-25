@@ -22,44 +22,28 @@ const COUPONS: LoveCoupon[] = [
     validity: "İstediğin herhangi bir akşam geçerli",
   },
   {
-    id: "coupon-coffee",
+    id: "coupon-city",
     code: "BG-1711-02",
-    emoji: "☕",
-    title: "Gece Yarısı Kahve & Tatlı",
-    desc: "Canın ne zaman çekerse kahve ve en sevdiğin tatlı için yola çıkıyoruz.",
-    validity: "7/24 Aşk Garantili",
-  },
-  {
-    id: "coupon-flowers",
-    code: "BG-1711-03",
-    emoji: "💐",
-    title: "Gül, Lale & Papatya Buketi",
-    desc: "En güzel üç çiçeğimizi bir araya getiren sürpriz buket hakkı.",
-    validity: "Süresiz • Bekir'den Gizem'e",
+    emoji: "✈️",
+    title: "Gidilecek Farklı Bir Şehir",
+    desc: "Haritadan yeni bir şehir seçiyoruz; yeni sokaklar, yeni anılar ikimizin!",
+    validity: "17 Kasım 2023 Hatırası • Süresiz",
   },
   {
     id: "coupon-massage",
-    code: "BG-1711-04",
+    code: "BG-1711-03",
     emoji: "💆",
     title: "15 Dk Şımartma & Masaj",
     desc: "Yorgun bir günün ardından tek dokunuşla aktif olan huzur molası.",
     validity: "İstediğin an kullanılabilir",
   },
   {
-    id: "coupon-roadtrip",
-    code: "BG-1711-05",
-    emoji: "🚗",
-    title: "Plansız Kaçamak & Yürüyüş",
-    desc: "Rotayı sen belirle, müzik listesi bizden; el ele yeni bir yere gidelim.",
-    validity: "Hafta sonu özel hakkı",
-  },
-  {
     id: "coupon-dinner",
-    code: "BG-1711-06",
+    code: "BG-1711-04",
     emoji: "🍽️",
     title: "Özel Yıldönümü Yemeği",
     desc: "Mekân ve menü tamamen senin seçimin, bütün gece sana özel.",
-    validity: "17 Kasım Hatırası • Süresiz",
+    validity: "17 Kasım 2023 Hatırası • Süresiz",
   },
 ];
 
@@ -141,7 +125,7 @@ export function LoveCoupons() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {COUPONS.map((coupon, idx) => {
           const isUsed = redeemed.includes(coupon.id);
 

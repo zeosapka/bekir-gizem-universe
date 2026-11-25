@@ -73,7 +73,7 @@ export function InteractiveLoveLetter() {
               if (e.key === "Enter" || e.key === " ") handleOpenEnvelope();
             }}
             aria-label={UNIVERSE_CONFIG.loveLetter.openEnvelopeAriaLabel}
-            className="group relative mx-auto max-w-2xl cursor-pointer select-none rounded-[2rem] p-8 sm:p-12 md:p-16 bg-gradient-to-br from-[#2B0B21] via-[#17091C] to-[#0E0514] border-2 border-[#F5D58A]/45 shadow-[0_20px_70px_rgba(232,62,112,0.28)] hover:border-[#F5D58A] transition-all duration-500 overflow-hidden"
+            className="group relative mx-auto max-w-2xl cursor-pointer select-none rounded-[2rem] p-8 sm:p-12 md:p-16 bg-gradient-to-br from-[#2B0B21] via-[#17091C] to-[#0E0514] border-2 border-[#F5D58A]/45 shadow-[0_20px_70px_rgba(14, 165, 233,0.28)] hover:border-[#F5D58A] transition-all duration-500 overflow-hidden"
           >
             {/* Zarf Kapağı Üçgen Kesim */}
             <div
@@ -119,7 +119,7 @@ export function InteractiveLoveLetter() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.75, ease: "easeOut" }}
-            className="relative mx-auto max-w-3xl rounded-[2.25rem] p-7 sm:p-12 md:p-16 bg-gradient-to-b from-[#1E0C26]/95 via-[#13081C]/95 to-[#0B0512]/95 backdrop-blur-2xl border-2 border-[#F5D58A]/45 shadow-[0_25px_90px_rgba(232,62,112,0.3)] overflow-hidden"
+            className="relative mx-auto max-w-3xl rounded-[2.25rem] p-7 sm:p-12 md:p-16 bg-gradient-to-b from-[#1E0C26]/95 via-[#13081C]/95 to-[#0B0512]/95 backdrop-blur-2xl border-2 border-[#F5D58A]/45 shadow-[0_25px_90px_rgba(14, 165, 233,0.3)] overflow-hidden"
           >
             {/* Altın Köşe Süslemeleri */}
             <div className="pointer-events-none absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-[#F5D58A]/45 rounded-tl-xl" />
@@ -194,7 +194,7 @@ export function InteractiveLoveLetter() {
                     transition={{ duration: 0.65 }}
                     className={
                       isHighlight
-                        ? "font-semibold text-[#A7F3D0] drop-shadow-[0_0_15px_rgba(232,62,112,0.35)]"
+                        ? "font-semibold text-[#A7F3D0] drop-shadow-[0_0_15px_rgba(14, 165, 233,0.35)]"
                         : "text-[#FFF8FC]/90"
                     }
                   >

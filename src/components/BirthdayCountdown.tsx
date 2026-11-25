@@ -3,34 +3,57 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Sparkles, CalendarHeart, PartyPopper } from "lucide-react";
 import { UNIVERSE_CONFIG } from "../config/universeConfig";
 
-interface TimeLeft {
+interface TimeElapsed {
   days: number;
   hours: number;
   minutes: number;
   seconds: number;
+  yearsLabel: string;
   isBirthdayReached: boolean;
 }
 
-function calculateTimeLeft(): TimeLeft {
-  const target = new Date(UNIVERSE_CONFIG.birthdayIsoDate).getTime();
-  const now = Date.now();
-  const diff = target - now;
+const ANNIVERSARY_START_ISO = "2023-11-17T00:00:00";
 
-  if (diff <= 0) {
-    return {
-      days: 0,
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
-      isBirthdayReached: true,
-    };
+function calculateElapsedTime(): TimeElapsed {
+  const start = new Date(ANNIVERSARY_START_ISO).getTime();
+  const nowDate = new Date();
+  const diff = Math.max(0, nowDate.getTime() - start);
+
+  // Takvim yılı & kalan gün hesabı (17 Kasım 2023'ten bugüne)
+  const startYear = 2023;
+  let years = nowDate.getFullYear() - startYear;
+  const thisYearAnniv = new Date(
+    nowDate.getFullYear(),
+    10,
+    17,
+    0,
+    0,
+    0,
+    0
+  );
+  if (nowDate.getTime() < thisYearAnniv.getTime()) {
+    years -= 1;
   }
+  const lastAnniv = new Date(
+    startYear + Math.max(0, years),
+    10,
+    17,
+    0,
+    0,
+    0,
+    0
+  );
+  const remDays = Math.max(
+    0,
+    Math.floor((nowDate.getTime() - lastAnniv.getTime()) / (1000 * 60 * 60 * 24))
+  );
 
   return {
     days: Math.floor(diff / (1000 * 60 * 60 * 24)),
     hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
     minutes: Math.floor((diff / 1000 / 60) % 60),
     seconds: Math.floor((diff / 1000) % 60),
+    yearsLabel: `${Math.max(0, years)} Yıl • ${remDays} Gün`,
     isBirthdayReached: false,
   };
 }
@@ -71,12 +94,14 @@ function AnimatedDigitCard({ value, label }: { value: number; label: string }) {
 }
 
 export function BirthdayCountdown() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState<TimeElapsed>(() =>
+    calculateElapsedTime()
+  );
   const [previewBirthdayMode, setPreviewBirthdayMode] = useState(false);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      setTimeLeft(calculateElapsedTime());
     }, 1000);
     return () => window.clearInterval(timer);
   }, []);
@@ -88,13 +113,13 @@ export function BirthdayCountdown() {
       id="countdown-section"
       className="relative py-16 md:py-24 px-6 max-w-5xl mx-auto"
     >
-      <div className="relative rounded-[2.25rem] p-6 sm:p-10 md:p-14 bg-gradient-to-br from-[#06383E]/35 via-[#06383E]/80 to-[#04282D]/90 backdrop-blur-2xl border border-[#F5D58A]/30 shadow-[0_0_70px_rgba(232,62,112,0.18)] overflow-hidden">
+      <div className="relative rounded-[2.25rem] p-6 sm:p-10 md:p-14 bg-gradient-to-br from-[#06383E]/35 via-[#06383E]/80 to-[#04282D]/90 backdrop-blur-2xl border border-[#F5D58A]/30 shadow-[0_0_70px_rgba(14, 165, 233,0.18)] overflow-hidden">
         {/* Başlık */}
         <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06383E]/50 border border-[#F5D58A]/30 mb-4">
-            <CalendarHeart className="w-4 h-4 shrink-0 text-[#F5D58A]" />
-            <span className="text-xs tracking-[0.2em] uppercase text-[#F5D58A] font-semibold">
-              {UNIVERSE_CONFIG.countdown.preTitle} • {UNIVERSE_CONFIG.birthdayDisplayDate}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06383E]/65 border border-[#A7F3D0]/35 mb-4">
+            <CalendarHeart className="w-4 h-4 shrink-0 text-[#A7F3D0]" />
+            <span className="text-xs tracking-[0.2em] uppercase text-[#E0F2FE] font-semibold">
+              {UNIVERSE_CONFIG.countdown.preTitle} • {timeLeft.yearsLabel}
             </span>
           </div>
 
@@ -152,7 +177,7 @@ export function BirthdayCountdown() {
             <button
               type="button"
               onClick={() => setPreviewBirthdayMode((prev) => !prev)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full text-xs tracking-[0.18em] uppercase text-[#F5D58A]/85 hover:text-[#FFF8FC] bg-[#160A26]/70 hover:bg-[#06383E]/60 border border-[#F5D58A]/25 transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full text-xs tracking-[0.18em] uppercase text-[#E0F2FE] hover:text-white bg-gradient-to-r from-[#059669]/80 to-[#0284C7]/80 hover:brightness-110 border border-white/35 transition-all cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5 shrink-0 text-[#F5D58A]" />
               <span>

@@ -130,23 +130,23 @@ export function OpeningPortal({ onEnterUniverse }: OpeningPortalProps) {
       const waves = [
         {
           delay: 0,
-          c0: "#FFF8FC",
-          c1: "#F5D58A",
-          c2: "#E83E70",
+          c0: "#FFFFFF",
+          c1: "#BAE6FD",
+          c2: "#38BDF8",
           alpha: 0.96,
         },
         {
           delay: 0.12,
-          c0: "#FFF8FC",
-          c1: "#FF91B5",
-          c2: "#8E1D47",
+          c0: "#FFFFFF",
+          c1: "#A7F3D0",
+          c2: "#10B981",
           alpha: 0.98,
         },
         {
           delay: 0.24,
-          c0: "#4A102D",
-          c1: "#180619",
-          c2: "#080611",
+          c0: "#1DB59A",
+          c1: "#169882",
+          c2: "#1D82C4",
           alpha: 1,
         },
       ];

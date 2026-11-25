@@ -102,11 +102,11 @@ export const UNIVERSE_CONFIG = {
     scrollButtonText: "Hikâyemizi Keşfet",
   },
 
-  // 3. Geri Sayım Ekranı (Anniversary Countdown)
+  // 3. Geri Sayım Ekranı (Anniversary Elapsed Timer)
   countdown: {
-    preTitle: "BİR SONRAKİ 17 KASIM YILDÖNÜMÜMÜZE",
+    preTitle: "17 KASIM 2023'TEN BERİ BİRLİKTE GEÇEN ZAMAN",
     titlePrefix: "Her Saniye Aşkımızı",
-    titleHighlight: "Bir Ömre Daha Yaklaştırıyor",
+    titleHighlight: "Birlikte Büyütüyor",
     celebrationHeadline: "17 KASIM — YILDÖNÜMÜMÜZ KUTLU OLSUN BİRİCİK AŞKIM!",
     celebrationSubtext:
       "Bekir & Gizem — 17 Kasım 2023'te başlayan hikâyemiz, bugün ve her gün tüm evreni aydınlatıyor. ❤️",
@@ -248,17 +248,17 @@ export const UNIVERSE_CONFIG = {
     playAgainButtonText: "Tekrar Oyna",
     switchGameLabel: "Oyun Seç:",
     catchHearts: {
-      tabTitle: "Kalpleri Yakala",
-      cardTitle: "Kalpleri Yakala",
-      cardSubtitle: "30 saniye içinde beliren parlak kalplere dokun ve topla.",
+      tabTitle: "Aşk Hafıza Kartları",
+      cardTitle: "Aşk Hafıza Kartları",
+      cardSubtitle: "12 kartın içindeki 6 romantik çifti eşleştirerek hafızanı test et.",
       durationSeconds: 30,
       pointsPerHeart: 10,
-      scoreLabel: "Skor",
-      timeLabel: "Süre",
-      timeUnit: "sn",
-      startPrompt: "Kalpler evrende belirmeye hazır. Başlamak için butona dokun!",
-      finalMessage: "Bütün kalpler senin için Gizem! ❤️",
-      collectedSummaryPrefix: "Toplam Puanın:",
+      scoreLabel: "Eşleşme",
+      timeLabel: "Hamle",
+      timeUnit: "",
+      startPrompt: "6 özel sembol çifti kartların altında gizli. Eşleştirmeye hazır mısın?",
+      finalMessage: "Harikasın Gizem! Bütün kalp çiftlerini sevgiyle buldun! ❤️",
+      collectedSummaryPrefix: "Toplam Hamle:",
     },
     findStar: {
       tabTitle: "Gizli Yıldızı Bul",
@@ -343,8 +343,8 @@ export const UNIVERSE_CONFIG = {
         boxGradient: "from-[#4A102D] via-[#2B0B21] to-[#17081C]",
         headline: "Sana Küçük Bir Not 💌",
         message:
-          "17 Kasım'dan beri günün hangi saati olursa olsun, aklıma düştüğün her an yüzümde istemsiz bir tebessüm oluşuyor. Senin o güzel kalbin, zarafetin ve sevgimiz bu dünyadaki en nadir hazine. Her sabah uyandığında Bekir tarafından ne kadar çok sevildiğini hissetmeni diliyorum...",
-        subNote: "Her zaman kalbimdesin Gizem ❤️",
+          "17 Kasım 2023'te elini ilk tuttuğum günden beri hayatımın en güzel mevsimini yaşıyorum. Seninle aynı yolda yürümek, en sıradan bir günü bile kahkahalarla unutulmaz kılmak bana verilen en büyük şans. İyi ki hayatıma girdin, iyi ki benimlesin biricik aşkım; birlikte daha nice güzel yıllara...",
+        subNote: "17 Kasım 2023'ten sonsuza dek • Bekir ❤️",
       },
       {
         id: 2,

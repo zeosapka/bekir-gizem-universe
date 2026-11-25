@@ -181,7 +181,7 @@ export function SenaSurpriseGifts() {
     >
       {/* Bölüm Başlığı */}
       <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06383E]/55 border border-[#F5D58A]/35 mb-3 shadow-[0_0_25px_rgba(232,62,112,0.25)]">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#06383E]/55 border border-[#F5D58A]/35 mb-3 shadow-[0_0_25px_rgba(14, 165, 233,0.25)]">
           <Gift className="w-4 h-4 text-[#F5D58A]" />
           <span className="text-xs tracking-[0.22em] uppercase text-[#F5D58A] font-semibold">
             {cfg.badgeText} • {openedCount} / {cfg.boxes.length}
@@ -232,7 +232,7 @@ export function SenaSurpriseGifts() {
                   isGrand
                     ? "border-2 border-[#F5D58A]/80 shadow-[0_0_55px_rgba(245,213,138,0.3)]"
                     : isOpened
-                    ? "border-2 border-[#A7F3D0]/65 shadow-[0_0_35px_rgba(232,62,112,0.28)]"
+                    ? "border-2 border-[#A7F3D0]/65 shadow-[0_0_35px_rgba(14, 165, 233,0.28)]"
                     : "border border-[#F5D58A]/35 shadow-[0_15px_45px_rgba(8,6,17,0.85)] hover:border-[#F5D58A]/75"
                 } active:scale-[0.98]`}
               >
@@ -430,7 +430,7 @@ export function SenaSurpriseGifts() {
               exit={{ opacity: 0, scale: 0.92, y: 16 }}
               transition={{ duration: 0.45, ease: "easeOut" }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-2xl max-h-[86dvh] overflow-y-auto overscroll-contain rounded-[2.25rem] p-6 sm:p-10 bg-gradient-to-b from-[#260B21] via-[#15081E] to-[#0A0512] border-2 border-[#F5D58A]/65 shadow-[0_25px_90px_rgba(232,62,112,0.45)] text-center"
+              className="relative w-full max-w-2xl max-h-[86dvh] overflow-y-auto overscroll-contain rounded-[2.25rem] p-6 sm:p-10 bg-gradient-to-b from-[#260B21] via-[#15081E] to-[#0A0512] border-2 border-[#F5D58A]/65 shadow-[0_25px_90px_rgba(14, 165, 233,0.45)] text-center"
             >
               {/* Sağ Üst Kapatma Butonu */}
               <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#F5D58A]/20">
@@ -458,7 +458,7 @@ export function SenaSurpriseGifts() {
                     initial={{ scale: 0.8 }}
                     animate={{ scale: [1, 1.08, 1] }}
                     transition={{ duration: 2.6, repeat: Infinity }}
-                    className="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-[#A7F3D0] to-[#0EA5E9] p-0.5 shadow-[0_0_40px_rgba(232,62,112,0.6)] flex items-center justify-center"
+                    className="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-[#A7F3D0] to-[#0EA5E9] p-0.5 shadow-[0_0_40px_rgba(14, 165, 233,0.6)] flex items-center justify-center"
                   >
                     <div className="w-full h-full rounded-full bg-[#14071E] flex items-center justify-center">
                       <Mail className="w-9 h-9 text-[#A7F3D0]" />
@@ -647,7 +647,7 @@ export function SenaSurpriseGifts() {
                     <motion.div
                       animate={{ scale: [1, 1.18, 1, 1.14, 1] }}
                       transition={{ duration: 2.2, repeat: Infinity }}
-                      className="relative z-10 w-28 h-28 rounded-full bg-gradient-to-br from-[#F5D58A] via-[#A7F3D0] to-[#0EA5E9] p-1 shadow-[0_0_70px_rgba(232,62,112,0.9)] flex items-center justify-center"
+                      className="relative z-10 w-28 h-28 rounded-full bg-gradient-to-br from-[#F5D58A] via-[#A7F3D0] to-[#0EA5E9] p-1 shadow-[0_0_70px_rgba(14, 165, 233,0.9)] flex items-center justify-center"
                     >
                       <div className="w-full h-full rounded-full bg-[#16061A] flex items-center justify-center">
                         <Heart className="w-14 h-14 text-[#0EA5E9] fill-[#0EA5E9]" />
@@ -655,7 +655,7 @@ export function SenaSurpriseGifts() {
                     </motion.div>
                   </div>
 
-                  <h3 className="font-serif italic font-bold text-2xl sm:text-4xl md:text-5xl bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#A7F3D0] bg-clip-text text-transparent leading-tight drop-shadow-[0_2px_30px_rgba(232,62,112,0.65)]">
+                  <h3 className="font-serif italic font-bold text-2xl sm:text-4xl md:text-5xl bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#A7F3D0] bg-clip-text text-transparent leading-tight drop-shadow-[0_2px_30px_rgba(14, 165, 233,0.65)]">
                     &ldquo;{activeBox.message}&rdquo;
                   </h3>
 
@@ -670,7 +670,7 @@ export function SenaSurpriseGifts() {
                 <button
                   type="button"
                   onClick={() => setActiveModalBoxId(null)}
-                  className="inline-flex items-center gap-2 px-8 py-3.5 min-h-[48px] rounded-full bg-gradient-to-r from-[#06383E] via-[#0EA5E9] to-[#06383E] border border-[#F5D58A]/65 text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-[#FFF8FC] shadow-[0_0_30px_rgba(232,62,112,0.5)] active:scale-95 transition-all cursor-pointer touch-manipulation"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 min-h-[48px] rounded-full bg-gradient-to-r from-[#06383E] via-[#0EA5E9] to-[#06383E] border border-[#F5D58A]/65 text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold text-[#FFF8FC] shadow-[0_0_30px_rgba(14, 165, 233,0.5)] active:scale-95 transition-all cursor-pointer touch-manipulation"
                 >
                   <RotateCcw className="w-4 h-4" />
                   <span>{cfg.closeModalButtonText}</span>

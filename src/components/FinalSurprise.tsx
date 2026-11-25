@@ -76,7 +76,7 @@ export function FinalSurprise() {
           onClick={handleOpenSurprise}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.95 }}
-          className="group relative inline-flex items-center justify-center gap-4 px-8 sm:px-14 py-6 min-h-[68px] rounded-full font-serif font-bold text-lg sm:text-2xl tracking-[0.12em] uppercase text-[#FFF8FC] bg-gradient-to-r from-[#06383E] via-[#0EA5E9] to-[#06383E] bg-[length:200%_100%] hover:bg-right border-2 border-[#F5D58A]/70 shadow-[0_0_60px_rgba(232,62,112,0.65)] transition-all duration-500 cursor-pointer"
+          className="group relative inline-flex items-center justify-center gap-4 px-8 sm:px-14 py-6 min-h-[68px] rounded-full font-serif font-bold text-lg sm:text-2xl tracking-[0.12em] uppercase text-[#FFF8FC] bg-gradient-to-r from-[#06383E] via-[#0EA5E9] to-[#06383E] bg-[length:200%_100%] hover:bg-right border-2 border-[#F5D58A]/70 shadow-[0_0_60px_rgba(14, 165, 233,0.65)] transition-all duration-500 cursor-pointer"
         >
           <Heart className="w-7 h-7 shrink-0 text-[#F5D58A] fill-[#0EA5E9] group-hover:scale-125 transition-transform" />
           <span>{UNIVERSE_CONFIG.surprise.buttonText}</span>
@@ -167,13 +167,13 @@ export function FinalSurprise() {
               transition={{ duration: 1.1, delay: 0.3 }}
               className="relative z-20 max-w-3xl mx-auto text-center space-y-8 px-4"
             >
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#0EA5E9] to-[#F5D58A] p-0.5 shadow-[0_0_55px_rgba(232,62,112,0.8)]">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#0EA5E9] to-[#F5D58A] p-0.5 shadow-[0_0_55px_rgba(14, 165, 233,0.8)]">
                 <div className="w-full h-full rounded-full bg-[#12061B] flex items-center justify-center">
                   <Heart className="w-10 h-10 text-[#0EA5E9] fill-[#0EA5E9] animate-pulse" />
                 </div>
               </div>
 
-              <h2 className="font-serif italic font-semibold text-3xl sm:text-5xl md:text-6xl text-[#FFF8FC] leading-tight drop-shadow-[0_4px_35px_rgba(232,62,112,0.6)]">
+              <h2 className="font-serif italic font-semibold text-3xl sm:text-5xl md:text-6xl text-[#FFF8FC] leading-tight drop-shadow-[0_4px_35px_rgba(14, 165, 233,0.6)]">
                 &ldquo;{UNIVERSE_CONFIG.surprise.mainMessage}&rdquo;
               </h2>
 

@@ -254,7 +254,7 @@ export function FireworksCelebration() {
 
   return (
     <section className="relative py-16 md:py-24 px-6 max-w-5xl mx-auto">
-      <div className="relative rounded-[2.25rem] p-8 sm:p-12 md:p-16 bg-gradient-to-br from-[#2B0C20]/80 via-[#06383E]/90 to-[#04282D]/95 backdrop-blur-2xl border border-[#0EA5E9]/35 shadow-[0_0_80px_rgba(232,62,112,0.22)] text-center overflow-hidden">
+      <div className="relative rounded-[2.25rem] p-8 sm:p-12 md:p-16 bg-gradient-to-br from-[#2B0C20]/80 via-[#06383E]/90 to-[#04282D]/95 backdrop-blur-2xl border border-[#0EA5E9]/35 shadow-[0_0_80px_rgba(14, 165, 233,0.22)] text-center overflow-hidden">
         <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[#0EA5E9]/20 blur-[110px]" />
 
         <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
@@ -324,7 +324,7 @@ export function FireworksCelebration() {
               <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#F5D58A] mb-4 font-semibold">
                 {UNIVERSE_CONFIG.fireworks.modalTopHint}
               </p>
-              <h2 className="font-serif font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#A7F3D0] bg-clip-text text-transparent drop-shadow-[0_4px_45px_rgba(232,62,112,0.85)]">
+              <h2 className="font-serif font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight bg-gradient-to-r from-[#FFF8FC] via-[#F5D58A] to-[#A7F3D0] bg-clip-text text-transparent drop-shadow-[0_4px_45px_rgba(14, 165, 233,0.85)]">
                 {UNIVERSE_CONFIG.fireworks.skyMessage}
               </h2>
               <p className="mt-6 text-xs sm:text-sm tracking-[0.18em] uppercase text-[#FFF8FC]/75">

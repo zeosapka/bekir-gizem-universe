@@ -168,7 +168,7 @@ export function OurLittleMoments() {
                       <button
                         type="button"
                         onClick={() => setSelectedMoment(item)}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 min-h-[42px] rounded-full text-xs uppercase tracking-wider text-[#FFF8FC] bg-[#0EA5E9]/80 hover:bg-[#0EA5E9] shadow-[0_0_20px_rgba(232,62,112,0.4)] transition-all cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 min-h-[42px] rounded-full text-xs uppercase tracking-wider text-[#FFF8FC] bg-[#0EA5E9]/80 hover:bg-[#0EA5E9] shadow-[0_0_20px_rgba(14, 165, 233,0.4)] transition-all cursor-pointer"
                       >
                         <Maximize2 className="w-3.5 h-3.5 shrink-0" />
                         <span>
@@ -181,7 +181,7 @@ export function OurLittleMoments() {
 
                 {/* 3B KART ARKA YÜZÜ (ROMANTİK NOT VE MESAJ DÜZENLEME) */}
                 <div
-                  className={`absolute inset-0 w-full h-full rounded-[2rem] p-6 flex flex-col justify-between bg-gradient-to-br from-[#2B0C20] via-[#150821] to-[#04282D] border-2 border-[#F5D58A]/50 shadow-[0_15px_50px_rgba(232,62,112,0.3)] safari-backface-hidden safari-rotate-y-180 ${
+                  className={`absolute inset-0 w-full h-full rounded-[2rem] p-6 flex flex-col justify-between bg-gradient-to-br from-[#2B0C20] via-[#06383E] to-[#04282D] border-2 border-[#F5D58A]/50 shadow-[0_15px_50px_rgba(14, 165, 233,0.3)] safari-backface-hidden safari-rotate-y-180 ${
                     isFlipped ? "pointer-events-auto" : "pointer-events-none"
                   }`}
                 >
@@ -257,7 +257,7 @@ export function OurLittleMoments() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-3xl max-h-[85dvh] overflow-y-auto overscroll-contain rounded-[2.25rem] p-5 sm:p-10 bg-gradient-to-b from-[#1E0C29] to-[#0B0512] border-2 border-[#F5D58A]/50 shadow-[0_25px_90px_rgba(232,62,112,0.45)]"
+              className="relative w-full max-w-3xl max-h-[85dvh] overflow-y-auto overscroll-contain rounded-[2.25rem] p-5 sm:p-10 bg-gradient-to-b from-[#1E0C29] to-[#0B0512] border-2 border-[#F5D58A]/50 shadow-[0_25px_90px_rgba(14, 165, 233,0.45)]"
             >
               <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#F5D58A]/20">
                 <div>

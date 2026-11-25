@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import confetti from "canvas-confetti";
@@ -505,7 +505,7 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
       const budHalo = ctx.createRadialGradient(0, 0, 1, 0, 0, r * 2.2);
       budHalo.addColorStop(0, "rgba(255, 248, 252, 0.9)");
       budHalo.addColorStop(0.5, "rgba(245, 213, 138, 0.6)");
-      budHalo.addColorStop(1, "rgba(232, 62, 112, 0)");
+      budHalo.addColorStop(1, "rgba(14, 165, 233, 0)");
       ctx.fillStyle = budHalo;
       ctx.beginPath();
       ctx.arc(0, 0, r * 2.2, 0, Math.PI * 2);
@@ -671,7 +671,7 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
       const auraR = 45 + bloomProgress * 112;
       const auraGrad = ctx.createRadialGradient(0, 0, 5, 0, 0, auraR);
       auraGrad.addColorStop(0, "rgba(245, 213, 138, 0.55)");
-      auraGrad.addColorStop(0.5, "rgba(232, 62, 112, 0.3)");
+      auraGrad.addColorStop(0.5, "rgba(14, 165, 233, 0.3)");
       auraGrad.addColorStop(1, "rgba(8, 6, 17, 0)");
       ctx.fillStyle = auraGrad;
       ctx.beginPath();
@@ -749,7 +749,7 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
         const centerGlow = ctx.createRadialGradient(0, 0, 2, 0, 0, 24);
         centerGlow.addColorStop(0, "rgba(255, 248, 252, 0.95)");
         centerGlow.addColorStop(0.5, "rgba(245, 213, 138, 0.8)");
-        centerGlow.addColorStop(1, "rgba(232, 62, 112, 0)");
+        centerGlow.addColorStop(1, "rgba(14, 165, 233, 0)");
         ctx.fillStyle = centerGlow;
         ctx.beginPath();
         ctx.arc(0, 0, 24 * heartAlpha, 0, Math.PI * 2);
@@ -1089,7 +1089,7 @@ export function FlowerBloomIntro({ onComplete }: FlowerBloomIntroProps) {
       ctx.scale(fitScale, fitScale);
 
       const seedGlow = ctx.createRadialGradient(cx, 320, 8, cx, 360, 260);
-      seedGlow.addColorStop(0, "rgba(232, 62, 112, 0.25)");
+      seedGlow.addColorStop(0, "rgba(14, 165, 233, 0.25)");
       seedGlow.addColorStop(0.5, "rgba(245, 213, 138, 0.12)");
       seedGlow.addColorStop(1, "rgba(8, 6, 17, 0)");
       ctx.fillStyle = seedGlow;
