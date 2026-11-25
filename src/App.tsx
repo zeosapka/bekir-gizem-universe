@@ -55,12 +55,12 @@ export function App() {
         <OpeningPortal onEnterUniverse={() => setHasEntered(true)} />
       )}
 
+      {/* Sağ ve Sol Boşluklarda Sürekli Akan Yarı Şeffaf Filigranlı Fotoğraf Şeritleri (Giriş Portalı + Ana Evren) */}
+      {hasFlowerBloomed && <SidePhotoStreams />}
+
       {/* Main Universe Experience */}
       {hasEntered && (
         <>
-          {/* Sağ ve Sol Boşluklarda Sürekli Akan Yarı Şeffaf Filigranlı Fotoğraf Şeritleri */}
-          <SidePhotoStreams />
-
           <motion.main
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
