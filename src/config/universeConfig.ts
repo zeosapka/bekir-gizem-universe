@@ -323,14 +323,14 @@ export const UNIVERSE_CONFIG = {
       {
         id: 2,
         numberLabel: "2",
-        title: "Sonsuz Çiçekler 🌹🌷🌼",
-        shortHint: "Güller, laleler ve papatyalarla dolu bir bahar...",
+        title: "Sonsuz Çiçekler 🌸🌺🌻",
+        shortHint: "Dünyanın en güzel çiçekleriyle dolu bir bahar...",
         accentColor: "#BAE6FD",
         ribbonColor: "#A7F3D0",
         boxGradient: "from-[#0284C7]/90 via-[#0369A1]/90 to-[#073349]/95",
-        headline: "Sonsuz Çiçekler 🌹🌷🌼",
+        headline: "Sonsuz Çiçekler 🌸🌺🌻",
         message:
-          "Her gül, her lale ve her papatya sana olan sevgimi anlatsaydı, bu bahar hiç bitmezdi.",
+          "Dünyadaki en güzel çiçeklerin hepsi bir araya gelse, yine de senin gülüşün kadar güzel açamazdı.",
         subNote: "Yeni çiçekler açtırmak için bahçeye dokun 🌸",
       },
       {
