@@ -13,8 +13,8 @@ interface FrameSlot {
 const FRAME_SLOTS: FrameSlot[] = [
   {
     id: "slot-left",
-    label: "17 Kasım Hatırası",
-    caption: "İlk Bakış & Tebessüm",
+    label: "En Güzel Anımız",
+    caption: "Gülüşümüz & Neşemiz",
     emoji: "🌷",
   },
   {
@@ -27,7 +27,7 @@ const FRAME_SLOTS: FrameSlot[] = [
   {
     id: "slot-right",
     label: "Biricik Aşkım",
-    caption: "Gülüşünle Aydınlanan Anlar",
+    caption: "Seninle Güzel Günlerimiz",
     emoji: "🌼",
   },
 ];
@@ -109,7 +109,7 @@ export function RomanticShowcaseBanner() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-[#A7F3D0]/45 mb-3">
               <Sparkles className="w-3.5 h-3.5 text-[#A7F3D0]" />
               <span className="text-[11px] sm:text-xs tracking-[0.22em] uppercase text-[#E0F2FE] font-semibold">
-                17 Kasım 2023 • İkinize Özel Vitrin
+                Bekir &amp; Gizem • Özel Fotoğraf Vitrini
               </span>
               <Sparkles className="w-3.5 h-3.5 text-[#BAE6FD]" />
             </div>
@@ -119,9 +119,9 @@ export function RomanticShowcaseBanner() {
             </h2>
 
             <p className="mt-2.5 font-serif italic text-base sm:text-lg text-[#E0F2FE]/85">
-              Ortadaki ve yanlardaki çerçevelere dokunup kendi fotoğraflarınızı ekleyebilirsiniz — site rengiyle uyumlu{" "}
+              Ortadaki ve yanlardaki çerçevelere dokunup dilediğiniz en güzel fotoğraflarınızı ekleyebilirsiniz — site rengiyle uyumlu{" "}
               <span className="text-[#A7F3D0] font-medium">
-                17.11.2023 filigranı
+                G &amp; B filigranı
               </span>{" "}
               otomatik uygulanır.
             </p>
@@ -203,7 +203,7 @@ export function RomanticShowcaseBanner() {
                       </span>
                       <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 text-[10px] text-[#A7F3D0] font-semibold tracking-wider">
                         <Heart className="w-2.5 h-2.5 fill-[#A7F3D0]" />
-                        B&amp;G • 17.11.23
+                        G &amp; B
                       </span>
                     </div>
                   </div>
